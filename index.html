@@ -14,22 +14,23 @@
   --shadow:0 2px 16px rgba(26,155,187,.12); --shadow-lg:0 6px 32px rgba(26,155,187,.18);
   --radius:18px; --radius-sm:12px;
   --text-dark:#1a202c; --text-mid:#2d3748; --text-light:#4a5568;
+  --green-gf:#276749;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Nunito',sans-serif;background:#ffffff;color:var(--text-dark);min-height:100vh}
+body{font-family:'Nunito',sans-serif;background:#ffffff;color:#1a202c;min-height:100vh}
 
 /* ── SPLASH ── */
 #splash{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:24px;background:#ffffff}
 .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;max-width:540px}
 .role-btn{
 background:#ffffff;
-border:2.5px solid var(–blue-light);
-border-radius:var(–radius);
+border:2.5px solid #b8e4f0;
+border-radius:18px;
 padding:32px 16px;
 cursor:pointer;
 transition:all .2s;
 text-align:center;
-box-shadow:var(–shadow);
+box-shadow:0 2px 16px rgba(26,155,187,.12);
 position:relative;
 overflow:hidden;
 }
@@ -38,53 +39,49 @@ content:’’;
 position:absolute;
 top:0;left:0;right:0;
 height:4px;
-background:var(–blue);
+background:#1a9bbb;
 transform:scaleX(0);
 transition:transform .2s;
+border-radius:18px 18px 0 0;
 }
 .role-btn:hover::before,.role-btn:active::before{transform:scaleX(1);}
 .role-btn:hover,.role-btn:active{
-border-color:var(–blue);
+border-color:#1a9bbb;
 transform:translateY(-4px);
-box-shadow:var(–shadow-lg);
+box-shadow:0 6px 32px rgba(26,155,187,.18);
 }
 .role-btn .icon{font-size:3rem;margin-bottom:10px}
-.role-btn .label{font-weight:900;font-size:1.25rem;color:var(–text-dark);margin-top:4px}
-.role-btn .desc{font-size:.9rem;color:var(–text-light);margin-top:5px;font-weight:600}
-.cassa-btn{
-grid-column:1/-1;
-background:var(–blue-pale);
-border-color:var(–blue);
-}
-.cassa-btn .label{color:var(–blue-dark)}
-.cassa-btn .desc{color:var(–text-mid)}
-.cassa-btn::before{background:var(–blue-dark);}
+.role-btn .label{font-weight:900;font-size:1.25rem;color:#1a202c;margin-top:4px}
+.role-btn .desc{font-size:.9rem;color:#4a5568;margin-top:5px;font-weight:600}
+.cassa-btn{grid-column:1/-1;background:#e8f7fb;border-color:#1a9bbb;}
+.cassa-btn .label{color:#0e7a9a}
+.cassa-btn .desc{color:#2d3748}
 
 /* ── MODAL ── */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2000;align-items:center;justify-content:center;padding:16px}
 .modal-overlay.active{display:flex}
-.modal-box{background:#ffffff;border-radius:var(–radius);padding:28px 22px;width:100%;max-width:460px;box-shadow:0 12px 48px rgba(0,0,0,.2);max-height:92vh;overflow-y:auto}
-.modal-box h3{font-family:‘Playfair Display’,serif;color:var(–blue-dark);margin-bottom:16px;font-size:1.4rem}
-.modal-input{width:100%;padding:13px 15px;border:2.5px solid var(–blue-light);border-radius:var(–radius-sm);font-size:1rem;font-family:‘Nunito’,sans-serif;outline:none;transition:border-color .2s;background:#ffffff;color:var(–text-dark);margin-bottom:11px}
-.modal-input:focus{border-color:var(–blue)}
-.modal-label{font-size:.88rem;font-weight:800;color:var(–text-mid);display:block;margin-bottom:5px}
+.modal-box{background:#ffffff;border-radius:18px;padding:28px 22px;width:100%;max-width:460px;box-shadow:0 12px 48px rgba(0,0,0,.2);max-height:92vh;overflow-y:auto}
+.modal-box h3{font-family:‘Playfair Display’,serif;color:#0e7a9a;margin-bottom:16px;font-size:1.4rem}
+.modal-input{width:100%;padding:13px 15px;border:2.5px solid #b8e4f0;border-radius:12px;font-size:1rem;font-family:‘Nunito’,sans-serif;outline:none;transition:border-color .2s;background:#ffffff;color:#1a202c;margin-bottom:11px}
+.modal-input:focus{border-color:#1a9bbb}
+.modal-label{font-size:.88rem;font-weight:800;color:#2d3748;display:block;margin-bottom:5px}
 .btn-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
-.btn{padding:14px 24px;border-radius:var(–radius-sm);border:none;cursor:pointer;font-family:“Nunito”,sans-serif;font-weight:800;font-size:1.05rem;transition:all .15s;white-space:nowrap;color:var(–text-dark)}
-.btn-primary{background:var(–blue);color:var(–text-dark)}
-.btn-primary:hover{background:var(–blue-dark);color:var(–text-dark)}
-.btn-secondary{background:var(–gray-light);color:var(–text-mid)}
-.btn-danger{background:var(–red);color:#ffffff}
-.btn-success{background:var(–green);color:#ffffff}
-.btn-warning{background:var(–orange);color:#ffffff}
-.btn-purple{background:var(–purple);color:#ffffff}
+.btn{padding:14px 24px;border-radius:12px;border:none;cursor:pointer;font-family:“Nunito”,sans-serif;font-weight:800;font-size:1.05rem;transition:all .15s;white-space:nowrap}
+.btn-primary{background:#1a9bbb;color:#1a202c}
+.btn-primary:hover{background:#0e7a9a;color:#1a202c}
+.btn-secondary{background:#f0f4f8;color:#2d3748}
+.btn-danger{background:#e53e3e;color:#ffffff}
+.btn-success{background:#38a169;color:#ffffff}
+.btn-warning{background:#dd6b20;color:#ffffff}
+.btn-purple{background:#805ad5;color:#ffffff}
 .btn-sm{padding:9px 16px;font-size:.88rem}
-.error-msg{color:var(–red);font-size:.88rem;margin-top:6px;font-weight:700}
+.error-msg{color:#e53e3e;font-size:.88rem;margin-top:6px;font-weight:700}
 
 /* ── APP ── */
 #app{display:none;flex-direction:column;min-height:100vh;background:#ffffff}
 .topbar{
 background:#ffffff;
-color:var(–text-dark);
+color:#1a202c;
 padding:14px 18px;
 display:flex;
 align-items:center;
@@ -93,15 +90,15 @@ box-shadow:0 2px 12px rgba(26,155,187,.1);
 position:sticky;
 top:0;
 z-index:100;
-border-bottom:3px solid var(–blue);
+border-bottom:3px solid #1a9bbb;
 }
-.topbar-logo{font-family:‘Playfair Display’,serif;font-size:1.4rem;color:var(–blue-dark)}
-.topbar-role{font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(–text-light);margin-top:2px}
+.topbar-logo{font-family:‘Playfair Display’,serif;font-size:1.4rem;color:#0e7a9a}
+.topbar-role{font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4a5568;margin-top:2px}
 .topbar-btns{display:flex;gap:8px;align-items:center}
 .topbar-btn{
-background:var(–blue-pale);
-border:2px solid var(–blue-light);
-color:var(–text-dark);
+background:#e8f7fb;
+border:2px solid #b8e4f0;
+color:#1a202c;
 padding:9px 16px;
 border-radius:10px;
 cursor:pointer;
@@ -111,179 +108,198 @@ font-size:.9rem;
 position:relative;
 transition:all .15s;
 }
-.topbar-btn:hover{background:var(–blue-light);border-color:var(–blue)}
-.notif-badge{position:absolute;top:-5px;right:-5px;background:var(–red);color:#ffffff;border-radius:50%;width:18px;height:18px;font-size:.62rem;font-weight:900;display:flex;align-items:center;justify-content:center;border:2px solid #ffffff}
+.topbar-btn:hover{background:#b8e4f0;border-color:#1a9bbb}
+.notif-badge{
+position:absolute;
+top:-5px;right:-5px;
+background:#e53e3e;
+color:#ffffff;
+border-radius:50%;
+width:18px;height:18px;
+font-size:.62rem;font-weight:900;
+display:flex;align-items:center;justify-content:center;
+border:2px solid #1a202c;
+}
 
 /* ── TABS ── */
-.tabs{display:flex;background:#ffffff;border-bottom:2.5px solid var(–blue-light);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs{display:flex;background:#ffffff;border-bottom:2.5px solid #b8e4f0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tab{padding:16px 22px;border:none;background:none;cursor:pointer;font-family:“Nunito”,sans-serif;font-weight:800;font-size:1.05rem;color:var(–text-mid);white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-2.5px;transition:all .15s}
-.tab.active{color:var(–blue-dark);border-bottom-color:var(–blue)}
+.tab{padding:16px 22px;border:none;background:none;cursor:pointer;font-family:“Nunito”,sans-serif;font-weight:800;font-size:1.05rem;color:#2d3748;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-2.5px;transition:all .15s}
+.tab.active{color:#0e7a9a;border-bottom-color:#1a9bbb}
 
 /* ── CONTENT ── */
 .content{flex:1;padding:16px;max-width:960px;margin:0 auto;width:100%}
-.section-title{font-family:“Playfair Display”,serif;font-size:1.35rem;color:var(–blue-dark);margin-bottom:14px}
-.divider{border:none;border-top:2.5px solid var(–blue-light);margin:16px 0}
+.section-title{font-family:“Playfair Display”,serif;font-size:1.35rem;color:#0e7a9a;margin-bottom:14px}
+.divider{border:none;border-top:2.5px solid #b8e4f0;margin:16px 0}
 .mt-12{margin-top:14px}
 
 /* ── TABLES ── */
 .tables-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:13px}
 .table-card{
 background:#ffffff;
-border-radius:var(–radius);
+border-radius:18px;
 padding:20px 14px;
 text-align:center;
 cursor:pointer;
 transition:all .2s;
-box-shadow:var(–shadow);
-border:2.5px solid var(–blue-light);
+box-shadow:0 2px 16px rgba(26,155,187,.12);
+border:2.5px solid #b8e4f0;
 position:relative;
 }
-.table-card:hover,.table-card:active{transform:translateY(-3px);box-shadow:var(–shadow-lg);border-color:var(–blue)}
-.table-card.has-order{border-color:var(–orange);border-width:3px}
-.table-card.ready{border-color:var(–green);border-width:3px}
+.table-card:hover,.table-card:active{transform:translateY(-3px);box-shadow:0 6px 32px rgba(26,155,187,.18);border-color:#1a9bbb}
+.table-card.has-order{border-color:#dd6b20;border-width:3px}
+.table-card.ready{border-color:#38a169;border-width:3px}
 .table-card.paid{border-color:#cbd5e0;opacity:.6}
-.table-card.reserved{border-color:var(–purple);border-width:3px}
-.t-name{font-weight:900;font-size:1.3rem;color:var(–blue-dark)}
-.t-covers{font-size:.95rem;color:var(–text-mid);margin-top:4px;font-weight:700}
-.t-status{font-size:.88rem;font-weight:800;margin-top:7px;padding:5px 13px;border-radius:20px;display:inline-block;color:var(–text-dark)}
-.s-free{background:var(–blue-pale);color:var(–blue-dark)}
+.table-card.reserved{border-color:#805ad5;border-width:3px}
+.t-name{font-weight:900;font-size:1.3rem;color:#0e7a9a}
+.t-covers{font-size:.95rem;color:#2d3748;margin-top:4px;font-weight:700}
+.t-status{font-size:.88rem;font-weight:800;margin-top:7px;padding:5px 13px;border-radius:20px;display:inline-block}
+.s-free{background:#e8f7fb;color:#0e7a9a}
 .s-order{background:#fff3e0;color:#7b3a10}
 .s-ready{background:#e6f4ea;color:#1a5c33}
-.s-paid{background:var(–gray-light);color:var(–text-mid)}
+.s-paid{background:#f0f4f8;color:#2d3748}
 .s-reserved{background:#faf5ff;color:#44337a}
-.t-total{font-size:.92rem;font-weight:900;color:var(–text-mid);margin-top:4px}
-.badge{position:absolute;top:-7px;right:-7px;background:var(–red);color:#ffffff;border-radius:50%;width:22px;height:22px;font-size:.72rem;font-weight:900;display:flex;align-items:center;justify-content:center}
-.badge-note{position:absolute;top:-7px;left:-7px;background:var(–purple);color:#ffffff;border-radius:50%;width:22px;height:22px;font-size:.72rem;display:flex;align-items:center;justify-content:center}
-.badge-res{position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);background:var(–purple);color:#ffffff;border-radius:10px;padding:2px 9px;font-size:.68rem;font-weight:800;white-space:nowrap}
+.t-total{font-size:.92rem;font-weight:900;color:#2d3748;margin-top:4px}
+.badge{position:absolute;top:-7px;right:-7px;background:#e53e3e;color:#ffffff;border-radius:50%;width:22px;height:22px;font-size:.72rem;font-weight:900;display:flex;align-items:center;justify-content:center}
+.badge-note{position:absolute;top:-7px;left:-7px;background:#805ad5;color:#ffffff;border-radius:50%;width:22px;height:22px;font-size:.72rem;display:flex;align-items:center;justify-content:center}
+.badge-res{position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);background:#805ad5;color:#ffffff;border-radius:10px;padding:2px 9px;font-size:.68rem;font-weight:800;white-space:nowrap}
 
 /* ── ORDER PANEL ── */
-.order-panel{background:#ffffff;border-radius:var(–radius);box-shadow:var(–shadow);overflow:hidden;border:2px solid var(–blue-light)}
-.order-header{background:var(–blue-pale);color:var(–text-dark);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:2px solid var(–blue-light)}
-.order-header h2{font-family:‘Playfair Display’,serif;font-size:1.4rem;color:var(–blue-dark)}
+.order-panel{background:#ffffff;border-radius:18px;box-shadow:0 2px 16px rgba(26,155,187,.12);overflow:hidden;border:2px solid #b8e4f0}
+.order-header{background:#e8f7fb;color:#1a202c;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:2px solid #b8e4f0}
+.order-header h2{font-family:‘Playfair Display’,serif;font-size:1.4rem;color:#0e7a9a}
 .order-body{padding:16px}
 .cat-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
-.cat-btn{padding:12px 20px;border-radius:24px;border:2.5px solid var(–blue-light);background:#ffffff;cursor:pointer;font-family:“Nunito”,sans-serif;font-weight:800;font-size:1rem;color:var(–text-mid);transition:all .15s}
-.cat-btn.active{background:var(–blue);border-color:var(–blue);color:var(–text-dark)}
-.cat-btn:hover{border-color:var(–blue)}
+.cat-btn{padding:12px 20px;border-radius:24px;border:2.5px solid #b8e4f0;background:#ffffff;cursor:pointer;font-family:“Nunito”,sans-serif;font-weight:800;font-size:1rem;color:#2d3748;transition:all .15s}
+.cat-btn.active{background:#1a9bbb;border-color:#1a9bbb;color:#1a202c}
+.cat-btn:hover{border-color:#1a9bbb}
 
 /* ── MENU GRID ── */
 .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-height:360px;overflow-y:auto;padding-right:3px}
 @media(max-width:500px){.menu-grid{grid-template-columns:1fr}}
-.menu-item{border:2.5px solid var(–blue-light);border-radius:var(–radius-sm);padding:13px 13px;cursor:pointer;transition:all .18s;position:relative;background:#ffffff}
-.menu-item:hover{border-color:var(–blue);background:var(–blue-pale)}
-.menu-item.selected{border-color:var(–blue);border-width:3px;background:var(–blue-pale);box-shadow:0 0 0 3px rgba(26,155,187,.18)}
-.menu-item.sold-out{opacity:.5;cursor:not-allowed;background:var(–gray-light)}
-.menu-item.sold-out::after{content:‘ESAURITO’;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-12deg);font-size:.72rem;font-weight:900;color:var(–red);background:rgba(255,255,255,.95);padding:3px 9px;border-radius:6px;border:2px solid var(–red);pointer-events:none}
-.mi-name{font-weight:900;font-size:1.1rem;color:var(–blue-dark)}
-.mi-desc{font-size:.85rem;color:var(–text-mid);line-height:1.4;margin-top:3px}
-.mi-price{font-weight:900;color:var(–blue-dark);font-size:1.05rem;margin-top:5px}
+.menu-item{border:2.5px solid #b8e4f0;border-radius:12px;padding:13px;cursor:pointer;transition:all .18s;position:relative;background:#ffffff}
+.menu-item:hover{border-color:#1a9bbb;background:#e8f7fb}
+.menu-item.selected{border-color:#1a9bbb;border-width:3px;background:#e8f7fb;box-shadow:0 0 0 3px rgba(26,155,187,.18)}
+.menu-item.sold-out{opacity:.5;cursor:not-allowed;background:#f0f4f8}
+.menu-item.sold-out::after{content:‘ESAURITO’;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-12deg);font-size:.72rem;font-weight:900;color:#e53e3e;background:rgba(255,255,255,.95);padding:3px 9px;border-radius:6px;border:2px solid #e53e3e;pointer-events:none}
+.mi-name{font-weight:900;font-size:1.1rem;color:#0e7a9a}
+.mi-desc{font-size:.85rem;color:#2d3748;line-height:1.4;margin-top:3px}
+.mi-price{font-weight:900;color:#0e7a9a;font-size:1.05rem;margin-top:5px}
+
+/* ── GLUTEN FREE stile speciale ── */
+.menu-item.gf-item{border-color:#276749;background:#f0fff4}
+.menu-item.gf-item:hover{background:#c6f6d5;border-color:#276749}
+.menu-item.gf-item .mi-name{color:#276749;font-weight:900}
+.menu-item.gf-item .mi-price{color:#276749;font-weight:900}
+.menu-item.gf-item .mi-desc{color:#2d3748}
+.cat-btn.gf-cat{border-color:#276749;color:#276749;font-weight:900}
+.cat-btn.gf-cat.active{background:#276749;border-color:#276749;color:#ffffff}
 
 /* ── INLINE NOTE ── */
-.inline-note{background:var(–blue-pale);border:2px solid var(–blue);border-radius:var(–radius-sm);padding:12px 13px;margin-top:8px;animation:slideDown .18s ease}
+.inline-note{background:#e8f7fb;border:2px solid #1a9bbb;border-radius:12px;padding:12px 13px;margin-top:8px;animation:slideDown .18s ease}
 @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-.inline-note-input{width:100%;padding:10px 13px;border:2px solid var(–blue-light);border-radius:10px;font-family:‘Nunito’,sans-serif;font-size:.95rem;outline:none;background:#ffffff;color:var(–text-dark)}
-.inline-note-input:focus{border-color:var(–blue)}
+.inline-note-input{width:100%;padding:10px 13px;border:2px solid #b8e4f0;border-radius:10px;font-family:‘Nunito’,sans-serif;font-size:.95rem;outline:none;background:#ffffff;color:#1a202c}
+.inline-note-input:focus{border-color:#1a9bbb}
 .inline-note-actions{display:flex;gap:8px;margin-top:9px}
 
 /* ── ORDER LIST ── */
 .order-list{margin-top:12px}
-.order-row{display:flex;align-items:flex-start;gap:9px;padding:10px 0;border-bottom:2px solid var(–blue-light)}
+.order-row{display:flex;align-items:flex-start;gap:9px;padding:10px 0;border-bottom:2px solid #b8e4f0}
 .order-row:last-child{border-bottom:none}
 .or-info{flex:1;min-width:0}
-.or-name{font-weight:800;font-size:1.05rem;color:var(–text-dark)}
-.or-note{font-size:.82rem;color:var(–orange);font-style:italic;margin-top:3px;font-weight:700}
+.or-name{font-weight:800;font-size:1.05rem;color:#1a202c}
+.or-note{font-size:.82rem;color:#dd6b20;font-style:italic;margin-top:3px;font-weight:700}
 .or-qty{display:flex;align-items:center;gap:7px;flex-shrink:0}
-.qty-btn{width:32px;height:32px;border-radius:50%;border:2.5px solid var(–blue-light);background:#ffffff;cursor:pointer;font-size:1.1rem;font-weight:900;color:var(–blue-dark);display:flex;align-items:center;justify-content:center;transition:all .1s}
-.qty-btn:hover,.qty-btn:active{background:var(–blue);color:var(–text-dark);border-color:var(–blue)}
-.or-price{font-weight:900;color:var(–blue-dark);font-size:.95rem;min-width:55px;text-align:right;flex-shrink:0}
-.order-total-row{font-size:1.3rem;font-weight:900;color:var(–blue-dark);text-align:right;margin-top:12px;padding-top:12px;border-top:2.5px solid var(–blue-light)}
+.qty-btn{width:32px;height:32px;border-radius:50%;border:2.5px solid #b8e4f0;background:#ffffff;cursor:pointer;font-size:1.1rem;font-weight:900;color:#0e7a9a;display:flex;align-items:center;justify-content:center;transition:all .1s}
+.qty-btn:hover,.qty-btn:active{background:#1a9bbb;color:#1a202c;border-color:#1a9bbb}
+.or-price{font-weight:900;color:#0e7a9a;font-size:.95rem;min-width:55px;text-align:right;flex-shrink:0}
+.order-total-row{font-size:1.3rem;font-weight:900;color:#0e7a9a;text-align:right;margin-top:12px;padding-top:12px;border-top:2.5px solid #b8e4f0}
 .order-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
 
 /* ── KITCHEN ── */
 .kitchen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-.kcard{background:#ffffff;border-radius:var(–radius);box-shadow:var(–shadow);border-left:6px solid var(–orange);overflow:hidden;border:2px solid var(–blue-light);border-left:6px solid var(–orange)}
-.kcard.k-ready{border-left-color:var(–green)}
-.kcard.k-urgent{border-left-color:var(–red)}
+.kcard{background:#ffffff;border-radius:18px;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0;border-left:6px solid #dd6b20;overflow:hidden}
+.kcard.k-ready{border-left-color:#38a169}
+.kcard.k-urgent{border-left-color:#e53e3e}
 .kcard.k-paid{border-left-color:#cbd5e0;opacity:.7}
-.kc-head{padding:12px 15px;display:flex;justify-content:space-between;align-items:center;background:var(–blue-pale)}
+.kc-head{padding:12px 15px;display:flex;justify-content:space-between;align-items:center;background:#e8f7fb}
 .kcard.k-ready .kc-head{background:#f0faf4}
 .kcard.k-urgent .kc-head{background:#fff5f5}
-.kc-tname{font-weight:900;font-size:1.35rem;color:var(–text-dark)}
+.kc-tname{font-weight:900;font-size:1.35rem;color:#1a202c}
 .kcard.k-ready .kc-tname{color:#1a5c33}
-.kcard.k-urgent .kc-tname{color:var(–red)}
-.kc-timer{font-size:.95rem;font-weight:800;padding:5px 14px;border-radius:20px;color:var(–text-dark)}
+.kcard.k-urgent .kc-tname{color:#e53e3e}
+.kc-timer{font-size:.95rem;font-weight:800;padding:5px 14px;border-radius:20px}
 .t-green{background:#e6f4ea;color:#1a5c33}
 .t-yellow{background:#fef9c3;color:#7b4f00}
 .t-red{background:#fee2e2;color:#9b1c1c;animation:blink .8s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
 .kc-body{padding:12px 15px}
-.kc-mine-title{font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(–blue-dark);margin:8px 0 4px}
-.kc-other-title{font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(–text-light);margin:8px 0 4px}
-.kc-item{padding:6px 0;border-bottom:1px solid var(–gray-light);font-size:1.1rem;font-weight:800;color:var(–blue-dark)}
-.kc-item.dim{color:var(–text-mid);opacity:.7;font-weight:600;font-size:1rem}
+.kc-mine-title{font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#0e7a9a;margin:8px 0 4px}
+.kc-other-title{font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#4a5568;margin:8px 0 4px}
+.kc-item{padding:6px 0;border-bottom:1px solid #f0f4f8;font-size:1.1rem;font-weight:800;color:#0e7a9a}
+.kc-item.dim{color:#4a5568;opacity:.7;font-weight:600;font-size:1rem}
 .kc-item:last-child{border-bottom:none}
-.kc-item-note{font-size:.82rem;color:var(–orange);font-style:italic;font-weight:600;display:block;margin-top:2px}
-.kc-foot{padding:10px 15px;display:flex;gap:8px;flex-wrap:wrap;border-top:2px solid var(–gray-light)}
+.kc-item-note{font-size:.82rem;color:#dd6b20;font-style:italic;font-weight:600;display:block;margin-top:2px}
+.kc-foot{padding:10px 15px;display:flex;gap:8px;flex-wrap:wrap;border-top:2px solid #f0f4f8}
 
 /* ── CASSA ── */
-.cassa-row{display:flex;align-items:center;background:#ffffff;border-radius:var(–radius-sm);padding:14px 16px;margin-bottom:10px;box-shadow:var(–shadow);gap:12px;cursor:pointer;border:2.5px solid var(–blue-light);transition:all .15s}
-.cassa-row:hover{border-color:var(–blue)}
-.cr-name{font-weight:900;font-size:1.15rem;color:var(–blue-dark);flex:1}
-.cr-info{font-size:.9rem;color:var(–text-mid);font-weight:700}
-.cr-total{font-weight:900;font-size:1.15rem;color:var(–blue-dark);flex-shrink:0}
-.cr-status{font-size:.8rem;font-weight:800;padding:4px 11px;border-radius:20px;flex-shrink:0;color:var(–text-dark)}
+.cassa-row{display:flex;align-items:center;background:#ffffff;border-radius:12px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 16px rgba(26,155,187,.12);gap:12px;cursor:pointer;border:2.5px solid #b8e4f0;transition:all .15s}
+.cassa-row:hover{border-color:#1a9bbb}
+.cr-name{font-weight:900;font-size:1.15rem;color:#0e7a9a;flex:1}
+.cr-info{font-size:.9rem;color:#2d3748;font-weight:700}
+.cr-total{font-weight:900;font-size:1.15rem;color:#0e7a9a;flex-shrink:0}
+.cr-status{font-size:.8rem;font-weight:800;padding:4px 11px;border-radius:20px;flex-shrink:0}
 
 /* ── BILL ── */
-.bill-row{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:2px solid var(–blue-light)}
+.bill-row{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:2px solid #b8e4f0}
 .bill-row:last-child{border-bottom:none}
-.bill-row-name{flex:1;font-size:.95rem;font-weight:700;color:var(–text-dark)}
-.bill-row-note{font-size:.78rem;color:var(–text-light);font-style:italic;display:block;margin-top:2px}
-.bill-price-input{width:75px;padding:6px 9px;border:2.5px solid var(–blue-light);border-radius:8px;font-family:‘Nunito’,sans-serif;font-size:.92rem;font-weight:800;text-align:right;color:var(–text-dark);background:#ffffff;outline:none}
-.bill-price-input:focus{border-color:var(–blue)}
-.bill-total-row{display:flex;justify-content:space-between;font-size:1.25rem;font-weight:900;padding-top:12px;color:var(–text-dark)}
+.bill-row-name{flex:1;font-size:.95rem;font-weight:700;color:#1a202c}
+.bill-row-note{font-size:.78rem;color:#4a5568;font-style:italic;display:block;margin-top:2px}
+.bill-price-input{width:75px;padding:6px 9px;border:2.5px solid #b8e4f0;border-radius:8px;font-family:‘Nunito’,sans-serif;font-size:.92rem;font-weight:800;text-align:right;color:#1a202c;background:#ffffff;outline:none}
+.bill-price-input:focus{border-color:#1a9bbb}
+.bill-total-row{display:flex;justify-content:space-between;font-size:1.25rem;font-weight:900;padding-top:12px;color:#1a202c}
 .pay-btns{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
 
 /* ── CHAT ── */
 .chat-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px}
 .chat-msg{max-width:78%;padding:10px 14px;border-radius:16px;font-size:.95rem}
-.chat-msg.me{background:var(–blue-pale);color:var(–text-dark);align-self:flex-end;border-bottom-right-radius:4px;border:1.5px solid var(–blue-light)}
-.chat-msg.them{background:var(–gray-light);color:var(–text-dark);align-self:flex-start;border-bottom-left-radius:4px}
-.chat-author{font-size:.75rem;font-weight:800;margin-bottom:3px;color:var(–blue-dark)}
-.chat-time{font-size:.7rem;color:var(–text-light);margin-top:3px;text-align:right}
+.chat-msg.me{background:#e8f7fb;color:#1a202c;align-self:flex-end;border-bottom-right-radius:4px;border:1.5px solid #b8e4f0}
+.chat-msg.them{background:#f0f4f8;color:#1a202c;align-self:flex-start;border-bottom-left-radius:4px}
+.chat-author{font-size:.75rem;font-weight:800;margin-bottom:3px;color:#0e7a9a}
+.chat-time{font-size:.7rem;color:#4a5568;margin-top:3px;text-align:right}
 
 /* ── STATS ── */
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:11px}
-.stat-card{background:#ffffff;border-radius:var(–radius);padding:20px 16px;text-align:center;box-shadow:var(–shadow);border:2px solid var(–blue-light)}
-.stat-val{font-size:2rem;font-weight:900;color:var(–blue-dark)}
-.stat-lbl{font-size:.9rem;color:var(–text-mid);font-weight:700;margin-top:4px}
+.stat-card{background:#ffffff;border-radius:18px;padding:20px 16px;text-align:center;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0}
+.stat-val{font-size:2rem;font-weight:900;color:#0e7a9a}
+.stat-lbl{font-size:.9rem;color:#2d3748;font-weight:700;margin-top:4px}
 
 /* ── SETTINGS ── */
 .settings-section{margin-bottom:24px}
-.settings-section h3{font-family:‘Playfair Display’,serif;color:var(–blue-dark);font-size:1.2rem;margin-bottom:12px;padding-bottom:8px;border-bottom:2.5px solid var(–blue-light)}
-.s-input{flex:1;min-width:100px;padding:11px 14px;border:2.5px solid var(–blue-light);border-radius:var(–radius-sm);font-family:‘Nunito’,sans-serif;font-size:.95rem;outline:none;background:#ffffff;color:var(–text-dark)}
-.s-input:focus{border-color:var(–blue)}
+.settings-section h3{font-family:‘Playfair Display’,serif;color:#0e7a9a;font-size:1.2rem;margin-bottom:12px;padding-bottom:8px;border-bottom:2.5px solid #b8e4f0}
+.s-input{flex:1;min-width:100px;padding:11px 14px;border:2.5px solid #b8e4f0;border-radius:12px;font-family:‘Nunito’,sans-serif;font-size:.95rem;outline:none;background:#ffffff;color:#1a202c}
+.s-input:focus{border-color:#1a9bbb}
 .s-row{display:flex;gap:9px;align-items:center;margin-bottom:9px;flex-wrap:wrap}
-.table-s-item{display:flex;align-items:center;gap:9px;background:#ffffff;border-radius:var(–radius-sm);padding:12px 15px;margin-bottom:9px;box-shadow:var(–shadow);border:2px solid var(–blue-light)}
-.menu-s-item{background:#ffffff;border-radius:var(–radius-sm);padding:12px 15px;margin-bottom:9px;box-shadow:var(–shadow);border-left:5px solid var(–blue-light);border:2px solid var(–blue-light);border-left:5px solid var(–blue)}
-.menu-s-item.sold-out-item{border-left-color:var(–red)}
-.add-form{background:var(–blue-pale);border-radius:var(–radius-sm);padding:15px;margin-top:11px;border:2px solid var(–blue-light)}
-.add-form label{font-size:.85rem;font-weight:800;color:var(–text-mid);display:block;margin-bottom:4px}
+.table-s-item{display:flex;align-items:center;gap:9px;background:#ffffff;border-radius:12px;padding:12px 15px;margin-bottom:9px;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0}
+.menu-s-item{background:#ffffff;border-radius:12px;padding:12px 15px;margin-bottom:9px;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0;border-left:5px solid #1a9bbb}
+.menu-s-item.sold-out-item{border-left-color:#e53e3e}
+.add-form{background:#e8f7fb;border-radius:12px;padding:15px;margin-top:11px;border:2px solid #b8e4f0}
+.add-form label{font-size:.85rem;font-weight:800;color:#2d3748;display:block;margin-bottom:4px}
 
 /* ── UTILS ── */
-.pill{display:inline-block;padding:3px 11px;border-radius:20px;font-size:.8rem;font-weight:800;color:var(–text-dark)}
-.pill-blue{background:var(–blue-pale);color:var(–blue-dark)}
+.pill{display:inline-block;padding:3px 11px;border-radius:20px;font-size:.8rem;font-weight:800}
+.pill-blue{background:#e8f7fb;color:#0e7a9a}
 .pill-green{background:#e6f4ea;color:#1a5c33}
 .pill-orange{background:#fff3e0;color:#7b3a10}
 .pill-red{background:#fee2e2;color:#9b1c1c}
-.empty{text-align:center;padding:40px 20px;color:var(–text-light)}
+.empty{text-align:center;padding:40px 20px;color:#4a5568}
 .empty .e-icon{font-size:3rem;margin-bottom:10px}
-.empty p{font-size:1rem;font-weight:700;color:var(–text-mid)}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(–blue-dark);color:#ffffff;padding:13px 26px;border-radius:40px;font-weight:800;font-size:.95rem;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap;max-width:90vw;text-align:center}
+.empty p{font-size:1rem;font-weight:700;color:#2d3748}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0e7a9a;color:#ffffff;padding:13px 26px;border-radius:40px;font-weight:800;font-size:.95rem;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap;max-width:90vw;text-align:center}
 .toast.show{opacity:1}
 ::-webkit-scrollbar{width:6px;height:6px}
-::-webkit-scrollbar-track{background:var(–blue-pale)}
-::-webkit-scrollbar-thumb{background:var(–blue-light);border-radius:3px}
+::-webkit-scrollbar-track{background:#e8f7fb}
+::-webkit-scrollbar-thumb{background:#b8e4f0;border-radius:3px}
 </style>
 
 </head>
@@ -392,7 +408,7 @@ position:relative;
     </div>
     <hr class="divider">
     <div class="bill-total-row" id="billTotalRow"></div>
-    <div style="font-size:.85rem;color:var(--text-light);margin-top:5px" id="billCopertoInfo"></div>
+    <div style="font-size:.85rem;color:#4a5568;margin-top:5px" id="billCopertoInfo"></div>
     <div class="pay-btns">
       <button class="btn btn-success" style="flex:1" onclick="payTable('contanti')">💵 Contanti</button>
       <button class="btn btn-primary" style="flex:1" onclick="payTable('carta')">💳 Carta</button>
@@ -409,7 +425,7 @@ position:relative;
     <h3>👥 Dividi Conto</h3>
     <label class="modal-label">Numero persone</label>
     <input class="modal-input" id="splitPeople" type="number" min="2" max="20" value="2">
-    <div id="splitResult" style="margin-top:14px;font-weight:900;font-size:1.2rem;color:var(--blue-dark)"></div>
+    <div id="splitResult" style="margin-top:14px;font-weight:900;font-size:1.2rem;color:#0e7a9a"></div>
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="closeModal('splitModal')">Chiudi</button>
       <button class="btn btn-primary" onclick="calcSplit()">Calcola</button>
@@ -422,7 +438,7 @@ position:relative;
 <div class="modal-overlay" id="mergeModal">
   <div class="modal-box">
     <h3>🔗 Unisci Tavoli</h3>
-    <p style="font-size:.92rem;color:var(--text-mid);margin-bottom:14px">Unisci <strong id="mergeSourceName"></strong> con:</p>
+    <p style="font-size:.92rem;color:#2d3748;margin-bottom:14px">Unisci <strong id="mergeSourceName"></strong> con:</p>
     <div id="mergeOptions"></div>
     <div class="btn-row"><button class="btn btn-secondary" onclick="closeModal('mergeModal')">Annulla</button></div>
   </div>
@@ -433,7 +449,7 @@ position:relative;
 <div class="modal-overlay" id="moveModal">
   <div class="modal-box">
     <h3>↔️ Sposta Ordine</h3>
-    <p style="font-size:.92rem;color:var(--text-mid);margin-bottom:14px">Sposta da <strong id="moveSourceName"></strong> a:</p>
+    <p style="font-size:.92rem;color:#2d3748;margin-bottom:14px">Sposta da <strong id="moveSourceName"></strong> a:</p>
     <div id="moveOptions"></div>
     <div class="btn-row"><button class="btn btn-secondary" onclick="closeModal('moveModal')">Annulla</button></div>
   </div>
@@ -462,13 +478,13 @@ position:relative;
 
 <div class="modal-overlay" id="chatOverlay">
   <div class="modal-box" style="max-width:520px;padding:0;height:82vh;display:flex;flex-direction:column">
-    <div style="padding:16px 18px;background:var(--blue-pale);border-bottom:2px solid var(--blue-light);border-radius:var(--radius) var(--radius) 0 0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0">
-      <span style="color:var(--blue-dark);font-weight:900;font-size:1.1rem">💬 Chat Interna</span>
-      <button onclick="closeModal('chatOverlay')" style="background:var(--blue-light);border:none;color:var(--text-dark);padding:7px 14px;border-radius:10px;cursor:pointer;font-weight:800;font-size:.95rem">✕ Chiudi</button>
+    <div style="padding:16px 18px;background:#e8f7fb;border-bottom:2px solid #b8e4f0;border-radius:18px 18px 0 0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0">
+      <span style="color:#0e7a9a;font-weight:900;font-size:1.1rem">💬 Chat Interna</span>
+      <button onclick="closeModal('chatOverlay')" style="background:#b8e4f0;border:none;color:#1a202c;padding:7px 14px;border-radius:10px;cursor:pointer;font-weight:800;font-size:.95rem">✕ Chiudi</button>
     </div>
     <div class="chat-msgs" id="chatMessages" style="flex:1;overflow-y:auto"></div>
-    <div style="display:flex;gap:9px;padding:13px;border-top:2.5px solid var(--blue-light);flex-shrink:0">
-      <input type="text" id="chatInput" placeholder="Scrivi un messaggio…" onkeydown="if(event.key==='Enter')sendChat()" style="flex:1;padding:11px 14px;border:2.5px solid var(--blue-light);border-radius:var(--radius-sm);font-family:'Nunito',sans-serif;font-size:.95rem;outline:none;color:var(--text-dark);background:#ffffff">
+    <div style="display:flex;gap:9px;padding:13px;border-top:2.5px solid #b8e4f0;flex-shrink:0">
+      <input type="text" id="chatInput" placeholder="Scrivi un messaggio…" onkeydown="if(event.key==='Enter')sendChat()" style="flex:1;padding:11px 14px;border:2.5px solid #b8e4f0;border-radius:12px;font-family:'Nunito',sans-serif;font-size:.95rem;outline:none;color:#1a202c;background:#ffffff">
       <button class="btn btn-primary btn-sm" onclick="sendChat()">Invia</button>
     </div>
   </div>
@@ -521,10 +537,74 @@ let unsubFns=[];
 let selectedTable=null, currentCat=null, tempOrder=[];
 let billTableId=null, billExtras=[], editingTableId=null, mergeSrcId=null, moveSrcId=null;
 let chatUnread=0, selectedMenuItem=null;
+let lastChatCount=0;
 
 const DEFAULT_SETTINGS={password:"pietro",coperto:1.50,restaurantName:"Saverio Pizza e Pollo",soundEnabled:true};
 const DEFAULT_TABLES={};
 for(let i=1;i<=10;i++) DEFAULT_TABLES[`t${i}`]={name:`Tavolo ${i}`,covers:4,note:''};
+
+// Pizze in ordine alfabetico (normali + allungate unificate)
+const PIZZE_ITEMS = {
+  quattro_formaggi:{name:"4 Formaggi",price:8.00,desc:"Mozzarella, emmenthal, grana e gorgonzola",separate:true},
+  quattro_gusti:{name:"4 Gusti",price:8.00,desc:"Pomodoro, mozzarella, prosciutto cotto, carciofi e wurstel",separate:true},
+  quattrostagioni:{name:"4 Stagioni",price:9.00,desc:"Pomodoro, mozzarella, pomodorini, crudo, rucola e grana",separate:true},
+  braccio_ferro:{name:"Braccio di Ferro",price:7.50,desc:"Pomodoro, mozzarella, spinaci e gorgonzola",separate:true},
+  brasiliana:{name:"Brasiliana",price:9.00,desc:"Pomodoro, mozzarella, salsiccia, salamino piccante, peperoni, cipolla e tabasco",separate:true},
+  bruschetta_p:{name:"Bruschetta",price:6.50,desc:"Pomodoro a fette, aglio e caciocavallo",separate:true},
+  cacocciula:{name:"Cacocciula",price:10.00,desc:"Crema di carciofi, fior di latte, prosciutto arrosto, carciofo alla romana, pomodorini, burrata e scaglie di grana",separate:true},
+  calzone:{name:"Calzone",price:7.50,desc:"Pomodoro, mozzarella e prosciutto cotto",separate:true},
+  calzone_fritto:{name:"Calzone Fritto",price:8.50,desc:"Pomodoro, mozzarella e prosciutto cotto",separate:true},
+  calzone_rustico:{name:"Calzone Rustico",price:8.50,desc:"Pomodoro a fette, salame napoli, ricotta e caciocavallo",separate:true},
+  capricciosa:{name:"Capricciosa",price:8.50,desc:"Pomodoro, mozzarella, prosciutto cotto, carciofi, funghi, olive nere e wurstel",separate:true},
+  biancaneve:{name:"Biancaneve",price:6.50,desc:"Mozzarella",separate:true},
+  ciclone:{name:"Il Ciclone",price:9.50,desc:"Pomodoro, mozzarella, prosciutto cotto, salamino piccante, melanzane fritte, funghi, cipolla, gorgonzola",separate:true},
+  pizzaiolo:{name:"Il Pizzaiolo",price:8.50,desc:"Pomodoro, mozzarella, melanzane fritte, salamino piccante, pomodorini e caciocavallo",separate:true},
+  covaccina:{name:"Covaccina",price:9.00,desc:"Bufala, pomodorini, prosciutto crudo, rucola e grana",separate:true},
+  delicata_salmone:{name:"Delicata al Salmone",price:10.50,desc:"Bufala, fette di salmone, rucola, granella di pistacchio",separate:true},
+  dinamite:{name:"Dinamite",price:8.00,desc:"Pomodoro, mozzarella, salamino piccante e cipolla",separate:true},
+  faccia_vecchia:{name:"Faccia da Vecchia",price:7.50,desc:"Pomodoro, mozzarella, acciughe, cipolla, caciocavallo e pangrattato",separate:true},
+  favignana:{name:"Favignana",price:10.00,desc:"Crema di zucca, scamorza affumicata, crudo e glassa di aceto balsamico",separate:true},
+  focaccia:{name:"Focaccia",price:8.50,desc:"Ricotta e caciocavallo",separate:true},
+  friarella:{name:"Friarella",price:8.50,desc:"Bufala, friarelli, salsiccia, pomodorini e grana",separate:true},
+  golosa:{name:"Golosa",price:8.50,desc:"Pomodoro, mozzarella, salame napoli, emmenthal e wurstel",separate:true},
+  heidy:{name:"Heidy",price:8.00,desc:"Mozzarella, ricotta, spinaci e caciocavallo",separate:true},
+  lampedusa:{name:"Lampedusa",price:10.00,desc:"Pesto genovese, fior di latte, pomodorini e bacon croccante",separate:true},
+  spagnola:{name:"La Spagnola",price:8.50,desc:"Pomodoro, mozzarella, melanzane fritte, salsiccia e cipolla",separate:true},
+  linosa:{name:"Linosa",price:10.00,desc:"Salsa di datterino giallo, salsiccia, cipolla caramellata e noci",separate:true},
+  margherita:{name:"Margherita",price:6.50,desc:"Pomodoro e mozzarella",separate:true},
+  mascarpone:{name:"Mascarpone",price:9.00,desc:"Bufala, prosciutto cotto, funghi, spinaci, mascarpone e grana",separate:true},
+  messicana:{name:"Messicana",price:9.00,desc:"Pomodoro, mozzarella, bacon, salsiccia, salamino piccante, cipolla e tabasco",separate:true},
+  mortadella_p:{name:"Mortadella",price:10.00,desc:"Bufala, mortadella, pesto di pistacchio e granella di pistacchio",separate:true},
+  napoli:{name:"Napoli",price:7.00,desc:"Pomodoro, mozzarella e acciughe",separate:true},
+  nostromo:{name:"Nostromo",price:8.00,desc:"Pomodoro a fette, mozzarella, tonno e olive nere",separate:true},
+  nutella:{name:"Nutella",price:7.50,desc:"Nutella e zucchero a velo",separate:true},
+  panino_greco:{name:"Panino Greco",price:8.50,desc:"Pomodoro a fette, mozzarella, prosciutto cotto, salamino piccante, olive e grana",separate:true},
+  pantelleria:{name:"Pantelleria",price:10.00,desc:"Crema di melanzane, burrata, pancetta coppata e scaglie di mandorle",separate:true},
+  parmigiana:{name:"Parmigiana",price:8.00,desc:"Pomodoro, mozzarella, melanzane fritte e parmigiano",separate:true},
+  pate:{name:"Patè",price:9.00,desc:"Patè di olive, bufala, prosciutto crudo e provola",separate:true},
+  patatosa:{name:"Patatosa",price:7.50,desc:"Pomodoro, mozzarella, patatine fritte",separate:true},
+  pizza_chicken:{name:"Pizza Chicken",price:10.00,desc:"Pomodoro, mozzarella, pollo alla brace sfilacciato, patatine fritte e salsa barbecue",separate:true},
+  pizza_sfincione:{name:"Pizza Sfincione",price:7.00,desc:"Condimento tradizionale sfincione, caciocavallo e pangrattato",separate:true},
+  pistacchiosa:{name:"Pistacchiosa",price:10.00,desc:"Bufala, speck, zucchinette fritte, pesto di pistacchio e granella di pistacchio",separate:true},
+  porcini:{name:"Porcini",price:9.00,desc:"Crema di funghi porcini, bufala, prosciutto cotto e grana",separate:true},
+  porchettosa:{name:"Porchettosa",price:9.50,desc:"Pomodoro, mozzarella, porchetta, cipolla, emmenthal",separate:true},
+  primavera:{name:"Primavera",price:8.50,desc:"Pomodoro, mozzarella, bresaola, rucola e grana",separate:true},
+  regina:{name:"Regina",price:9.00,desc:"Pomodoro, bufala, prosciutto crudo, rucola e grana",separate:true},
+  romana:{name:"Romana",price:7.00,desc:"Pomodoro, mozzarella e prosciutto cotto",separate:true},
+  rustica:{name:"Rustica",price:9.50,desc:"Pomodoro a fette, mozzarella, melanzane fritte, acciughe, salsiccia, cipolla, caciocavallo e olive",separate:true},
+  salina:{name:"Salina",price:11.00,desc:"Pesto di menta, fior di latte, pomodorini, melanzane fritte, noci e ricottina fresca",separate:true},
+  salmone:{name:"Salmone",price:9.50,desc:"Crema di salmone, fette di salmone e uova di lompo",separate:true},
+  saverio:{name:"Saverio",price:9.00,desc:"Pomodoro, mozzarella, melanzane fritte, salsiccia e grana",separate:true},
+  schiacciata:{name:"Schiacciata",price:7.50,desc:"Pomodoro a fette, mozzarella, prosciutto cotto e caciocavallo",separate:true},
+  sfilatino:{name:"Sfilatino",price:8.50,desc:"Mozzarella, pomodoro, pomodorini, emmenthal, bacon e sesamo",separate:true},
+  sfilatino_nutella:{name:"Sfilatino Nutella",price:8.50,desc:"Nutella, mascarpone e zucchero a velo",separate:true},
+  sfilatino_porchetta:{name:"Sfilatino Porchetta",price:9.50,desc:"Pomodoro a fette, bufala, porchetta ed emmenthal",separate:true},
+  stromboli:{name:"Stromboli",price:11.00,desc:"Crema di datterino giallo, stracciatella, speck, noci e basilico",separate:true},
+  tartufo:{name:"Tartufo",price:9.50,desc:"Crema di tartufo, bufala, funghi e grana",separate:true},
+  tricolore:{name:"Tricolore",price:8.50,desc:"Pomodoro a fette, bufala, rucola e grana",separate:true},
+  vegetariana:{name:"Vegetariana",price:8.50,desc:"Pomodoro, funghi, carciofi, spinaci, peperoni e pomodorini",separate:true},
+  vulcano:{name:"Vulcano",price:10.00,desc:"Crema di noci, gorgonzola, prosciutto crudo e miele",separate:true},
+};
 
 const DEFAULT_MENU={
   antipasti:{label:"🥗 Antipasti",dest:"cucina",items:{
@@ -548,66 +628,8 @@ const DEFAULT_MENU={
   pollo:{label:"🍗 Pollo alla Brace",dest:"polleria",items:{
     mezzo_pollo:{name:"1/2 Pollo",price:8.50,desc:"Con patate fritte e crocchette",separate:true}
   }},
-  pizze:{label:"🍕 Pizze",dest:"pizzeria",items:{
-    margherita:{name:"Margherita",price:6.50,desc:"Pomodoro e mozzarella",separate:true},
-    romana:{name:"Romana",price:7.00,desc:"Pomodoro, mozzarella e prosciutto cotto",separate:true},
-    biancaneve:{name:"Biancaneve",price:6.50,desc:"Mozzarella",separate:true},
-    napoli:{name:"Napoli",price:7.00,desc:"Pomodoro, mozzarella e acciughe",separate:true},
-    quattro_gusti:{name:"4 Gusti",price:8.00,desc:"Pomodoro, mozzarella, prosciutto cotto, carciofi e wurstel",separate:true},
-    capricciosa:{name:"Capricciosa",price:8.50,desc:"Pomodoro, mozzarella, prosciutto cotto, carciofi, funghi, olive nere e wurstel",separate:true},
-    dinamite:{name:"Dinamite",price:8.00,desc:"Pomodoro, mozzarella, salamino piccante e cipolla",separate:true},
-    regina:{name:"Regina",price:9.00,desc:"Pomodoro, bufala, prosciutto crudo, rucola e grana",separate:true},
-    parmigiana:{name:"Parmigiana",price:8.00,desc:"Pomodoro, mozzarella, melanzane fritte e parmigiano",separate:true},
-    calzone:{name:"Calzone",price:7.50,desc:"Pomodoro, mozzarella e prosciutto cotto",separate:true},
-    schiacciata:{name:"Schiacciata",price:7.50,desc:"Pomodoro a fette, mozzarella, prosciutto cotto e caciocavallo",separate:true},
-    patatosa:{name:"Patatosa",price:7.50,desc:"Pomodoro, mozzarella, patatine fritte",separate:true},
-    quattro_formaggi:{name:"4 Formaggi",price:8.00,desc:"Mozzarella, emmenthal, grana e gorgonzola",separate:true},
-    vegetariana:{name:"Vegetariana",price:8.50,desc:"Pomodoro, funghi, carciofi, spinaci, peperoni e pomodorini",separate:true},
-    focaccia:{name:"Focaccia",price:8.50,desc:"Ricotta e caciocavallo",separate:true},
-    golosa:{name:"Golosa",price:8.50,desc:"Pomodoro, mozzarella, salame napoli, emmenthal e wurstel",separate:true},
-    friarella:{name:"Friarella",price:8.50,desc:"Bufala, friarelli, salsiccia, pomodorini e grana",separate:true},
-    primavera:{name:"Primavera",price:8.50,desc:"Pomodoro, mozzarella, bresaola, rucola e grana",separate:true},
-    quattrostagioni:{name:"4 Stagioni",price:9.00,desc:"Pomodoro, mozzarella, pomodorini, crudo, rucola e grana",separate:true},
-    saverio:{name:"Saverio",price:9.00,desc:"Pomodoro, mozzarella, melanzane fritte, salsiccia e grana",separate:true},
-    tricolore:{name:"Tricolore",price:8.50,desc:"Pomodoro a fette, bufala, rucola e grana",separate:true},
-    heidy:{name:"Heidy",price:8.00,desc:"Mozzarella, ricotta, spinaci e caciocavallo",separate:true},
-    brasiliana:{name:"Brasiliana",price:9.00,desc:"Pomodoro, mozzarella, salsiccia, salamino piccante, peperoni, cipolla e tabasco",separate:true},
-    messicana:{name:"Messicana",price:9.00,desc:"Pomodoro, mozzarella, bacon, salsiccia, salamino piccante, cipolla e tabasco",separate:true},
-    braccio_ferro:{name:"Braccio di Ferro",price:7.50,desc:"Pomodoro, mozzarella, spinaci e gorgonzola",separate:true},
-    ciclone:{name:"Il Ciclone",price:9.50,desc:"Pomodoro, mozzarella, prosciutto cotto, salamino piccante, melanzane fritte, funghi, cipolla, gorgonzola",separate:true},
-    spagnola:{name:"La Spagnola",price:8.50,desc:"Pomodoro, mozzarella, melanzane fritte, salsiccia e cipolla",separate:true},
-    rustica:{name:"Rustica",price:9.50,desc:"Pomodoro a fette, mozzarella, melanzane fritte, acciughe, salsiccia, cipolla, caciocavallo e olive",separate:true},
-    pizzaiolo:{name:"Il Pizzaiolo",price:8.50,desc:"Pomodoro, mozzarella, melanzane fritte, salamino piccante, pomodorini e caciocavallo",separate:true},
-    faccia_vecchia:{name:"Faccia da Vecchia",price:7.50,desc:"Pomodoro, mozzarella, acciughe, cipolla, caciocavallo e pangrattato",separate:true},
-    pizza_sfincione:{name:"Pizza Sfincione",price:7.00,desc:"Condimento tradizionale sfincione, caciocavallo e pangrattato",separate:true},
-    nostromo:{name:"Nostromo",price:8.00,desc:"Pomodoro a fette, mozzarella, tonno e olive nere",separate:true},
-    sfilatino_nutella:{name:"Sfilatino Nutella",price:8.50,desc:"Nutella, mascarpone e zucchero a velo",separate:true},
-    nutella:{name:"Nutella",price:7.50,desc:"Nutella e zucchero a velo",separate:true},
-    calzone_rustico:{name:"Calzone Rustico",price:8.50,desc:"Pomodoro a fette, salame napoli, ricotta e caciocavallo",separate:true},
-    calzone_fritto:{name:"Calzone Fritto",price:8.50,desc:"Pomodoro, mozzarella e prosciutto cotto",separate:true},
-    sfilatino:{name:"Sfilatino",price:8.50,desc:"Mozzarella, pomodoro, pomodorini, emmenthal, bacon e sesamo",separate:true},
-    sfilatino_porchetta:{name:"Sfilatino Porchetta",price:9.50,desc:"Pomodoro a fette, bufala, porchetta ed emmenthal",separate:true},
-    porchettosa:{name:"Porchettosa",price:9.50,desc:"Pomodoro, mozzarella, porchetta, cipolla, emmenthal",separate:true},
-    mascarpone:{name:"Mascarpone",price:9.00,desc:"Bufala, prosciutto cotto, funghi, spinaci, mascarpone e grana",separate:true},
-    porcini:{name:"Porcini",price:9.00,desc:"Crema di funghi porcini, bufala, prosciutto cotto e grana",separate:true},
-    tartufo:{name:"Tartufo",price:9.50,desc:"Crema di tartufo, bufala, funghi e grana",separate:true},
-    covaccina:{name:"Covaccina",price:9.00,desc:"Bufala, pomodorini, prosciutto crudo, rucola e grana",separate:true},
-    bruschetta_p:{name:"Bruschetta",price:6.50,desc:"Pomodoro a fette, aglio e caciocavallo",separate:true},
-    pate:{name:"Patè",price:9.00,desc:"Patè di olive, bufala, prosciutto crudo e provola",separate:true},
-    pistacchiosa:{name:"Pistacchiosa",price:10.00,desc:"Bufala, speck, zucchinette fritte, pesto di pistacchio e granella di pistacchio",separate:true},
-    mortadella_p:{name:"Mortadella",price:10.00,desc:"Bufala, mortadella, pesto di pistacchio e granella di pistacchio",separate:true},
-    salmone:{name:"Salmone",price:9.50,desc:"Crema di salmone, fette di salmone e uova di lompo",separate:true},
-    delicata_salmone:{name:"Delicata al Salmone",price:10.50,desc:"Bufala, fette di salmone, rucola, granella di pistacchio",separate:true},
-    pizza_chicken:{name:"Pizza Chicken",price:10.00,desc:"Pomodoro, mozzarella, pollo alla brace sfilacciato, patatine fritte e salsa barbecue",separate:true},
-    panino_greco:{name:"Panino Greco",price:8.50,desc:"Pomodoro a fette, mozzarella, prosciutto cotto, salamino piccante, olive e grana",separate:true},
-    lampedusa:{name:"Lampedusa",price:10.00,desc:"Pesto genovese, fior di latte, pomodorini e bacon croccante",separate:true},
-    salina:{name:"Salina",price:11.00,desc:"Pesto di menta, fior di latte, pomodorini, melanzane fritte, noci e ricottina fresca",separate:true},
-    favignana:{name:"Favignana",price:10.00,desc:"Crema di zucca, scamorza affumicata, crudo e glassa di aceto balsamico",separate:true},
-    pantelleria:{name:"Pantelleria",price:10.00,desc:"Crema di melanzane, burrata, pancetta coppata e scaglie di mandorle",separate:true},
-    stromboli:{name:"Stromboli",price:11.00,desc:"Crema di datterino giallo, stracciatella, speck, noci e basilico",separate:true},
-    linosa:{name:"Linosa",price:10.00,desc:"Salsa di datterino giallo, salsiccia, cipolla caramellata e noci",separate:true},
-    vulcano:{name:"Vulcano",price:10.00,desc:"Crema di noci, gorgonzola, prosciutto crudo e miele",separate:true},
-    cacocciula:{name:"Cacocciula",price:10.00,desc:"Crema di carciofi, fior di latte, prosciutto arrosto, carciofo alla romana, pomodorini, burrata e scaglie di grana",separate:true},
+  pizze:{label:"🍕 Pizze",dest:"pizzeria",items:PIZZE_ITEMS},
+  pizze_sg:{label:"🌾 Senza Glutine",dest:"pizzeria",items:{
     sg_margherita:{name:"Margherita S/G",price:8.00,desc:"Mozzarella senza lattosio, pomodoro",separate:true},
     sg_romana:{name:"Romana S/G",price:9.00,desc:"Mozzarella senza lattosio, pomodoro e prosciutto cotto",separate:true},
     sg_parmigiana:{name:"Parmigiana S/G",price:10.00,desc:"Mozzarella senza lattosio, grana, melanzane",separate:true},
@@ -647,6 +669,55 @@ const DEFAULT_MENU={
   }}
 };
 
+// ── SUONI ────────────────────────────────────────────────────────
+function playWhoosh(){
+  try{
+    const c=new AudioContext();
+    const b=c.createBuffer(1,c.sampleRate*0.4,c.sampleRate);
+    const d=b.getChannelData(0);
+    for(let i=0;i<d.length;i++){
+      const t=i/c.sampleRate;
+      d[i]=Math.sin(2*Math.PI*(800-1500*t)*t)*Math.exp(-8*t)*(Math.random()*0.3+0.7);
+    }
+    const s=c.createBufferSource();
+    const g=c.createGain();
+    s.buffer=b; s.connect(g); g.connect(c.destination);
+    g.gain.setValueAtTime(0.4,c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,c.currentTime+0.4);
+    s.start(); s.stop(c.currentTime+0.4);
+  }catch(e){}
+}
+
+function playCampanella(){
+  try{
+    const c=new AudioContext();
+    const g=c.createGain();
+    g.connect(c.destination);
+    [880,1100,1320].forEach((freq,i)=>{
+      const o=c.createOscillator();
+      o.connect(g); o.frequency.value=freq; o.type='sine';
+      const t=c.currentTime+i*0.12;
+      g.gain.setValueAtTime(0.35,t);
+      g.gain.exponentialRampToValueAtTime(0.001,t+0.6);
+      o.start(t); o.stop(t+0.6);
+    });
+  }catch(e){}
+}
+
+function playChatPop(){
+  try{
+    const c=new AudioContext();
+    const o=c.createOscillator();
+    const g=c.createGain();
+    o.connect(g); g.connect(c.destination);
+    o.frequency.value=1200; o.type='sine';
+    g.gain.setValueAtTime(0.15,c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,c.currentTime+0.18);
+    o.start(); o.stop(c.currentTime+0.18);
+  }catch(e){}
+}
+
+// ── UTILS ────────────────────────────────────────────────────────
 async function initFirebase(){
   if(!(await get(ref(db,'tables'))).exists()) await set(ref(db,'tables'),DEFAULT_TABLES);
   if(!(await get(ref(db,'menu'))).exists()) await set(ref(db,'menu'),DEFAULT_MENU);
@@ -655,7 +726,6 @@ async function initFirebase(){
 }
 function listen(path,cb){ const u=onValue(ref(db,path),snap=>{cb(snap.val()||{});}); unsubFns.push(u); }
 function stopAll(){ unsubFns.forEach(u=>u()); unsubFns=[]; }
-
 function fmt(n){ return '€'+Number(n).toFixed(2).replace('.',','); }
 function showToast(msg,dur=2800){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),dur); }
 function getTimerLabel(ts){
@@ -665,7 +735,6 @@ function getTimerLabel(ts){
   if(m<20) return {label:`${m} min`,cls:'t-yellow'};
   return {label:`${m} min ⚠️`,cls:'t-red'};
 }
-function playNotif(){ try{ const c=new AudioContext(),o=c.createOscillator(),g=c.createGain(); o.connect(g); g.connect(c.destination); o.frequency.value=880; g.gain.setValueAtTime(0.3,c.currentTime); g.gain.exponentialRampToValueAtTime(0.001,c.currentTime+0.4); o.start(); o.stop(c.currentTime+0.4); }catch(e){} }
 function getStatusLabel(s){ return {free:'Libero',pending:'⏳ In attesa',ready:'✅ Pronto',paid:'💰 Pagato',reserved:'📅 Prenotato'}[s]||s; }
 function getStatusClass(ord){
   if(!ord) return '';
@@ -674,6 +743,12 @@ function getStatusClass(ord){
   if(ord.status==='reserved') return 'reserved';
   if(ord.items&&(Array.isArray(ord.items)?ord.items.length:Object.keys(ord.items).length)) return 'has-order';
   return '';
+}
+
+// Controlla se la categoria è Gluten Free
+function isGlutenFree(catId){
+  const lbl=(menuData[catId]?.label||'').toUpperCase();
+  return lbl.includes('GLUTEN');
 }
 
 window.selectRole=async function(role){
@@ -689,13 +764,29 @@ window.selectRole=async function(role){
   listen('settings',s=>{ settings=s; document.getElementById('topbarName').textContent=s.restaurantName||'Saverio'; });
   listen('tables',t=>{ tables=t; });
   listen('menu',m=>{ menuData=m; });
-  listen('orders',o=>{ const prev=JSON.stringify(orders); orders=o||{}; if(JSON.stringify(orders)!==prev&&(currentRole==='cucina'||currentRole==='pizzeria'||currentRole==='polleria')){ if(settings.soundEnabled!==false) playNotif(); } renderRole(); });
+  listen('orders',o=>{
+    const prev=JSON.stringify(orders);
+    orders=o||{};
+    if(JSON.stringify(orders)!==prev&&(currentRole==='cucina'||currentRole==='pizzeria'||currentRole==='polleria')){
+      if(settings.soundEnabled!==false) playCampanella();
+    }
+    renderRole();
+  });
   listen('dailyStats',s=>{ dailyStats=s; });
-  listen('chat',c=>{ chatMsgs=c||{}; updateChatBadge(); renderChatIfOpen(); });
+  listen('chat',c=>{
+    const newCount=Object.keys(c||{}).length;
+    if(newCount>lastChatCount && lastChatCount>0){
+      if(settings.soundEnabled!==false) playChatPop();
+    }
+    lastChatCount=newCount;
+    chatMsgs=c||{};
+    updateChatBadge();
+    renderChatIfOpen();
+  });
   renderRole();
 };
 
-window.goBack=function(){ stopAll(); currentRole=null; selectedTable=null; tempOrder=[]; document.getElementById('splash').style.display='flex'; document.getElementById('app').style.display='none'; };
+window.goBack=function(){ stopAll(); currentRole=null; selectedTable=null; tempOrder=[]; lastChatCount=0; document.getElementById('splash').style.display='flex'; document.getElementById('app').style.display='none'; };
 
 let pendingRole=null;
 window.openPassModal=function(role){ pendingRole=role; document.getElementById('passInput').value=''; document.getElementById('passError').style.display='none'; openModal('passModal'); setTimeout(()=>document.getElementById('passInput').focus(),100); };
@@ -773,14 +864,15 @@ function renderOrderPanel(){
   if(!currentCat||!menuData[currentCat]) currentCat=cats[0];
   const catItems=menuData[currentCat]?.items||{};
   const status=ord?.status||'free';
+  const gf=isGlutenFree(currentCat);
 
   c.innerHTML=`
     <div class="order-panel mt-12">
       <div class="order-header">
         <div>
           <h2>${t.name}</h2>
-          <div style="font-size:.85rem;color:var(--text-mid);margin-top:3px">👥 ${t.covers} coperti · ${getStatusLabel(status)}</div>
-          ${t.note?`<div style="font-size:.8rem;color:var(--text-light);margin-top:2px">📝 ${t.note}</div>`:''}
+          <div style="font-size:.85rem;color:#2d3748;margin-top:3px">👥 ${t.covers} coperti · ${getStatusLabel(status)}</div>
+          ${t.note?`<div style="font-size:.8rem;color:#4a5568;margin-top:2px">📝 ${t.note}</div>`:''}
         </div>
         <div style="display:flex;gap:7px;flex-wrap:wrap">
           <button class="btn btn-secondary btn-sm" onclick="openEditTableModal('${selectedTable}')">✏️ Tavolo</button>
@@ -790,8 +882,11 @@ function renderOrderPanel(){
       </div>
       <div class="order-body">
         <div class="section-title">📋 Menù</div>
-        <div class="cat-tabs">${cats.map(cid=>`<button class="cat-btn ${currentCat===cid?'active':''}" onclick="setCat('${cid}')">${menuData[cid]?.label||cid}</button>`).join('')}</div>
-        <div class="menu-grid" id="menuGrid">${renderMenuItems(catItems)}</div>
+        <div class="cat-tabs">${cats.map(cid=>{
+          const gfCat=isGlutenFree(cid);
+          return `<button class="cat-btn ${gfCat?'gf-cat':''} ${currentCat===cid?'active':''}" onclick="setCat('${cid}')">${menuData[cid]?.label||cid}</button>`;
+        }).join('')}</div>
+        <div class="menu-grid" id="menuGrid">${renderMenuItems(catItems,gf)}</div>
         <hr class="divider">
         <div class="section-title">🛒 Ordine corrente</div>
         ${renderCurrentOrder()}
@@ -804,20 +899,21 @@ function renderOrderPanel(){
     </div>`;
 }
 
-function renderMenuItems(catItems){
+function renderMenuItems(catItems, gf=false){
   return Object.keys(catItems).map(iid=>{
     const item=catItems[iid];
     const so=item.soldOut?'sold-out':'';
     const sel=(selectedMenuItem===iid)?'selected':'';
-    return `<div class="menu-item ${so} ${sel}" id="mi_${iid}" onclick="${item.soldOut?'':(`selectMenuItem('${iid}','${currentCat}')`)}">
-      <div class="mi-name">${item.name}</div>
+    const gfClass=gf?'gf-item':'';
+    return `<div class="menu-item ${so} ${sel} ${gfClass}" id="mi_${iid}" onclick="${item.soldOut?'':(`selectMenuItem('${iid}','${currentCat}')`)}">
+      <div class="mi-name" style="${gf?'color:#276749;font-weight:900':''}">${item.name}</div>
       ${item.desc?`<div class="mi-desc">${item.desc}</div>`:''}
-      <div class="mi-price">${fmt(item.price)}</div>
-      ${item.soldOut?'<div style="font-size:.7rem;color:var(--red);font-weight:800;margin-top:3px">ESAURITO</div>':''}
+      <div class="mi-price" style="${gf?'color:#276749;font-weight:900':''}">${fmt(item.price)}</div>
+      ${item.soldOut?'<div style="font-size:.7rem;color:#e53e3e;font-weight:800;margin-top:3px">ESAURITO</div>':''}
     </div>
     ${selectedMenuItem===iid?`
     <div class="inline-note" id="inlineNote_${iid}" style="grid-column:1/-1">
-      <div style="font-weight:800;font-size:.92rem;color:var(--blue-dark);margin-bottom:8px">✏️ ${item.name} — aggiungi nota</div>
+      <div style="font-weight:800;font-size:.92rem;color:#0e7a9a;margin-bottom:8px">✏️ ${item.name} — aggiungi nota</div>
       <input class="inline-note-input" id="inlineNoteInput_${iid}" placeholder="Nota opzionale…" onkeydown="if(event.key==='Enter')confirmInlineItem('${iid}','${currentCat}')">
       <div class="inline-note-actions">
         <button class="btn btn-primary btn-sm" onclick="confirmInlineItem('${iid}','${currentCat}')">✅ Aggiungi</button>
@@ -830,8 +926,9 @@ function renderMenuItems(catItems){
 window.selectMenuItem=function(iid,catId){
   if(selectedMenuItem===iid){ selectedMenuItem=null; }
   else { selectedMenuItem=iid; }
+  const gf=isGlutenFree(catId);
   const grid=document.getElementById('menuGrid');
-  if(grid){ grid.innerHTML=renderMenuItems(menuData[catId]?.items||{}); }
+  if(grid){ grid.innerHTML=renderMenuItems(menuData[catId]?.items||{},gf); }
   if(selectedMenuItem){ setTimeout(()=>{ const inp=document.getElementById(`inlineNoteInput_${iid}`); if(inp) inp.focus(); },100); }
 };
 
@@ -853,10 +950,15 @@ window.confirmInlineItem=function(iid,catId){
   showToast(`✅ ${item.name} aggiunto`);
 };
 
-window.cancelInlineItem=function(){ selectedMenuItem=null; const grid=document.getElementById('menuGrid'); if(grid&&currentCat&&menuData[currentCat]) grid.innerHTML=renderMenuItems(menuData[currentCat].items||{}); };
+window.cancelInlineItem=function(){
+  selectedMenuItem=null;
+  const gf=isGlutenFree(currentCat);
+  const grid=document.getElementById('menuGrid');
+  if(grid&&currentCat&&menuData[currentCat]) grid.innerHTML=renderMenuItems(menuData[currentCat].items||{},gf);
+};
 
 function renderCurrentOrder(){
-  if(!tempOrder.length) return '<div style="color:var(--text-light);font-size:.95rem;padding:8px 0;font-weight:600">Nessun articolo aggiunto</div>';
+  if(!tempOrder.length) return '<div style="color:#4a5568;font-size:.95rem;padding:8px 0;font-weight:600">Nessun articolo aggiunto</div>';
   const rows=tempOrder.map((it,i)=>`
     <div class="order-row">
       <div class="or-info">
@@ -865,7 +967,7 @@ function renderCurrentOrder(){
       </div>
       <div class="or-qty">
         <button class="qty-btn" onclick="removeOrderItem(${i})">−</button>
-        <span style="font-weight:900;min-width:20px;text-align:center;font-size:1rem;color:var(--text-dark)">${it.qty||1}</span>
+        <span style="font-weight:900;min-width:20px;text-align:center;font-size:1rem;color:#1a202c">${it.qty||1}</span>
         ${!it.separate?`<button class="qty-btn" onclick="addQty(${i})">+</button>`:`<button class="qty-btn" onclick="duplicateItem(${i})" title="Aggiungi altro uguale">+</button>`}
       </div>
       <div class="or-price">${fmt((it.price||0)*(it.qty||1))}</div>
@@ -880,11 +982,15 @@ window.addQty=function(i){ if(tempOrder[i]) tempOrder[i].qty=(tempOrder[i].qty||
 window.duplicateItem=function(i){ if(tempOrder[i]){ const c=JSON.parse(JSON.stringify(tempOrder[i])); c.uid=Date.now()+'_'+Math.random(); c.note=''; tempOrder.splice(i+1,0,c); } renderOrderPanel(); };
 window.goTables=function(){ tempOrder=[]; selectedTable=null; camTab='tables'; selectedMenuItem=null; renderCameriere(); };
 window.clearTable=async function(){ if(!confirm('Svuotare il tavolo?')) return; await remove(ref(db,`orders/${selectedTable}`)); tempOrder=[]; showToast('Tavolo svuotato'); goTables(); };
+
 window.sendOrder=async function(){
   if(!tempOrder.length){ showToast('Aggiungi almeno un articolo!'); return; }
   const existing=orders[selectedTable];
   await set(ref(db,`orders/${selectedTable}`),{tableId:selectedTable,tableName:tables[selectedTable]?.name||'',items:tempOrder,status:'pending',timestamp:existing?.timestamp||Date.now(),covers:tables[selectedTable]?.covers||1,newItems:true});
-  showToast('✅ Ordine inviato!'); tempOrder=[]; goTables();
+  playWhoosh();
+  showToast('✅ Ordine inviato!');
+  tempOrder=[];
+  goTables();
 };
 
 window.openEditTableModal=function(tid){ editingTableId=tid; const t=tables[tid]||{}; document.getElementById('etName').value=t.name||''; document.getElementById('etCovers').value=t.covers||4; document.getElementById('etNote').value=t.note||''; openModal('editTableModal'); };
@@ -915,7 +1021,10 @@ function renderStation(role){
 
 function renderStationContent(role){
   const c=document.getElementById('stationContent'); if(!c) return;
-  const list=Object.entries(orders).filter(([,ord])=>{ if(!ord||ord.status==='reserved') return false; return stationTab==='active'?ord.status!=='paid':ord.status==='paid'; }).sort((a,b)=>(a[1].timestamp||0)-(b[1].timestamp||0));
+  const list=Object.entries(orders).filter(([,ord])=>{
+    if(!ord||ord.status==='reserved') return false;
+    return stationTab==='active'?ord.status!=='paid':ord.status==='paid';
+  }).sort((a,b)=>(a[1].timestamp||0)-(b[1].timestamp||0));
   if(!list.length){ c.innerHTML=`<div class="empty mt-12"><div class="e-icon">${role==='pizzeria'?'🍕':role==='polleria'?'🍗':'👨‍🍳'}</div><p>Nessun ordine ${stationTab==='active'?'in corso':'completato'}</p></div>`; return; }
   c.innerHTML=`<div class="kitchen-grid mt-12">${list.map(([tid,ord])=>{
     const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items||{});
@@ -926,16 +1035,16 @@ function renderStationContent(role){
     const cls=ord.status==='paid'?'k-paid':isReady?'k-ready':timer.cls==='t-red'?'k-urgent':'';
     return `<div class="kcard ${cls}">
       <div class="kc-head">
-        <span class="kc-tname">${ord.tableName||tid} <span style="font-size:.8rem;font-weight:600;color:var(--text-light)">👥${ord.covers||''}</span></span>
+        <span class="kc-tname">${ord.tableName||tid} <span style="font-size:.8rem;font-weight:600;color:#4a5568">👥${ord.covers||''}</span></span>
         <span class="kc-timer ${timer.cls}">${timer.label}</span>
       </div>
       <div class="kc-body">
-        ${mine.length?`<div class="kc-mine-title">▶ Da preparare</div>${mine.map(it=>`<div class="kc-item">${it.qty>1?`×${it.qty} `:''}${it.name}${it.note?`<span class="kc-item-note">📝 ${it.note}</span>`:''}</div>`).join('')}`:`<div style="font-size:.88rem;color:var(--text-light);padding:5px 0">Nessun articolo per questa stazione</div>`}
+        ${mine.length?`<div class="kc-mine-title">▶ Da preparare</div>${mine.map(it=>`<div class="kc-item">${it.qty>1?`×${it.qty} `:''}${it.name}${it.note?`<span class="kc-item-note">📝 ${it.note}</span>`:''}</div>`).join('')}`:`<div style="font-size:.88rem;color:#4a5568;padding:5px 0">Nessun articolo per questa stazione</div>`}
         ${others.length?`<div class="kc-other-title">📋 Resto del tavolo</div>${others.map(it=>`<div class="kc-item dim">${it.qty>1?`×${it.qty} `:''}${it.name}${it.note?`<span class="kc-item-note">📝 ${it.note}</span>`:''}</div>`).join('')}`:``}
       </div>
       <div class="kc-foot">
         ${!isReady?`<button class="btn btn-success btn-sm" onclick="markReady('${tid}')">✅ Pronto!</button>`:`<span class="pill pill-green">✅ Pronto</span>`}
-        ${ord.status==='paid'?`<span class="pill" style="background:var(--gray-light);color:var(--text-mid)">💰 Pagato</span>`:''}
+        ${ord.status==='paid'?`<span class="pill" style="background:#f0f4f8;color:#2d3748">💰 Pagato</span>`:''}
       </div>
     </div>`;
   }).join('')}</div>`;
@@ -994,13 +1103,21 @@ function renderBill(){
       <input class="bill-price-input" type="number" step="0.5" value="${ex.price.toFixed(2)}" oninput="updateExtraPrice(${i},this.value)">
       <button class="btn btn-danger btn-sm" onclick="removeExtra(${i})" style="margin-left:5px">✕</button>
     </div>`).join('');
-  html+=`<div class="bill-row"><div class="bill-row-name">Coperto (${ord.covers||t.covers} pers.)</div><span style="font-weight:800;font-size:.95rem;color:var(--text-dark)">${fmt(coperto)}</span></div>`;
+  html+=`<div class="bill-row"><div class="bill-row-name">Coperto (${ord.covers||t.covers} pers.)</div><span style="font-weight:800;font-size:.95rem;color:#1a202c">${fmt(coperto)}</span></div>`;
   document.getElementById('billItems').innerHTML=html;
   document.getElementById('discountVal').value='0';
   updateBillTotal();
 }
 
-function getBillSubtotal(){ const tid=billTableId,ord=orders[tid]; if(!ord) return 0; const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items); let sub=0; items.forEach((_,i)=>{ const el=document.getElementById(`billItem_${i}`); sub+=el?parseFloat(el.value)||0:0; }); billExtras.forEach(ex=>{ sub+=ex.price; }); sub+=(settings.coperto||1.5)*((ord.covers||tables[tid]?.covers)||1); return sub; }
+function getBillSubtotal(){
+  const tid=billTableId,ord=orders[tid]; if(!ord) return 0;
+  const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items);
+  let sub=0;
+  items.forEach((_,i)=>{ const el=document.getElementById(`billItem_${i}`); sub+=el?parseFloat(el.value)||0:0; });
+  billExtras.forEach(ex=>{ sub+=ex.price; });
+  sub+=(settings.coperto||1.5)*((ord.covers||tables[tid]?.covers)||1);
+  return sub;
+}
 
 window.updateBillTotal=function(){
   let sub=getBillSubtotal();
@@ -1027,8 +1144,6 @@ window.payTable=async function(method){
   const discount=dt==='percent'?sub*(dv/100):dv;
   const final=Math.max(0,sub-discount);
   const t=tables[tid]||{};
-  const covers=tables[tid]?.covers||orders[tid]?.covers||1;
-  // Svuota l'ordine e torna libero, mantiene i coperti del tavolo
   await remove(ref(db,`orders/${tid}`));
   const cur=dailyStats||{};
   const payments=Array.isArray(cur.payments)?[...cur.payments]:[];
@@ -1054,10 +1169,10 @@ function renderStats(c){
     </div>
     <div style="margin-top:20px"><div class="section-title">Ultimi pagamenti</div>
     ${payments.length?[...payments].reverse().slice(0,20).map(p=>`
-      <div style="display:flex;justify-content:space-between;align-items:center;background:#ffffff;border-radius:12px;padding:12px 15px;margin-bottom:9px;box-shadow:var(--shadow);border:2px solid var(--blue-light)">
-        <span style="font-weight:800;font-size:1rem;color:var(--text-dark)">${p.table}</span>
-        <span style="font-size:.85rem;color:var(--text-mid)">${p.method==='contanti'?'💵':'💳'} ${new Date(p.time).toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})}</span>
-        <span style="font-weight:900;font-size:1rem;color:var(--blue-dark)">${fmt(p.total)}</span>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#ffffff;border-radius:12px;padding:12px 15px;margin-bottom:9px;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0">
+        <span style="font-weight:800;font-size:1rem;color:#1a202c">${p.table}</span>
+        <span style="font-size:.85rem;color:#2d3748">${p.method==='contanti'?'💵':'💳'} ${new Date(p.time).toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})}</span>
+        <span style="font-weight:900;font-size:1rem;color:#0e7a9a">${fmt(p.total)}</span>
       </div>`).join(''):`<div class="empty"><p>Nessun pagamento oggi</p></div>`}
     </div>
     <div style="margin-top:16px"><button class="btn btn-danger btn-sm" onclick="resetStats()">🔄 Reset statistiche</button></div>`;
@@ -1071,7 +1186,10 @@ function renderMenuEditor(c){
   const cats=Object.keys(menuData); if(!menuEditCat||!menuData[menuEditCat]) menuEditCat=cats[0];
   const catItems=menuData[menuEditCat]?.items||{};
   c.innerHTML=`<div class="section-title mt-12">📋 Editor Menù</div>
-    <div class="cat-tabs">${cats.map(cid=>`<button class="cat-btn ${menuEditCat===cid?'active':''}" onclick="setMenuEditCat('${cid}')">${menuData[cid]?.label||cid}</button>`).join('')}</div>
+    <div class="cat-tabs">${cats.map(cid=>{
+      const gfCat=isGlutenFree(cid);
+      return `<button class="cat-btn ${gfCat?'gf-cat':''} ${menuEditCat===cid?'active':''}" onclick="setMenuEditCat('${cid}')">${menuData[cid]?.label||cid}</button>`;
+    }).join('')}</div>
     <div style="display:flex;gap:8px;margin-bottom:13px;flex-wrap:wrap">
       <input class="s-input" id="catLabel" value="${menuData[menuEditCat]?.label||''}" placeholder="Nome categoria" style="flex:2">
       <select class="s-input" id="catDest" style="flex:1;max-width:150px">
@@ -1093,13 +1211,13 @@ function renderMenuEditor(c){
         <input class="s-input" value="${catItems[iid].desc||''}" placeholder="Descrizione…" onchange="updateMenuItem('${iid}','desc',this.value)" style="width:100%;margin-top:7px;font-size:.88rem">
       </div>`).join('')}</div>
     <div class="add-form">
-      <div style="font-weight:900;color:var(--blue-dark);margin-bottom:10px;font-size:1rem">➕ Aggiungi voce</div>
+      <div style="font-weight:900;color:#0e7a9a;margin-bottom:10px;font-size:1rem">➕ Aggiungi voce</div>
       <div style="display:flex;gap:8px;margin-bottom:9px;flex-wrap:wrap">
         <div style="flex:2"><label>Nome</label><input class="s-input" id="niName" placeholder="Es. Margherita" style="width:100%"></div>
         <div style="flex:1"><label>Prezzo €</label><input class="s-input" id="niPrice" type="number" step="0.5" placeholder="8.50" style="width:100%"></div>
       </div>
       <div style="margin-bottom:8px"><label>Descrizione</label><input class="s-input" id="niDesc" placeholder="Ingredienti…" style="width:100%"></div>
-      <label style="display:flex;align-items:center;gap:7px;font-size:.88rem;font-weight:700;cursor:pointer;margin-bottom:10px;color:var(--text-mid)">
+      <label style="display:flex;align-items:center;gap:7px;font-size:.88rem;font-weight:700;cursor:pointer;margin-bottom:10px;color:#2d3748">
         <input type="checkbox" id="niSeparate"> Voce separata (pizze, pollo)
       </label>
       <button class="btn btn-primary btn-sm" onclick="addMenuItem()">Aggiungi</button>
@@ -1120,7 +1238,7 @@ window.deleteCategory=async function(){ if(!confirm(`Eliminare "${menuData[menuE
 
 function renderTableSettings(c){
   c.innerHTML=`<div class="section-title mt-12">⚙️ Gestione Tavoli</div>
-    ${Object.keys(tables).map(tid=>{ const t=tables[tid]; return `<div class="table-s-item"><div style="flex:1"><div style="font-weight:800;font-size:1rem;color:var(--text-dark)">${t.name}</div><div style="font-size:.85rem;color:var(--text-mid)">👥 ${t.covers} coperti${t.note?` · 📝 ${t.note}`:''}</div></div><button class="btn btn-secondary btn-sm" onclick="openEditTableModal('${tid}')">✏️</button><button class="btn btn-danger btn-sm" onclick="deleteTbl('${tid}')">🗑️</button></div>`; }).join('')}
+    ${Object.keys(tables).map(tid=>{ const t=tables[tid]; return `<div class="table-s-item"><div style="flex:1"><div style="font-weight:800;font-size:1rem;color:#1a202c">${t.name}</div><div style="font-size:.85rem;color:#2d3748">👥 ${t.covers} coperti${t.note?` · 📝 ${t.note}`:''}</div></div><button class="btn btn-secondary btn-sm" onclick="openEditTableModal('${tid}')">✏️</button><button class="btn btn-danger btn-sm" onclick="deleteTbl('${tid}')">🗑️</button></div>`; }).join('')}
     <div style="margin-top:13px"><button class="btn btn-primary btn-sm" onclick="addTable()">➕ Aggiungi Tavolo</button></div>`;
 }
 window.deleteTbl=async function(tid){ if(!confirm(`Eliminare ${tables[tid]?.name}?`)) return; const nt={...tables}; delete nt[tid]; await set(ref(db,'tables'),nt); showToast('Tavolo eliminato'); };
@@ -1131,8 +1249,8 @@ function renderSettings(c){
     <div class="settings-section mt-12">
       <h3>🏪 Ristorante</h3>
       <div class="s-row"><input class="s-input" id="sName" value="${s.restaurantName||'Saverio Pizza e Pollo'}" placeholder="Nome ristorante"><button class="btn btn-primary btn-sm" onclick="saveSetting('restaurantName','sName')">Salva</button></div>
-      <div class="s-row"><label style="font-size:.9rem;font-weight:800;margin-right:8px;color:var(--text-mid)">Coperto €</label><input class="s-input" id="sCoperto" type="number" step="0.5" value="${s.coperto||1.5}" style="max-width:110px"><button class="btn btn-primary btn-sm" onclick="saveCoperto()">Salva</button></div>
-      <div class="s-row" style="align-items:center;gap:12px"><label style="font-size:.95rem;font-weight:800;color:var(--text-mid)">🔔 Suono notifiche</label><button class="btn btn-sm ${s.soundEnabled!==false?'btn-success':'btn-secondary'}" onclick="toggleSound()">${s.soundEnabled!==false?'ON':'OFF'}</button></div>
+      <div class="s-row"><label style="font-size:.9rem;font-weight:800;margin-right:8px;color:#2d3748">Coperto €</label><input class="s-input" id="sCoperto" type="number" step="0.5" value="${s.coperto||1.5}" style="max-width:110px"><button class="btn btn-primary btn-sm" onclick="saveCoperto()">Salva</button></div>
+      <div class="s-row" style="align-items:center;gap:12px"><label style="font-size:.95rem;font-weight:800;color:#2d3748">🔔 Suono notifiche</label><button class="btn btn-sm ${s.soundEnabled!==false?'btn-success':'btn-secondary'}" onclick="toggleSound()">${s.soundEnabled!==false?'ON':'OFF'}</button></div>
     </div>
     <div class="settings-section">
       <h3>🔐 Password Cassa</h3>
