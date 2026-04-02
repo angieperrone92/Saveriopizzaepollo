@@ -1250,47 +1250,41 @@ function stampaBrowser(items, tname, covers) {
     });
     if (!miei.length) return;
     var label = stazione === 'cucina' ? '*** CUCINA ***' : stazione === 'pizzeria' ? '*** PIZZERIA ***' : '*** POLLERIA ***';
-    var w = window.open('', '_blank', 'width=340,height=600');
-    if (!w) { alert('Abilita i popup per stampare!'); return; }
-    w.document.open();
-    w.document.write('<!DOCTYPE html>');
-    w.document.write('<html>');
-    w.document.write('<head>');
-    w.document.write('<meta charset="UTF-8">');
-    w.document.write('<style>');
-    w.document.write('body{font-family:monospace;width:280px;margin:0;padding:10px;color:#000;background:#fff}');
-    w.document.write('.st{background:#000;color:#fff;text-align:center;font-size:14px;font-weight:bold;padding:5px;letter-spacing:2px;margin-bottom:6px}');
-    w.document.write('.tn{text-align:center;font-size:18px;font-weight:bold}');
-    w.document.write('.nf{text-align:center;font-size:11px;margin-top:2px}');
-    w.document.write('hr{border:none;border-top:1px dashed #000;margin:8px 0}');
-    w.document.write('table{width:100%;border-collapse:collapse}');
-    w.document.write('.ft{text-align:center;font-size:11px;margin-top:6px}');
-    w.document.write('@media print{body{margin:0;padding:5px}}');
-    w.document.write('</style>');
+    var righe = '';
+    miei.forEach(function(it) {
+      righe += '<tr>';
+      righe += '<td style="font-size:14px;font-weight:bold;padding:4px 2px;vertical-align:top">x' + (it.qty || 1) + '</td>';
+      righe += '<td style="font-size:14px;font-weight:bold;padding:4px 0 4px 6px;vertical-align:top;text-transform:uppercase">' + it.name.toUpperCase();
+      if (it.note) righe += '<br><em style="font-size:11px;font-weight:normal">' + it.note + '</em>';
+      righe += '</td></tr>';
+    });
+    var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
+    html += '<style>';
+    html += 'body{font-family:monospace;width:280px;margin:0;padding:10px;color:#000;background:#fff}';
+    html += '.st{background:#000;color:#fff;text-align:center;font-size:14px;font-weight:bold;padding:5px;letter-spacing:2px;margin-bottom:6px}';
+    html += '.tn{text-align:center;font-size:18px;font-weight:bold}';
+    html += '.nf{text-align:center;font-size:11px;margin-top:2px}';
+    html += 'hr{border:none;border-top:1px dashed #000;margin:8px 0}';
+    html += 'table{width:100%;border-collapse:collapse}';
+    html += '.ft{text-align:center;font-size:11px;margin-top:6px}';
+    html += '@media print{body{margin:0;padding:5px}}';
+    html += '</style></head><body>';
 
 ```
-w.document.write('</head>');
-w.document.write('<body>');
-w.document.write('<div class="st">' + label + '</div>');
-w.document.write('<div class="tn">' + tname.toUpperCase() + '</div>');
-w.document.write('<div class="nf">' + covers + ' coperti</div>');
-w.document.write('<div class="nf">' + ora + ' - ' + data + '</div>');
-w.document.write('<hr>');
-w.document.write('<table>');
-miei.forEach(function(it) {
-  w.document.write('<tr>');
-  w.document.write('<td style="font-size:14px;font-weight:bold;padding:4px 2px;vertical-align:top">x' + (it.qty || 1) + '</td>');
-  w.document.write('<td style="font-size:14px;font-weight:bold;padding:4px 0 4px 6px;vertical-align:top;text-transform:uppercase">' + it.name.toUpperCase() + (it.note ? ('<br><em>' + it.note + '</em>') : '') + '</td>');
-  w.document.write('</tr>');
-});
-w.document.write('</table>');
-w.document.write('<hr>');
-w.document.write('<div class="ft">*** ORDINE RICEVUTO ***<br>Saverio Pizza e Pollo</div>');
-w.document.write('</body>');
-w.document.write('</html>');
-w.document.close();
-w.focus();
-setTimeout(function() { w.print(); w.close(); }, 600);
+html += '<div class="st">' + label + '</div>';
+html += '<div class="tn">' + tname.toUpperCase() + '</div>';
+html += '<div class="nf">' + covers + ' coperti</div>';
+html += '<div class="nf">' + ora + ' - ' + data + '</div>';
+html += '<hr><table>' + righe + '</table><hr>';
+html += '<div class="ft">*** ORDINE RICEVUTO ***<br>Saverio Pizza e Pollo</div>';
+html += '</body></html>';
+var blob = new Blob([html], {type: 'text/html'});
+var url = URL.createObjectURL(blob);
+var a = document.createElement('a');
+a.href = url;
+a.target = '_blank';
+a.click();
+setTimeout(function() { URL.revokeObjectURL(url); }, 5000);
 ```
 
 });
