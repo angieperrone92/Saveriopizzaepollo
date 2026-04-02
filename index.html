@@ -503,12 +503,14 @@ const PIZZE_ITEMS={
 };
 
 const DEFAULT_MENU={
-  antipasti:{label:"🥗 Antipasti",dest:"cucina",items:{patate_fritte:{name:"Patate Fritte",price:4.00,desc:""},antipasto_caldo:{name:"Antipasto Caldo x2",price:8.00,desc:"Patatine fritte, panelle, verdure in pastella, anelli di cipolla, mozzarelline fritte"},pata_cheddar:{name:"Pata Cheddar e Bacon",price:6.00,desc:"Patatine fritte con salsa cheddar e bacon croccante"},pollo_mix:{name:"Pollo Mix x2",price:6.00,desc:"Patatine fritte, straccetti di pollo, chicken nuggets, alette piccanti, stick mozzarella"},bruschette_romana:{name:"Bruschette alla Romana",price:4.00,desc:"Pomodoro, aglio, basilico, pepe, sale e olio"},bruschette_miste:{name:"Bruschette Miste",price:6.00,desc:""}}},
+  antipasti:{label:"🥗 Antipasti",dest:"cucina",items:{patate_fritte:{name:"Patate Fritte",price:4.00,desc:""},antipasto_caldo:{name:"Antipasto Caldo x2",price:8.00,desc:"Patatine fritte, panelle, verdure in pastella, anelli di cipolla, mozzarelline fritte"},pata_cheddar:{name:"Pata Cheddar e Bacon",price:6.00,desc:"Patatine fritte con salsa cheddar e bacon croccante"},pollo_mix:{name:"Pollo Mix x2",price:6.00,desc:"Patatine fritte, straccetti di pollo, chicken nuggets, alette piccanti, stick mozzarella"},bruschette_romana:{name:"Bruschette alla Romana",price:4.00,desc:"Pomodoro, aglio, basilico, pepe, sale e olio"},bruschette_miste:{name:"Bruschette Miste",price:6.00,desc:""},
+    patate_fritte_sg:{name:"Patate Fritte SG",price:4.00,desc:"Senza glutine",glutenFree:true}}},
   taglieri:{label:"🧀 Taglieri",dest:"cucina",items:{tagliere_salumi:{name:"Tagliere Salumi e Formaggi x2",price:15.00,desc:""},tagliere_rosticceria:{name:"Tagliere Rosticceria Mignon",price:12.00,desc:"10 pezzi rosticceria mignon misti"}}},
   insalate:{label:"🥗 Insalate",dest:"cucina",items:{maestosa:{name:"Maestosa",price:8.00,desc:"Rucola, radicchio, pomodorini, scaglie di grana e fior di latte"},siciliana:{name:"Siciliana",price:6.00,desc:"Acciughe, lattuga, pomodoro e olive nere"},vastasa:{name:"Vastasa",price:7.00,desc:"Lattuga, pomodoro, cipolla calabrese, olive nere e tonno"},regina_ins:{name:"Regina",price:10.00,desc:"Lattuga, rucola, pomodorini, bufala, prosciutto crudo e scaglie di grana"}}},
-  pollo:{label:"🍗 Pollo alla Brace",dest:"polleria",items:{mezzo_pollo:{name:"1/2 Pollo",price:8.50,desc:"Con patate fritte e crocchette",separate:true}}},
+  pollo:{label:"🍗 Pollo alla Brace",dest:"polleria",items:{mezzo_pollo:{name:"1/2 Pollo",price:8.50,desc:"Con patate fritte e crocchette",separate:true},
+    mezzo_pollo_sg:{name:"1/2 Pollo SG",price:8.50,desc:"Con patate fritte e crocchette, senza glutine",separate:true,glutenFree:true}}},
   pizze:{label:"🍕 Pizze",dest:"pizzeria",items:PIZZE_ITEMS},
-  pizze_sg:{label:"🌾 Senza Glutine",dest:"pizzeria",items:{sg_margherita:{name:"Margherita S/G",price:8.00,desc:"Mozzarella senza lattosio, pomodoro",separate:true},sg_romana:{name:"Romana S/G",price:9.00,desc:"Mozzarella senza lattosio, pomodoro e prosciutto cotto",separate:true},sg_parmigiana:{name:"Parmigiana S/G",price:10.00,desc:"Mozzarella senza lattosio, grana, melanzane",separate:true},sg_napoli:{name:"Napoli S/G",price:9.00,desc:"Mozzarella senza lattosio, pomodoro e acciughe",separate:true},sg_4gusti:{name:"4 Gusti S/G",price:10.00,desc:"Mozzarella senza lattosio, pomodoro, prosciutto cotto e carciofi",separate:true},sg_regina:{name:"Regina S/G",price:10.00,desc:"Pomodoro, mozzarella senza lattosio, grana, prosciutto crudo, rucola",separate:true}}},
+  pizze_sg:{label:"🌾 Senza Glutine",dest:"pizzeria",items:{sg_margherita:{name:"Margherita SG",price:8.00,desc:"Mozzarella senza lattosio, pomodoro",separate:true},sg_romana:{name:"Romana SG",price:9.00,desc:"Mozzarella senza lattosio, pomodoro e prosciutto cotto",separate:true},sg_parmigiana:{name:"Parmigiana SG",price:10.00,desc:"Mozzarella senza lattosio, grana, melanzane",separate:true},sg_napoli:{name:"Napoli SG",price:9.00,desc:"Mozzarella senza lattosio, pomodoro e acciughe",separate:true},sg_4gusti:{name:"4 Gusti SG",price:10.00,desc:"Mozzarella senza lattosio, pomodoro, prosciutto cotto e carciofi",separate:true},sg_regina:{name:"Regina SG",price:10.00,desc:"Pomodoro, mozzarella senza lattosio, grana, prosciutto crudo, rucola",separate:true}}},
   bibite:{label:"🥤 Bibite",dest:"cameriere",items:{acqua_nat_1L:{name:"Acqua Naturale 1L",price:2.50,desc:""},acqua_frizz_1L:{name:"Acqua Frizzante 1L",price:2.50,desc:""},acqua_nat_05L:{name:"Acqua Naturale 0.5L",price:1.50,desc:""},acqua_frizz_05L:{name:"Acqua Frizzante 0.5L",price:1.50,desc:""},moretti_66:{name:"Moretti 66cl",price:3.50,desc:""},heineken_66:{name:"Heineken 66cl",price:4.50,desc:""},becks_66:{name:"Beck's 66cl",price:4.50,desc:""},moretti_33:{name:"Moretti 33cl",price:2.50,desc:""},heineken_33:{name:"Heineken 33cl",price:2.50,desc:""},becks_33:{name:"Beck's 33cl",price:2.50,desc:""},coca_15:{name:"Coca-Cola 1.5L",price:4.00,desc:""},fanta_15:{name:"Fanta 1.5L",price:4.00,desc:""},sprite_15:{name:"Sprite 1.5L",price:4.00,desc:""},coca_33:{name:"Coca-Cola 33cl",price:2.00,desc:""},fanta_33:{name:"Fanta 33cl",price:2.00,desc:""},sprite_33:{name:"Sprite 33cl",price:2.00,desc:""}}},
   vini:{label:"🍷 Vini",dest:"cameriere",items:{insolita:{name:"Insolita – Baglio di Pianetto",price:11.00,desc:""},babbio:{name:"Babbio – Gorghi Tondi",price:15.00,desc:""},leone:{name:"Leone – Tenuta Regaleali",price:18.00,desc:""},bianco_nera:{name:"Bianco di Nera – G.Milazzo",price:20.00,desc:""},nero_avola:{name:"Nero d'Avola – Baglio di Pianetto",price:11.00,desc:""},guarnacche:{name:"Guarnacche – Tenuta Regaleali",price:17.00,desc:""}}},
   amaro_caffe:{label:"☕ Amaro / Caffè",dest:"cucina",items:{amaro:{name:"Amaro",price:2.50,desc:""},caffe:{name:"Caffè",price:2.00,desc:""}}}
@@ -592,6 +594,7 @@ function showProductToast(msg){const t=document.getElementById('productToast');t
 function getTimerLabel(ts){if(!ts)return{label:'—',cls:'t-green'};const m=Math.floor((Date.now()-ts)/60000);if(m<10)return{label:`${m} min`,cls:'t-green'};if(m<20)return{label:`${m} min`,cls:'t-yellow'};return{label:`${m} min ⚠️`,cls:'t-red'};}
 function getStatusLabel(s){return{free:'Libero',pending:'⏳ In attesa',ready:'✅ Pronto',paid:'💰 Pagato',reserved:'📅 Prenotato'}[s]||s;}
 function isGlutenFree(catId){return(menuData[catId]?.label||'').toUpperCase().includes('GLUTEN');}
+function isGlutenFreeItem(item){return !!(item&&item.glutenFree);}
 
 function getStationCirclesHtml(ord,tid){
   if(!ord||!ord.items)return'';
@@ -791,7 +794,18 @@ function renderOrderPanel(){
         </div>
       </div>
       <div class="order-body">
-        ${hasExisting&&status!=='paid'?`<div class="partial-banner">⚠️ Ordine già inviato — aggiungi nuovi articoli e premi <strong>Invia Aggiunta</strong></div>`:''}
+        ${hasExisting&&status!=='paid'?`
+        <div style="margin-bottom:14px">
+          <div class="section-title" style="font-size:1.1rem;margin-bottom:8px">📋 Già ordinato</div>
+          <div style="background:#f0f4f8;border-radius:12px;padding:12px;border:2px solid #b8e4f0">
+            ${existingItems.map(it=>`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #b8e4f0;font-weight:700;font-size:.95rem;color:${it.glutenFree?'#276749':'#1a202c'}">
+              <span>×${it.qty||1} ${it.name.toUpperCase()}</span>
+              <span style="color:#0e7a9a">${fmt((it.price||0)*(it.qty||1))}</span>
+            </div>`).join('')}
+            <div style="text-align:right;font-weight:900;color:#0e7a9a;margin-top:8px">Totale: ${fmt(existingItems.reduce((s,it)=>s+(it.price||0)*(it.qty||1),0))}</div>
+          </div>
+          <div class="partial-banner" style="margin-top:10px">⚠️ Ordine già inviato — aggiungi nuovi articoli e premi <strong>Invia Aggiunta</strong></div>
+        </div>`:''}
         <div class="section-title">📋 Menù</div>
         <div class="cat-tabs">${cats.map(cid=>{const gfCat=isGlutenFree(cid);return`<button class="cat-btn ${gfCat?'gf-cat':''} ${currentCat===cid?'active':''}" onclick="setCat('${cid}')">${menuData[cid]?.label||cid}</button>`;}).join('')}</div>
         <div class="menu-grid" id="menuGrid">${renderMenuItems(catItems,gf)}</div>
@@ -799,7 +813,7 @@ function renderOrderPanel(){
         <div class="section-title">🛒 ${hasExisting&&status!=='paid'?'Aggiunte':'Ordine corrente'}</div>
         ${renderCurrentOrder(tempOrder)}
         <div class="order-actions">
-          ${tempOrder.length&&status!=='paid'?`<button class="btn btn-primary" onclick="sendOrder()">📤 ${hasExisting?'Invia Aggiunta':'Invia Ordine'}</button><button class="btn btn-success btn-sm" onclick="sendAndPrint()">📤🖨️ Invia e Stampa</button>`:''}
+          ${tempOrder.length&&status!=='paid'?`<button class="btn btn-primary" onclick="sendOrder()">📤 ${hasExisting?'Invia Aggiunta':'Invia Ordine'}</button>`:''}
           <button class="btn btn-secondary" onclick="goTables()">← Tavoli</button>
           ${ord&&ord.items?`<button class="btn btn-warning btn-sm" onclick="openMerge('${selectedTable}')">🔗 Unisci</button><button class="btn btn-secondary btn-sm" onclick="openMove('${selectedTable}')">↔️ Sposta</button>`:''}
         </div>
@@ -814,8 +828,10 @@ function renderMenuItems(catItems,gf=false){
     const so=item.soldOut?'sold-out':'';
     const sel=(selectedMenuItem===iid)?'selected':'';
     const gfClass=gf?'gf-item':'';
-    const nameStyle=gf?'color:#276749;font-weight:900':'';
-    return`<div class="menu-item ${so} ${sel} ${gfClass}" id="mi_${iid}" onclick="${item.soldOut?'':(`selectMenuItem('${iid}','${currentCat}')`)}">
+    const itemGf=gf||isGlutenFreeItem(item);
+    const nameStyle=itemGf?'color:#276749;font-weight:900':'';
+    const gfClass2=itemGf?'gf-item':'';
+    return`<div class="menu-item ${so} ${sel} ${gfClass2}" id="mi_${iid}" onclick="${item.soldOut?'':(`selectMenuItem('${iid}','${currentCat}')`)}">
       <div class="mi-name" style="${nameStyle}">${item.name.toUpperCase()}</div>
       ${item.desc?`<div class="mi-desc">${item.desc}</div>`:''}
       <div class="mi-price" style="${nameStyle}">${fmt(item.price)}</div>
@@ -855,8 +871,8 @@ window.confirmInlineItem=function(iid,catId){
   const note=noteEl?noteEl.value.trim():'';
   const qty=inlineQty||1;
   const tempOrder=getDraft(selectedTable);
-  if(!sep&&!note){const existing=tempOrder.find(it=>it.iid===iid&&!it.note);if(existing){existing.qty=(existing.qty||1)+qty;}else{tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty,note:'',dest,separate:sep});}}
-  else{tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty,note,dest,separate:sep});}
+  if(!sep&&!note){const existing=tempOrder.find(it=>it.iid===iid&&!it.note);if(existing){existing.qty=(existing.qty||1)+qty;}else{tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty,note:'',dest,separate:sep,glutenFree:item.glutenFree||false});}}
+  else{tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty,note,dest,separate:sep,glutenFree:item.glutenFree||false});}
   setDraft(selectedTable,tempOrder);selectedMenuItem=null;inlineQty=1;
   showProductToast(`✅ ×${qty} ${item.name.toUpperCase()} aggiunto`);
   renderOrderPanel();
@@ -868,7 +884,7 @@ function renderCurrentOrder(tempOrder){
   if(!tempOrder||!tempOrder.length)return'<div style="color:#4a5568;font-size:.95rem;padding:8px 0;font-weight:600">Nessun articolo aggiunto</div>';
   const rows=tempOrder.map((it,i)=>`
     <div class="order-row">
-      <div class="or-info"><div class="or-name">${it.name.toUpperCase()}</div>${it.note?`<div class="or-note">📝 ${it.note}</div>`:''}</div>
+      <div class="or-info"><div class="or-name" style="${it.glutenFree?'color:#276749;font-weight:900':''}">${it.name.toUpperCase()}</div>${it.note?`<div class="or-note">📝 ${it.note}</div>`:''}</div>
       <div class="or-qty">
         <button class="qty-btn" onclick="removeOrderItem(${i})">−</button>
         <span style="font-weight:900;min-width:20px;text-align:center;font-size:1rem;color:#1a202c">${it.qty||1}</span>
@@ -900,14 +916,6 @@ window.sendOrder=async function(){
   goTables();
 };
 
-window.sendAndPrint=async function(){
-  const draft=getDraft(selectedTable);
-  if(!draft.length){showToast('Aggiungi almeno un articolo!');return;}
-  const tname=tables[selectedTable]?.name||selectedTable;
-  const covers=tables[selectedTable]?.covers||1;
-  await sendOrder();
-  stampaBrowser(draft,tname,covers);
-};
 window.openEditTableModal=function(tid){editingTableId=tid;const t=tables[tid]||{};document.getElementById('etName').value=t.name||'';document.getElementById('etCovers').value=t.covers||4;document.getElementById('etNote').value=t.note||'';openModal('editTableModal');};
 window.saveEditTable=async function(){const name=document.getElementById('etName').value.trim(),covers=parseInt(document.getElementById('etCovers').value)||4,note=document.getElementById('etNote').value.trim();if(!name)return;await update(ref(db,`tables/${editingTableId}`),{name,covers,note});closeModal('editTableModal');showToast('Tavolo aggiornato');};
 window.addTable=async function(){const name=prompt('Nome tavolo:',`Tavolo ${Object.keys(tables).length+1}`);if(!name)return;const covers=parseInt(prompt('Coperti:','4'))||4;await set(ref(db,`tables/t${Date.now()}`),{name,covers,note:''});showToast('Tavolo aggiunto');};
@@ -968,7 +976,7 @@ function renderStationContent(role){
       </div>
       <div class="kc-body">
         <div class="kc-mine-title">▶ DA PREPARARE</div>
-        ${mine.map(it=>`<div class="kc-item">${it.qty>1?`×${it.qty} `:''}${it.name.toUpperCase()}${it.note?`<span class="kc-item-note">📝 ${it.note}</span>`:''}</div>`).join('')}
+        ${mine.map(it=>`<div class="kc-item" style="${it.glutenFree?'color:#276749':''}">${it.qty>1?`×${it.qty} `:''}${it.name.toUpperCase()}${it.note?`<span class="kc-item-note">📝 ${it.note}</span>`:''}</div>`).join('')}
         ${others.length?`<div class="kc-other-title">📋 RESTO DEL TAVOLO</div>${others.map(it=>`<div class="kc-item dim">${it.qty>1?`×${it.qty} `:''}${it.name.toUpperCase()}${it.note?`<span class="kc-item-note">📝 ${it.note}</span>`:''}</div>`).join('')}`:''}
       </div>
       <div class="kc-foot">
@@ -1233,55 +1241,6 @@ window.sendChat=async function(){const inp=document.getElementById('chatInput');
 
 function scheduleReset(){const now=new Date(),mid=new Date(now);mid.setHours(24,0,0,0);setTimeout(async()=>{await set(ref(db,'dailyStats'),{totalRevenue:0,tablesPaid:0,payments:[]});scheduleReset();},mid-now);}
 scheduleReset();
-</script>
-
-<script>
-function stampaBrowser(items, tname, covers) {
-  if (!items || !items.length) { alert('Aggiungi prima degli articoli!'); return; }
-  var ora = new Date().toLocaleTimeString('it-IT', {hour: '2-digit', minute: '2-digit'});
-  var data = new Date().toLocaleDateString('it-IT', {weekday: 'long', day: 'numeric', month: 'short'});
-  var stazioni = ['cucina', 'pizzeria', 'polleria'];
-  stazioni.forEach(function(stazione) {
-    var miei = items.filter(function(it) {
-      if (stazione === 'polleria') {
-        return it.dest === 'polleria' && (it.name.toLowerCase().indexOf('pollo') >= 0 || it.name.toLowerCase().indexOf('rosticceria') >= 0);
-      }
-      return it.dest === stazione;
-    });
-    if (!miei.length) return;
-    var label = stazione === 'cucina' ? '*** CUCINA ***' : stazione === 'pizzeria' ? '*** PIZZERIA ***' : '*** POLLERIA ***';
-    var testo = label + '
-';
-    testo += tname.toUpperCase() + '
-';
-    testo += covers + ' coperti
-';
-    testo += ora + ' - ' + data + '
-';
-    testo += '--------------------------------
-';
-    miei.forEach(function(it) {
-      testo += 'x' + (it.qty || 1) + '  ' + it.name.toUpperCase() + '
-';
-      if (it.note) testo += '    -> ' + it.note + '
-';
-    });
-    testo += '--------------------------------
-';
-    testo += '*** ORDINE RICEVUTO ***
-';
-    testo += 'Saverio Pizza e Pollo
-';
-    if (navigator.share) {
-      navigator.share({
-        title: label + ' - ' + tname,
-        text: testo
-      }).catch(function(e) { console.log('Share cancelled'); });
-    } else {
-      alert(testo);
-    }
-  });
-}
 </script>
 
 </body>
