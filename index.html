@@ -935,23 +935,7 @@ win.document.write(html);win.document.close();win.focus();
 setTimeout(()=>{win.print();win.close();},600);
 }
 
-async function printWithQZ(html,stazione){
-try{
-const key=stazione===‘cucina’?‘printerCucina’:stazione===‘pizzeria’?‘printerPizzeria’:‘printerPolleria’;
-const printerName=settings[key]||’’;
-if(!printerName){printWithBrowser(html,stazione);return;}
-const config=qz.configs.create(printerName);
-await qz.print(config,[{type:‘pixel’,format:‘html’,flavor:‘plain’,data:html,options:{width:‘72mm’}}]);
-}catch(e){printWithBrowser(html,stazione);}
-}
-
-window.initQZ=async function(){
-try{
-if(typeof qz===‘undefined’){showToast(‘⚠️ QZ Tray non trovato. Scaricalo da qz.io’);return;}
-if(!qz.websocket.isActive()){await qz.websocket.connect();showToast(‘🖨️ QZ Tray connesso!’);}
-else showToast(‘✅ QZ Tray già connesso!’);
-}catch(e){showToast(‘⚠️ Impossibile connettersi a QZ Tray’);}
-};
+window.initQZ=function(){showToast(‘🖨️ QZ Tray: installa da qz.io sul PC cassa’);};
 
 window.openEditTableModal=function(tid){editingTableId=tid;const t=tables[tid]||{};document.getElementById(‘etName’).value=t.name||’’;document.getElementById(‘etCovers’).value=t.covers||4;document.getElementById(‘etNote’).value=t.note||’’;openModal(‘editTableModal’);};
 window.saveEditTable=async function(){const name=document.getElementById(‘etName’).value.trim(),covers=parseInt(document.getElementById(‘etCovers’).value)||4,note=document.getElementById(‘etNote’).value.trim();if(!name)return;await update(ref(db,`tables/${editingTableId}`),{name,covers,note});closeModal(‘editTableModal’);showToast(‘Tavolo aggiornato’);};
