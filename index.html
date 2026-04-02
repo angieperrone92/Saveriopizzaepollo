@@ -645,20 +645,25 @@ window.selectRole=async function(role){
   listen('settings',s=>{settings=s;document.getElementById('topbarName').textContent=s.restaurantName||'Saverio';});
   listen('tables',t=>{tables=t;});
   listen('menu',m=>{menuData=m;});
+  let knownOrderKeys={};
   listen('orders',o=>{
     const newOrders=o||{};
     if(role==='cucina'||role==='pizzeria'||role==='polleria'){
-      // Suona se c'è almeno un ordine con newItems=true per questa stazione
-      Object.values(newOrders).forEach(ord=>{
-        if(!ord||!ord.newItems||!ord.items)return;
+      Object.entries(newOrders).forEach(([tid,ord])=>{
+        if(!ord||!ord.items)return;
         const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items);
         let hasMyItems;
         if(role==='polleria'){
           hasMyItems=items.some(it=>it.dest==='polleria'&&(it.name.toLowerCase().includes('pollo')||it.name.toLowerCase().includes('rosticceria')));
-        } else {
+        }else{
           hasMyItems=items.some(it=>it.dest===role);
         }
-        if(hasMyItems&&settings.soundEnabled!==false)playSuonoStazione(role);
+        if(!hasMyItems)return;
+        const key=tid+'_'+ord.timestamp+'_'+items.length;
+        if(knownOrderKeys[tid]!==key){
+          knownOrderKeys[tid]=key;
+          if(settings.soundEnabled!==false)playSuonoStazione(role);
+        }
       });
     }
     orders=newOrders;
