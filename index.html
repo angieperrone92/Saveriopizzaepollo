@@ -646,35 +646,22 @@ window.selectRole=async function(role){
   listen('tables',t=>{tables=t;});
   listen('menu',m=>{menuData=m;});
   listen('orders',o=>{
-    const newJson=JSON.stringify(o||{});
-    const isFirst=lastOrdersJson==='';
-    if(!isFirst&&newJson!==lastOrdersJson&&settings.soundEnabled!==false){
-      // Suono specifico per stazione — solo se ci sono ordini per questa stazione
-      if(role==='cucina'||role==='pizzeria'||role==='polleria'){
-        const newOrders=o||{};
-        const oldOrders=JSON.parse(lastOrdersJson||'{}');
-        // Controlla se c'è un ordine nuovo o aggiornato per questa stazione
-        let hasNewForMe=false;
-        Object.entries(newOrders).forEach(([tid,ord])=>{
-          if(!ord||!ord.items)return;
-          const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items);
-          let hasMyItems;
-          if(role==='polleria'){
-            hasMyItems=items.some(it=>it.dest==='polleria'&&(it.name.toLowerCase().includes('pollo')||it.name.toLowerCase().includes('rosticceria')));
-          } else {
-            hasMyItems=items.some(it=>it.dest===role);
-          }
-          if(!hasMyItems)return;
-          const oldOrd=oldOrders[tid];
-          const oldJson=JSON.stringify(oldOrd?.items||[]);
-          const newItemJson=JSON.stringify(ord.items);
-          if(oldJson!==newItemJson||!oldOrd)hasNewForMe=true;
-        });
-        if(hasNewForMe)playSuonoStazione(role);
-      }
+    const newOrders=o||{};
+    if(role==='cucina'||role==='pizzeria'||role==='polleria'){
+      // Suona se c'è almeno un ordine con newItems=true per questa stazione
+      Object.values(newOrders).forEach(ord=>{
+        if(!ord||!ord.newItems||!ord.items)return;
+        const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items);
+        let hasMyItems;
+        if(role==='polleria'){
+          hasMyItems=items.some(it=>it.dest==='polleria'&&(it.name.toLowerCase().includes('pollo')||it.name.toLowerCase().includes('rosticceria')));
+        } else {
+          hasMyItems=items.some(it=>it.dest===role);
+        }
+        if(hasMyItems&&settings.soundEnabled!==false)playSuonoStazione(role);
+      });
     }
-    lastOrdersJson=newJson;
-    orders=o||{};
+    orders=newOrders;
     renderRole();
   });
   listen('dailyStats',s=>{dailyStats=s;});
