@@ -799,7 +799,7 @@ function renderOrderPanel(){
         <div class="section-title">🛒 ${hasExisting&&status!=='paid'?'Aggiunte':'Ordine corrente'}</div>
         ${renderCurrentOrder(tempOrder)}
         <div class="order-actions">
-          ${tempOrder.length&&status!=='paid'?`<button class="btn btn-primary" onclick="sendOrder()">📤 ${hasExisting?'Invia Aggiunta':'Invia Ordine'}</button>`:''}
+          ${tempOrder.length&&status!=='paid'?`<button class="btn btn-primary" onclick="sendOrder()">📤 ${hasExisting?'Invia Aggiunta':'Invia Ordine'}</button><button class="btn btn-success btn-sm" onclick="stampaBrowser(getDraft(selectedTable),tables[selectedTable]?.name||'',tables[selectedTable]?.covers||1)">📤🖨️ Invia e Stampa</button>`:''}
           <button class="btn btn-secondary" onclick="goTables()">← Tavoli</button>
           ${ord&&ord.items?`<button class="btn btn-warning btn-sm" onclick="openMerge('${selectedTable}')">🔗 Unisci</button><button class="btn btn-secondary btn-sm" onclick="openMove('${selectedTable}')">↔️ Sposta</button>`:''}
         </div>
@@ -1225,6 +1225,68 @@ window.sendChat=async function(){const inp=document.getElementById('chatInput');
 
 function scheduleReset(){const now=new Date(),mid=new Date(now);mid.setHours(24,0,0,0);setTimeout(async()=>{await set(ref(db,'dailyStats'),{totalRevenue:0,tablesPaid:0,payments:[]});scheduleReset();},mid-now);}
 scheduleReset();
+</script>
+
+<script>
+function stampaBrowser(items, tname, covers) {
+  if (!items || !items.length) { alert('Aggiungi prima degli articoli!'); return; }
+  var ora = new Date().toLocaleTimeString('it-IT', {hour: '2-digit', minute: '2-digit'});
+  var data = new Date().toLocaleDateString('it-IT', {weekday: 'long', day: 'numeric', month: 'short'});
+  var stazioni = ['cucina', 'pizzeria', 'polleria'];
+  stazioni.forEach(function(stazione) {
+    var miei = items.filter(function(it) {
+      if (stazione === 'polleria') {
+        return it.dest === 'polleria' && (it.name.toLowerCase().indexOf('pollo') >= 0 || it.name.toLowerCase().indexOf('rosticceria') >= 0);
+      }
+      return it.dest === stazione;
+    });
+    if (!miei.length) return;
+    var label = stazione === 'cucina' ? '*** CUCINA ***' : stazione === 'pizzeria' ? '*** PIZZERIA ***' : '*** POLLERIA ***';
+    var w = window.open('', '_blank', 'width=340,height=600');
+    if (!w) { alert('Abilita i popup per stampare!'); return; }
+    w.document.open();
+    w.document.write('<!DOCTYPE html>');
+    w.document.write('<html>');
+    w.document.write('<head>');
+    w.document.write('<meta charset="UTF-8">');
+    w.document.write('<style>');
+    w.document.write('body{font-family:monospace;width:280px;margin:0;padding:10px;color:#000;background:#fff}');
+    w.document.write('.st{background:#000;color:#fff;text-align:center;font-size:14px;font-weight:bold;padding:5px;letter-spacing:2px;margin-bottom:6px}');
+    w.document.write('.tn{text-align:center;font-size:18px;font-weight:bold}');
+    w.document.write('.nf{text-align:center;font-size:11px;margin-top:2px}');
+    w.document.write('hr{border:none;border-top:1px dashed #000;margin:8px 0}');
+    w.document.write('table{width:100%;border-collapse:collapse}');
+    w.document.write('.ft{text-align:center;font-size:11px;margin-top:6px}');
+    w.document.write('@media print{body{margin:0;padding:5px}}');
+    w.document.write('</style>');
+
+```
+w.document.write('</head>');
+w.document.write('<body>');
+w.document.write('<div class="st">' + label + '</div>');
+w.document.write('<div class="tn">' + tname.toUpperCase() + '</div>');
+w.document.write('<div class="nf">' + covers + ' coperti</div>');
+w.document.write('<div class="nf">' + ora + ' - ' + data + '</div>');
+w.document.write('<hr>');
+w.document.write('<table>');
+miei.forEach(function(it) {
+  w.document.write('<tr>');
+  w.document.write('<td style="font-size:14px;font-weight:bold;padding:4px 2px;vertical-align:top">x' + (it.qty || 1) + '</td>');
+  w.document.write('<td style="font-size:14px;font-weight:bold;padding:4px 0 4px 6px;vertical-align:top;text-transform:uppercase">' + it.name.toUpperCase() + (it.note ? ('<br><em>' + it.note + '</em>') : '') + '</td>');
+  w.document.write('</tr>');
+});
+w.document.write('</table>');
+w.document.write('<hr>');
+w.document.write('<div class="ft">*** ORDINE RICEVUTO ***<br>Saverio Pizza e Pollo</div>');
+w.document.write('</body>');
+w.document.write('</html>');
+w.document.close();
+w.focus();
+setTimeout(function() { w.print(); w.close(); }, 600);
+```
+
+});
+}
 </script>
 
 </body>
