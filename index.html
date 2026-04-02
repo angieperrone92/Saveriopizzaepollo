@@ -9,55 +9,28 @@
 <style>
 :root {
   --blue:#1a9bbb; --blue-dark:#0e7a9a; --blue-light:#b8e4f0; --blue-pale:#e8f7fb;
-  --gray:#2d3748; --gray-light:#f0f4f8; --gray-mid:#4a5568; --white:#ffffff;
-  --red:#e53e3e; --green:#38a169; --orange:#dd6b20; --yellow:#d69e2e; --purple:#805ad5;
+  --gray:#2d3748; --gray-light:#f0f4f8; --white:#ffffff;
+  --red:#e53e3e; --green:#38a169; --orange:#dd6b20; --purple:#805ad5;
   --shadow:0 2px 16px rgba(26,155,187,.12); --shadow-lg:0 6px 32px rgba(26,155,187,.18);
   --radius:18px; --radius-sm:12px;
-  --text-dark:#1a202c; --text-mid:#2d3748; --text-light:#4a5568;
   --green-gf:#276749;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Nunito',sans-serif;background:#ffffff;color:#1a202c;min-height:100vh}
 
-/* ── SPLASH ── */
 #splash{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:24px;background:#ffffff}
 .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;max-width:540px}
-.role-btn{
-background:#ffffff;
-border:2.5px solid #b8e4f0;
-border-radius:18px;
-padding:32px 16px;
-cursor:pointer;
-transition:all .2s;
-text-align:center;
-box-shadow:0 2px 16px rgba(26,155,187,.12);
-position:relative;
-overflow:hidden;
-}
-.role-btn::before{
-content:’’;
-position:absolute;
-top:0;left:0;right:0;
-height:4px;
-background:#1a9bbb;
-transform:scaleX(0);
-transition:transform .2s;
-border-radius:18px 18px 0 0;
-}
-.role-btn:hover::before,.role-btn:active::before{transform:scaleX(1);}
-.role-btn:hover,.role-btn:active{
-border-color:#1a9bbb;
-transform:translateY(-4px);
-box-shadow:0 6px 32px rgba(26,155,187,.18);
-}
+.role-btn{background:#ffffff;border:2.5px solid #b8e4f0;border-radius:18px;padding:32px 16px;cursor:pointer;transition:all .2s;text-align:center;box-shadow:0 2px 16px rgba(26,155,187,.12);position:relative;overflow:hidden}
+.role-btn::before{content:’’;position:absolute;top:0;left:0;right:0;height:4px;background:#1a9bbb;transform:scaleX(0);transition:transform .2s;border-radius:18px 18px 0 0}
+.role-btn:hover::before,.role-btn:active::before{transform:scaleX(1)}
+.role-btn:hover,.role-btn:active{border-color:#1a9bbb;transform:translateY(-4px);box-shadow:0 6px 32px rgba(26,155,187,.18)}
 .role-btn .icon{font-size:3rem;margin-bottom:10px}
 .role-btn .label{font-weight:900;font-size:1.25rem;color:#1a202c;margin-top:4px}
 .role-btn .desc{font-size:.9rem;color:#4a5568;margin-top:5px;font-weight:600}
-.cassa-btn{grid-column:1/-1;background:#e8f7fb;border-color:#1a9bbb;}
+.cassa-btn{grid-column:1/-1;background:#e8f7fb;border-color:#1a9bbb}
 .cassa-btn .label{color:#0e7a9a}
 .cassa-btn .desc{color:#2d3748}
 
-/* ── MODAL ── */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2000;align-items:center;justify-content:center;padding:16px}
 .modal-overlay.active{display:flex}
 .modal-box{background:#ffffff;border-radius:18px;padding:28px 22px;width:100%;max-width:460px;box-shadow:0 12px 48px rgba(0,0,0,.2);max-height:92vh;overflow-y:auto}
@@ -77,75 +50,72 @@ box-shadow:0 6px 32px rgba(26,155,187,.18);
 .btn-sm{padding:9px 16px;font-size:.88rem}
 .error-msg{color:#e53e3e;font-size:.88rem;margin-top:6px;font-weight:700}
 
-/* ── APP ── */
 #app{display:none;flex-direction:column;min-height:100vh;background:#ffffff}
-.topbar{
-background:#ffffff;
-color:#1a202c;
-padding:14px 18px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-box-shadow:0 2px 12px rgba(26,155,187,.1);
-position:sticky;
-top:0;
-z-index:100;
-border-bottom:3px solid #1a9bbb;
-}
+.topbar{background:#ffffff;color:#1a202c;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(26,155,187,.1);position:sticky;top:0;z-index:100;border-bottom:3px solid #1a9bbb}
 .topbar-logo{font-family:‘Playfair Display’,serif;font-size:1.4rem;color:#0e7a9a}
 .topbar-role{font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4a5568;margin-top:2px}
 .topbar-btns{display:flex;gap:8px;align-items:center}
-.topbar-btn{
-background:#e8f7fb;
-border:2px solid #b8e4f0;
-color:#1a202c;
-padding:9px 16px;
-border-radius:10px;
-cursor:pointer;
-font-family:‘Nunito’,sans-serif;
-font-weight:700;
-font-size:.9rem;
-position:relative;
-transition:all .15s;
-}
+.topbar-btn{background:#e8f7fb;border:2px solid #b8e4f0;color:#1a202c;padding:9px 16px;border-radius:10px;cursor:pointer;font-family:‘Nunito’,sans-serif;font-weight:700;font-size:.9rem;position:relative;transition:all .15s}
 .topbar-btn:hover{background:#b8e4f0;border-color:#1a9bbb}
-.notif-badge{
-position:absolute;
-top:-5px;right:-5px;
-background:#e53e3e;
-color:#ffffff;
-border-radius:50%;
-width:18px;height:18px;
-font-size:.62rem;font-weight:900;
-display:flex;align-items:center;justify-content:center;
-border:2px solid #1a202c;
-}
+.notif-badge{position:absolute;top:-5px;right:-5px;background:#e53e3e;color:#ffffff;border-radius:50%;width:18px;height:18px;font-size:.62rem;font-weight:900;display:flex;align-items:center;justify-content:center;border:2px solid #1a202c}
 
-/* ── TABS ── */
+/* ── CARRELLO FISSO ── */
+.cart-badge-fixed{
+position:fixed;
+bottom:24px;
+right:20px;
+background:#1a9bbb;
+color:#1a202c;
+border-radius:50px;
+padding:12px 20px;
+font-weight:900;
+font-size:1rem;
+box-shadow:0 4px 20px rgba(26,155,187,.35);
+z-index:500;
+display:none;
+align-items:center;
+gap:8px;
+border:2px solid #0e7a9a;
+cursor:pointer;
+transition:all .2s;
+}
+.cart-badge-fixed:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(26,155,187,.45)}
+.cart-badge-fixed .cart-count{background:#e53e3e;color:#ffffff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:900}
+
+/* ── TOAST PRODOTTO ── */
+.product-toast{
+position:fixed;
+top:80px;
+left:50%;
+transform:translateX(-50%) translateY(-20px);
+background:#276749;
+color:#ffffff;
+padding:12px 24px;
+border-radius:40px;
+font-weight:800;
+font-size:.95rem;
+z-index:9998;
+opacity:0;
+transition:all .3s;
+pointer-events:none;
+white-space:nowrap;
+max-width:90vw;
+text-align:center;
+}
+.product-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
 .tabs{display:flex;background:#ffffff;border-bottom:2.5px solid #b8e4f0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{padding:16px 22px;border:none;background:none;cursor:pointer;font-family:“Nunito”,sans-serif;font-weight:800;font-size:1.05rem;color:#2d3748;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-2.5px;transition:all .15s}
 .tab.active{color:#0e7a9a;border-bottom-color:#1a9bbb}
 
-/* ── CONTENT ── */
 .content{flex:1;padding:16px;max-width:960px;margin:0 auto;width:100%}
 .section-title{font-family:“Playfair Display”,serif;font-size:1.35rem;color:#0e7a9a;margin-bottom:14px}
 .divider{border:none;border-top:2.5px solid #b8e4f0;margin:16px 0}
 .mt-12{margin-top:14px}
 
-/* ── TABLES ── */
 .tables-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:13px}
-.table-card{
-background:#ffffff;
-border-radius:18px;
-padding:20px 14px;
-text-align:center;
-cursor:pointer;
-transition:all .2s;
-box-shadow:0 2px 16px rgba(26,155,187,.12);
-border:2.5px solid #b8e4f0;
-position:relative;
-}
+.table-card{background:#ffffff;border-radius:18px;padding:20px 14px;text-align:center;cursor:pointer;transition:all .2s;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2.5px solid #b8e4f0;position:relative}
 .table-card:hover,.table-card:active{transform:translateY(-3px);box-shadow:0 6px 32px rgba(26,155,187,.18);border-color:#1a9bbb}
 .table-card.has-order{border-color:#dd6b20;border-width:3px}
 .table-card.ready{border-color:#38a169;border-width:3px}
@@ -164,7 +134,6 @@ position:relative;
 .badge-note{position:absolute;top:-7px;left:-7px;background:#805ad5;color:#ffffff;border-radius:50%;width:22px;height:22px;font-size:.72rem;display:flex;align-items:center;justify-content:center}
 .badge-res{position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);background:#805ad5;color:#ffffff;border-radius:10px;padding:2px 9px;font-size:.68rem;font-weight:800;white-space:nowrap}
 
-/* ── ORDER PANEL ── */
 .order-panel{background:#ffffff;border-radius:18px;box-shadow:0 2px 16px rgba(26,155,187,.12);overflow:hidden;border:2px solid #b8e4f0}
 .order-header{background:#e8f7fb;color:#1a202c;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:2px solid #b8e4f0}
 .order-header h2{font-family:‘Playfair Display’,serif;font-size:1.4rem;color:#0e7a9a}
@@ -173,9 +142,10 @@ position:relative;
 .cat-btn{padding:12px 20px;border-radius:24px;border:2.5px solid #b8e4f0;background:#ffffff;cursor:pointer;font-family:“Nunito”,sans-serif;font-weight:800;font-size:1rem;color:#2d3748;transition:all .15s}
 .cat-btn.active{background:#1a9bbb;border-color:#1a9bbb;color:#1a202c}
 .cat-btn:hover{border-color:#1a9bbb}
+.cat-btn.gf-cat{border-color:#276749;color:#276749;font-weight:900}
+.cat-btn.gf-cat.active{background:#276749;border-color:#276749;color:#ffffff}
 
-/* ── MENU GRID ── */
-.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-height:360px;overflow-y:auto;padding-right:3px}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-height:400px;overflow-y:auto;padding-right:3px}
 @media(max-width:500px){.menu-grid{grid-template-columns:1fr}}
 .menu-item{border:2.5px solid #b8e4f0;border-radius:12px;padding:13px;cursor:pointer;transition:all .18s;position:relative;background:#ffffff}
 .menu-item:hover{border-color:#1a9bbb;background:#e8f7fb}
@@ -185,24 +155,24 @@ position:relative;
 .mi-name{font-weight:900;font-size:1.1rem;color:#0e7a9a}
 .mi-desc{font-size:.85rem;color:#2d3748;line-height:1.4;margin-top:3px}
 .mi-price{font-weight:900;color:#0e7a9a;font-size:1.05rem;margin-top:5px}
-
-/* ── GLUTEN FREE stile speciale ── */
 .menu-item.gf-item{border-color:#276749;background:#f0fff4}
 .menu-item.gf-item:hover{background:#c6f6d5;border-color:#276749}
 .menu-item.gf-item .mi-name{color:#276749;font-weight:900}
 .menu-item.gf-item .mi-price{color:#276749;font-weight:900}
-.menu-item.gf-item .mi-desc{color:#2d3748}
-.cat-btn.gf-cat{border-color:#276749;color:#276749;font-weight:900}
-.cat-btn.gf-cat.active{background:#276749;border-color:#276749;color:#ffffff}
 
-/* ── INLINE NOTE ── */
-.inline-note{background:#e8f7fb;border:2px solid #1a9bbb;border-radius:12px;padding:12px 13px;margin-top:8px;animation:slideDown .18s ease}
+/* ── INLINE NOTE + QTY ── */
+.inline-note{background:#e8f7fb;border:2px solid #1a9bbb;border-radius:12px;padding:14px;margin-top:8px;animation:slideDown .18s ease;grid-column:1/-1}
 @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.inline-note-title{font-weight:800;font-size:.95rem;color:#0e7a9a;margin-bottom:10px}
+.inline-qty-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.inline-qty-btn{width:36px;height:36px;border-radius:50%;border:2.5px solid #1a9bbb;background:#ffffff;cursor:pointer;font-size:1.3rem;font-weight:900;color:#0e7a9a;display:flex;align-items:center;justify-content:center;transition:all .1s;flex-shrink:0}
+.inline-qty-btn:hover,.inline-qty-btn:active{background:#1a9bbb;color:#1a202c}
+.inline-qty-display{font-size:1.4rem;font-weight:900;color:#1a202c;min-width:32px;text-align:center}
+.inline-qty-total{font-size:1rem;font-weight:900;color:#0e7a9a;margin-left:4px}
 .inline-note-input{width:100%;padding:10px 13px;border:2px solid #b8e4f0;border-radius:10px;font-family:‘Nunito’,sans-serif;font-size:.95rem;outline:none;background:#ffffff;color:#1a202c}
 .inline-note-input:focus{border-color:#1a9bbb}
-.inline-note-actions{display:flex;gap:8px;margin-top:9px}
+.inline-note-actions{display:flex;gap:8px;margin-top:10px}
 
-/* ── ORDER LIST ── */
 .order-list{margin-top:12px}
 .order-row{display:flex;align-items:flex-start;gap:9px;padding:10px 0;border-bottom:2px solid #b8e4f0}
 .order-row:last-child{border-bottom:none}
@@ -216,7 +186,9 @@ position:relative;
 .order-total-row{font-size:1.3rem;font-weight:900;color:#0e7a9a;text-align:right;margin-top:12px;padding-top:12px;border-top:2.5px solid #b8e4f0}
 .order-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
 
-/* ── KITCHEN ── */
+/* ── BANNER INVIO PARZIALE ── */
+.partial-banner{background:#fff3e0;border:2px solid #dd6b20;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:.9rem;font-weight:700;color:#7b3a10;display:flex;align-items:center;gap:8px}
+
 .kitchen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
 .kcard{background:#ffffff;border-radius:18px;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0;border-left:6px solid #dd6b20;overflow:hidden}
 .kcard.k-ready{border-left-color:#38a169}
@@ -242,7 +214,6 @@ position:relative;
 .kc-item-note{font-size:.82rem;color:#dd6b20;font-style:italic;font-weight:600;display:block;margin-top:2px}
 .kc-foot{padding:10px 15px;display:flex;gap:8px;flex-wrap:wrap;border-top:2px solid #f0f4f8}
 
-/* ── CASSA ── */
 .cassa-row{display:flex;align-items:center;background:#ffffff;border-radius:12px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 16px rgba(26,155,187,.12);gap:12px;cursor:pointer;border:2.5px solid #b8e4f0;transition:all .15s}
 .cassa-row:hover{border-color:#1a9bbb}
 .cr-name{font-weight:900;font-size:1.15rem;color:#0e7a9a;flex:1}
@@ -250,7 +221,6 @@ position:relative;
 .cr-total{font-weight:900;font-size:1.15rem;color:#0e7a9a;flex-shrink:0}
 .cr-status{font-size:.8rem;font-weight:800;padding:4px 11px;border-radius:20px;flex-shrink:0}
 
-/* ── BILL ── */
 .bill-row{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:2px solid #b8e4f0}
 .bill-row:last-child{border-bottom:none}
 .bill-row-name{flex:1;font-size:.95rem;font-weight:700;color:#1a202c}
@@ -260,7 +230,6 @@ position:relative;
 .bill-total-row{display:flex;justify-content:space-between;font-size:1.25rem;font-weight:900;padding-top:12px;color:#1a202c}
 .pay-btns{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
 
-/* ── CHAT ── */
 .chat-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px}
 .chat-msg{max-width:78%;padding:10px 14px;border-radius:16px;font-size:.95rem}
 .chat-msg.me{background:#e8f7fb;color:#1a202c;align-self:flex-end;border-bottom-right-radius:4px;border:1.5px solid #b8e4f0}
@@ -268,13 +237,11 @@ position:relative;
 .chat-author{font-size:.75rem;font-weight:800;margin-bottom:3px;color:#0e7a9a}
 .chat-time{font-size:.7rem;color:#4a5568;margin-top:3px;text-align:right}
 
-/* ── STATS ── */
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:11px}
 .stat-card{background:#ffffff;border-radius:18px;padding:20px 16px;text-align:center;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0}
 .stat-val{font-size:2rem;font-weight:900;color:#0e7a9a}
 .stat-lbl{font-size:.9rem;color:#2d3748;font-weight:700;margin-top:4px}
 
-/* ── SETTINGS ── */
 .settings-section{margin-bottom:24px}
 .settings-section h3{font-family:‘Playfair Display’,serif;color:#0e7a9a;font-size:1.2rem;margin-bottom:12px;padding-bottom:8px;border-bottom:2.5px solid #b8e4f0}
 .s-input{flex:1;min-width:100px;padding:11px 14px;border:2.5px solid #b8e4f0;border-radius:12px;font-family:‘Nunito’,sans-serif;font-size:.95rem;outline:none;background:#ffffff;color:#1a202c}
@@ -286,7 +253,6 @@ position:relative;
 .add-form{background:#e8f7fb;border-radius:12px;padding:15px;margin-top:11px;border:2px solid #b8e4f0}
 .add-form label{font-size:.85rem;font-weight:800;color:#2d3748;display:block;margin-bottom:4px}
 
-/* ── UTILS ── */
 .pill{display:inline-block;padding:3px 11px;border-radius:20px;font-size:.8rem;font-weight:800}
 .pill-blue{background:#e8f7fb;color:#0e7a9a}
 .pill-green{background:#e6f4ea;color:#1a5c33}
@@ -309,26 +275,25 @@ position:relative;
 
 <div id="splash">
   <div class="role-grid">
-    <div class="role-btn" onclick="selectRole('cameriere')">
-      <div class="icon">🍽️</div><div class="label">Cameriere</div><div class="desc">Prendi ordini, gestisci tavoli</div>
-    </div>
-    <div class="role-btn" onclick="selectRole('pizzeria')">
-      <div class="icon">🍕</div><div class="label">Pizzeria</div><div class="desc">Visualizza ordini pizze</div>
-    </div>
-    <div class="role-btn" onclick="selectRole('cucina')">
-      <div class="icon">👨‍🍳</div><div class="label">Cucina</div><div class="desc">Visualizza ordini cucina</div>
-    </div>
-    <div class="role-btn" onclick="selectRole('polleria')">
-      <div class="icon">🍗</div><div class="label">Polleria</div><div class="desc">Visualizza ordini pollo</div>
-    </div>
-    <div class="role-btn cassa-btn" onclick="openPassModal('cassa')">
-      <div class="icon">💰</div><div class="label">Cassa</div><div class="desc">Conti, menù, impostazioni</div>
-    </div>
-    <div class="role-btn cassa-btn" onclick="openPassModal('cassa_polleria')">
-      <div class="icon">🍗💰</div><div class="label">Cassa Polleria</div><div class="desc">Conti, menù, impostazioni</div>
-    </div>
+    <div class="role-btn" onclick="selectRole('cameriere')"><div class="icon">🍽️</div><div class="label">Cameriere</div><div class="desc">Prendi ordini, gestisci tavoli</div></div>
+    <div class="role-btn" onclick="selectRole('pizzeria')"><div class="icon">🍕</div><div class="label">Pizzeria</div><div class="desc">Visualizza ordini pizze</div></div>
+    <div class="role-btn" onclick="selectRole('cucina')"><div class="icon">👨‍🍳</div><div class="label">Cucina</div><div class="desc">Visualizza ordini cucina</div></div>
+    <div class="role-btn" onclick="selectRole('polleria')"><div class="icon">🍗</div><div class="label">Polleria</div><div class="desc">Visualizza ordini pollo</div></div>
+    <div class="role-btn cassa-btn" onclick="openPassModal('cassa')"><div class="icon">💰</div><div class="label">Cassa</div><div class="desc">Conti, menù, impostazioni</div></div>
+    <div class="role-btn cassa-btn" onclick="openPassModal('cassa_polleria')"><div class="icon">🍗💰</div><div class="label">Cassa Polleria</div><div class="desc">Conti, menù, impostazioni</div></div>
   </div>
 </div>
+
+<!-- CARRELLO FISSO -->
+
+<div class="cart-badge-fixed" id="cartBadgeFixed" onclick="scrollToOrder()">
+  🛒 <span id="cartBadgeText">0 articoli</span>
+  <span class="cart-count" id="cartBadgeCount">0</span>
+</div>
+
+<!-- PRODUCT TOAST -->
+
+<div class="product-toast" id="productToast"></div>
 
 <!-- PASSWORD MODAL -->
 
@@ -349,12 +314,9 @@ position:relative;
 <div class="modal-overlay" id="editTableModal">
   <div class="modal-box">
     <h3>✏️ Modifica Tavolo</h3>
-    <label class="modal-label">Nome</label>
-    <input class="modal-input" id="etName" placeholder="Es. Tavolo 1">
-    <label class="modal-label">Coperti</label>
-    <input class="modal-input" id="etCovers" type="number" min="1" max="30">
-    <label class="modal-label">Note (allergeni, preferenze…)</label>
-    <input class="modal-input" id="etNote" placeholder="Es. Allergico ai crostacei">
+    <label class="modal-label">Nome</label><input class="modal-input" id="etName" placeholder="Es. Tavolo 1">
+    <label class="modal-label">Coperti</label><input class="modal-input" id="etCovers" type="number" min="1" max="30">
+    <label class="modal-label">Note</label><input class="modal-input" id="etNote" placeholder="Es. Allergico ai crostacei">
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="closeModal('editTableModal')">Annulla</button>
       <button class="btn btn-primary" onclick="saveEditTable()">Salva</button>
@@ -367,12 +329,9 @@ position:relative;
 <div class="modal-overlay" id="reservationModal">
   <div class="modal-box">
     <h3>📅 Prenotazione</h3>
-    <label class="modal-label">Nome cliente</label>
-    <input class="modal-input" id="resName" placeholder="Es. Rossi">
-    <label class="modal-label">Ora</label>
-    <input class="modal-input" id="resTime" placeholder="Es. 20:30">
-    <label class="modal-label">Coperti</label>
-    <input class="modal-input" id="resCovers" type="number" min="1" max="30">
+    <label class="modal-label">Nome cliente</label><input class="modal-input" id="resName" placeholder="Es. Rossi">
+    <label class="modal-label">Ora</label><input class="modal-input" id="resTime" placeholder="Es. 20:30">
+    <label class="modal-label">Coperti</label><input class="modal-input" id="resCovers" type="number" min="1" max="30">
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="closeModal('reservationModal')">Annulla</button>
       <button class="btn btn-danger btn-sm" onclick="removeReservation()">Rimuovi</button>
@@ -460,12 +419,9 @@ position:relative;
 <div class="modal-overlay" id="changePassModal">
   <div class="modal-box">
     <h3>🔑 Cambia Password</h3>
-    <label class="modal-label">Password attuale</label>
-    <input type="password" class="modal-input" id="cpOld" placeholder="Password attuale">
-    <label class="modal-label">Nuova password</label>
-    <input type="password" class="modal-input" id="cpNew" placeholder="Nuova password">
-    <label class="modal-label">Conferma</label>
-    <input type="password" class="modal-input" id="cpConfirm" placeholder="Conferma password">
+    <label class="modal-label">Password attuale</label><input type="password" class="modal-input" id="cpOld" placeholder="Password attuale">
+    <label class="modal-label">Nuova password</label><input type="password" class="modal-input" id="cpNew" placeholder="Nuova password">
+    <label class="modal-label">Conferma</label><input type="password" class="modal-input" id="cpConfirm" placeholder="Conferma password">
     <div class="error-msg" id="cpError" style="display:none"></div>
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="closeModal('changePassModal')">Annulla</button>
@@ -511,8 +467,7 @@ position:relative;
 <script>
 function closeModal(id){ document.getElementById(id).classList.remove("active"); }
 function openModal(id){ document.getElementById(id).classList.add("active"); }
-window.closeModal = closeModal;
-window.openModal = openModal;
+window.closeModal=closeModal; window.openModal=openModal;
 </script>
 
 <script type="module">
@@ -536,15 +491,13 @@ let tables={}, menuData={}, orders={}, dailyStats={}, settings={}, chatMsgs={};
 let unsubFns=[];
 let selectedTable=null, currentCat=null, tempOrder=[];
 let billTableId=null, billExtras=[], editingTableId=null, mergeSrcId=null, moveSrcId=null;
-let chatUnread=0, selectedMenuItem=null;
-let lastChatCount=0;
+let chatUnread=0, selectedMenuItem=null, inlineQty=1, lastChatCount=0;
 
 const DEFAULT_SETTINGS={password:"pietro",coperto:1.50,restaurantName:"Saverio Pizza e Pollo",soundEnabled:true};
 const DEFAULT_TABLES={};
 for(let i=1;i<=10;i++) DEFAULT_TABLES[`t${i}`]={name:`Tavolo ${i}`,covers:4,note:''};
 
-// Pizze in ordine alfabetico (normali + allungate unificate)
-const PIZZE_ITEMS = {
+const PIZZE_ITEMS={
   quattro_formaggi:{name:"4 Formaggi",price:8.00,desc:"Mozzarella, emmenthal, grana e gorgonzola",separate:true},
   quattro_gusti:{name:"4 Gusti",price:8.00,desc:"Pomodoro, mozzarella, prosciutto cotto, carciofi e wurstel",separate:true},
   quattrostagioni:{name:"4 Stagioni",price:9.00,desc:"Pomodoro, mozzarella, pomodorini, crudo, rucola e grana",separate:true},
@@ -679,38 +632,28 @@ function playWhoosh(){
       const t=i/c.sampleRate;
       d[i]=Math.sin(2*Math.PI*(800-1500*t)*t)*Math.exp(-8*t)*(Math.random()*0.3+0.7);
     }
-    const s=c.createBufferSource();
-    const g=c.createGain();
+    const s=c.createBufferSource(),g=c.createGain();
     s.buffer=b; s.connect(g); g.connect(c.destination);
     g.gain.setValueAtTime(0.4,c.currentTime);
     g.gain.exponentialRampToValueAtTime(0.001,c.currentTime+0.4);
     s.start(); s.stop(c.currentTime+0.4);
   }catch(e){}
 }
-
 function playCampanella(){
   try{
-    const c=new AudioContext();
-    const g=c.createGain();
-    g.connect(c.destination);
+    const c=new AudioContext(),g=c.createGain(); g.connect(c.destination);
     [880,1100,1320].forEach((freq,i)=>{
-      const o=c.createOscillator();
-      o.connect(g); o.frequency.value=freq; o.type='sine';
+      const o=c.createOscillator(); o.connect(g); o.frequency.value=freq; o.type='sine';
       const t=c.currentTime+i*0.12;
-      g.gain.setValueAtTime(0.35,t);
-      g.gain.exponentialRampToValueAtTime(0.001,t+0.6);
+      g.gain.setValueAtTime(0.35,t); g.gain.exponentialRampToValueAtTime(0.001,t+0.6);
       o.start(t); o.stop(t+0.6);
     });
   }catch(e){}
 }
-
 function playChatPop(){
   try{
-    const c=new AudioContext();
-    const o=c.createOscillator();
-    const g=c.createGain();
-    o.connect(g); g.connect(c.destination);
-    o.frequency.value=1200; o.type='sine';
+    const c=new AudioContext(),o=c.createOscillator(),g=c.createGain();
+    o.connect(g); g.connect(c.destination); o.frequency.value=1200; o.type='sine';
     g.gain.setValueAtTime(0.15,c.currentTime);
     g.gain.exponentialRampToValueAtTime(0.001,c.currentTime+0.18);
     o.start(); o.stop(c.currentTime+0.18);
@@ -728,6 +671,10 @@ function listen(path,cb){ const u=onValue(ref(db,path),snap=>{cb(snap.val()||{})
 function stopAll(){ unsubFns.forEach(u=>u()); unsubFns=[]; }
 function fmt(n){ return '€'+Number(n).toFixed(2).replace('.',','); }
 function showToast(msg,dur=2800){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),dur); }
+function showProductToast(msg){
+  const t=document.getElementById('productToast'); t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),1800);
+}
 function getTimerLabel(ts){
   if(!ts) return {label:'—',cls:'t-green'};
   const m=Math.floor((Date.now()-ts)/60000);
@@ -744,12 +691,27 @@ function getStatusClass(ord){
   if(ord.items&&(Array.isArray(ord.items)?ord.items.length:Object.keys(ord.items).length)) return 'has-order';
   return '';
 }
+function isGlutenFree(catId){ return (menuData[catId]?.label||'').toUpperCase().includes('GLUTEN'); }
 
-// Controlla se la categoria è Gluten Free
-function isGlutenFree(catId){
-  const lbl=(menuData[catId]?.label||'').toUpperCase();
-  return lbl.includes('GLUTEN');
+function updateCartBadge(){
+  const total=tempOrder.reduce((s,it)=>s+(it.qty||1),0);
+  const badge=document.getElementById('cartBadgeFixed');
+  const count=document.getElementById('cartBadgeCount');
+  const text=document.getElementById('cartBadgeText');
+  if(!badge) return;
+  if(total>0&&currentRole==='cameriere'&&selectedTable){
+    badge.style.display='flex';
+    count.textContent=total;
+    text.textContent=`${total} articol${total===1?'o':'i'}`;
+  } else {
+    badge.style.display='none';
+  }
 }
+
+window.scrollToOrder=function(){
+  const el=document.querySelector('.order-list')||document.querySelector('.order-actions');
+  if(el) el.scrollIntoView({behavior:'smooth'});
+};
 
 window.selectRole=async function(role){
   currentRole=role;
@@ -765,8 +727,7 @@ window.selectRole=async function(role){
   listen('tables',t=>{ tables=t; });
   listen('menu',m=>{ menuData=m; });
   listen('orders',o=>{
-    const prev=JSON.stringify(orders);
-    orders=o||{};
+    const prev=JSON.stringify(orders); orders=o||{};
     if(JSON.stringify(orders)!==prev&&(currentRole==='cucina'||currentRole==='pizzeria'||currentRole==='polleria')){
       if(settings.soundEnabled!==false) playCampanella();
     }
@@ -775,18 +736,13 @@ window.selectRole=async function(role){
   listen('dailyStats',s=>{ dailyStats=s; });
   listen('chat',c=>{
     const newCount=Object.keys(c||{}).length;
-    if(newCount>lastChatCount && lastChatCount>0){
-      if(settings.soundEnabled!==false) playChatPop();
-    }
-    lastChatCount=newCount;
-    chatMsgs=c||{};
-    updateChatBadge();
-    renderChatIfOpen();
+    if(newCount>lastChatCount&&lastChatCount>0){ if(settings.soundEnabled!==false) playChatPop(); }
+    lastChatCount=newCount; chatMsgs=c||{}; updateChatBadge(); renderChatIfOpen();
   });
   renderRole();
 };
 
-window.goBack=function(){ stopAll(); currentRole=null; selectedTable=null; tempOrder=[]; lastChatCount=0; document.getElementById('splash').style.display='flex'; document.getElementById('app').style.display='none'; };
+window.goBack=function(){ stopAll(); currentRole=null; selectedTable=null; tempOrder=[]; lastChatCount=0; updateCartBadge(); document.getElementById('splash').style.display='flex'; document.getElementById('app').style.display='none'; };
 
 let pendingRole=null;
 window.openPassModal=function(role){ pendingRole=role; document.getElementById('passInput').value=''; document.getElementById('passError').style.display='none'; openModal('passModal'); setTimeout(()=>document.getElementById('passInput').focus(),100); };
@@ -794,7 +750,7 @@ window.checkPass=async function(){
   const ssnap=await get(ref(db,'settings'));
   const pw=ssnap.exists()?(ssnap.val().password||'pietro'):'pietro';
   if(document.getElementById('passInput').value===pw){ closeModal('passModal'); selectRole(pendingRole); }
-  else { document.getElementById('passError').style.display='block'; }
+  else{ document.getElementById('passError').style.display='block'; }
 };
 
 function renderRole(){
@@ -813,7 +769,7 @@ function renderCameriere(){
   mc.innerHTML=`
     <div class="tabs">
       <button class="tab ${camTab==='tables'?'active':''}" onclick="setCamTab('tables')">🍽️ Tavoli</button>
-      ${selectedTable?`<button class="tab ${camTab==='order'?'active':''}" onclick="setCamTab('order')">📝 Ordine</button>`:''}
+      ${selectedTable?`<button class="tab ${camTab==='order'?'active':''}" onclick="setCamTab('order')">📝 Ordine ${tempOrder.length?`<span style="background:#e53e3e;color:#fff;border-radius:50%;padding:1px 6px;font-size:.75rem;margin-left:4px">${tempOrder.reduce((s,i)=>s+(i.qty||1),0)}</span>`:''}</button>`:''}
     </div>
     <div class="content" id="camContent"></div>`;
   if(camTab==='tables') renderTablesList();
@@ -851,20 +807,21 @@ function renderTablesList(){
     <div style="margin-top:16px"><button class="btn btn-secondary btn-sm" onclick="addTable()">➕ Aggiungi Tavolo</button></div>`;
 }
 
-window.openTable=function(tid){ selectedTable=tid; camTab='order'; tempOrder=[]; selectedMenuItem=null; renderCameriere(); };
+window.openTable=function(tid){
+  selectedTable=tid; camTab='order'; tempOrder=[]; selectedMenuItem=null; inlineQty=1;
+  renderCameriere();
+};
 
 function renderOrderPanel(){
   const c=document.getElementById('camContent'); if(!c) return;
   const t=tables[selectedTable]||{},ord=orders[selectedTable];
-  if(ord&&ord.items&&tempOrder.length===0){
-    const items=ord.items;
-    tempOrder=Array.isArray(items)?JSON.parse(JSON.stringify(items)):Object.values(JSON.parse(JSON.stringify(items)));
-  }
   const cats=Object.keys(menuData);
   if(!currentCat||!menuData[currentCat]) currentCat=cats[0];
   const catItems=menuData[currentCat]?.items||{};
   const status=ord?.status||'free';
   const gf=isGlutenFree(currentCat);
+  const existingItems=ord?.items?(Array.isArray(ord.items)?ord.items:Object.values(ord.items)):[];
+  const hasExisting=existingItems.length>0;
 
   c.innerHTML=`
     <div class="order-panel mt-12">
@@ -881,6 +838,7 @@ function renderOrderPanel(){
         </div>
       </div>
       <div class="order-body">
+        ${hasExisting&&status!=='paid'?`<div class="partial-banner">⚠️ Ordine già inviato — aggiungi nuovi articoli e premi <strong>Invia Aggiunta</strong></div>`:''}
         <div class="section-title">📋 Menù</div>
         <div class="cat-tabs">${cats.map(cid=>{
           const gfCat=isGlutenFree(cid);
@@ -888,33 +846,40 @@ function renderOrderPanel(){
         }).join('')}</div>
         <div class="menu-grid" id="menuGrid">${renderMenuItems(catItems,gf)}</div>
         <hr class="divider">
-        <div class="section-title">🛒 Ordine corrente</div>
+        <div class="section-title">🛒 ${hasExisting&&status!=='paid'?'Aggiunte':'Ordine corrente'}</div>
         ${renderCurrentOrder()}
         <div class="order-actions">
-          ${tempOrder.length&&status!=='paid'?`<button class="btn btn-primary" onclick="sendOrder()">📤 Invia Ordine</button>`:''}
+          ${tempOrder.length&&status!=='paid'?`<button class="btn btn-primary" onclick="sendOrder()">📤 ${hasExisting?'Invia Aggiunta':'Invia Ordine'}</button>`:''}
           <button class="btn btn-secondary" onclick="goTables()">← Tavoli</button>
           ${ord&&ord.items?`<button class="btn btn-warning btn-sm" onclick="openMerge('${selectedTable}')">🔗 Unisci</button><button class="btn btn-secondary btn-sm" onclick="openMove('${selectedTable}')">↔️ Sposta</button>`:''}
         </div>
       </div>
     </div>`;
+  updateCartBadge();
 }
 
-function renderMenuItems(catItems, gf=false){
+function renderMenuItems(catItems,gf=false){
   return Object.keys(catItems).map(iid=>{
     const item=catItems[iid];
     const so=item.soldOut?'sold-out':'';
     const sel=(selectedMenuItem===iid)?'selected':'';
     const gfClass=gf?'gf-item':'';
+    const nameColor=gf?'color:#276749;font-weight:900':'';
     return `<div class="menu-item ${so} ${sel} ${gfClass}" id="mi_${iid}" onclick="${item.soldOut?'':(`selectMenuItem('${iid}','${currentCat}')`)}">
-      <div class="mi-name" style="${gf?'color:#276749;font-weight:900':''}">${item.name}</div>
+      <div class="mi-name" style="${nameColor}">${item.name}</div>
       ${item.desc?`<div class="mi-desc">${item.desc}</div>`:''}
-      <div class="mi-price" style="${gf?'color:#276749;font-weight:900':''}">${fmt(item.price)}</div>
-      ${item.soldOut?'<div style="font-size:.7rem;color:#e53e3e;font-weight:800;margin-top:3px">ESAURITO</div>':''}
+      <div class="mi-price" style="${nameColor}">${fmt(item.price)}</div>
     </div>
     ${selectedMenuItem===iid?`
-    <div class="inline-note" id="inlineNote_${iid}" style="grid-column:1/-1">
-      <div style="font-weight:800;font-size:.92rem;color:#0e7a9a;margin-bottom:8px">✏️ ${item.name} — aggiungi nota</div>
-      <input class="inline-note-input" id="inlineNoteInput_${iid}" placeholder="Nota opzionale…" onkeydown="if(event.key==='Enter')confirmInlineItem('${iid}','${currentCat}')">
+    <div class="inline-note" id="inlineNote_${iid}">
+      <div class="inline-note-title">✏️ ${item.name}</div>
+      <div class="inline-qty-row">
+        <button class="inline-qty-btn" onclick="changeInlineQty(-1,'${iid}','${currentCat}')">−</button>
+        <span class="inline-qty-display" id="inlineQtyDisplay">${inlineQty}</span>
+        <button class="inline-qty-btn" onclick="changeInlineQty(1,'${iid}','${currentCat}')">+</button>
+        <span class="inline-qty-total">${fmt(item.price*inlineQty)}</span>
+      </div>
+      <input class="inline-note-input" id="inlineNoteInput_${iid}" placeholder="Nota opzionale (es. senza cipolla)…" onkeydown="if(event.key==='Enter')confirmInlineItem('${iid}','${currentCat}')">
       <div class="inline-note-actions">
         <button class="btn btn-primary btn-sm" onclick="confirmInlineItem('${iid}','${currentCat}')">✅ Aggiungi</button>
         <button class="btn btn-secondary btn-sm" onclick="cancelInlineItem()">Annulla</button>
@@ -923,12 +888,23 @@ function renderMenuItems(catItems, gf=false){
   }).join('');
 }
 
+window.changeInlineQty=function(delta,iid,catId){
+  inlineQty=Math.max(1,inlineQty+delta);
+  const disp=document.getElementById('inlineQtyDisplay');
+  if(disp) disp.textContent=inlineQty;
+  const item=menuData[catId]?.items?.[iid];
+  if(item){
+    const totalEl=disp?.parentElement?.querySelector('.inline-qty-total');
+    if(totalEl) totalEl.textContent=fmt(item.price*inlineQty);
+  }
+};
+
 window.selectMenuItem=function(iid,catId){
-  if(selectedMenuItem===iid){ selectedMenuItem=null; }
-  else { selectedMenuItem=iid; }
+  if(selectedMenuItem===iid){ selectedMenuItem=null; inlineQty=1; }
+  else { selectedMenuItem=iid; inlineQty=1; }
   const gf=isGlutenFree(catId);
   const grid=document.getElementById('menuGrid');
-  if(grid){ grid.innerHTML=renderMenuItems(menuData[catId]?.items||{},gf); }
+  if(grid) grid.innerHTML=renderMenuItems(menuData[catId]?.items||{},gf);
   if(selectedMenuItem){ setTimeout(()=>{ const inp=document.getElementById(`inlineNoteInput_${iid}`); if(inp) inp.focus(); },100); }
 };
 
@@ -938,20 +914,21 @@ window.confirmInlineItem=function(iid,catId){
   const sep=item.separate||false;
   const noteEl=document.getElementById(`inlineNoteInput_${iid}`);
   const note=noteEl?noteEl.value.trim():'';
+  const qty=inlineQty||1;
   if(!sep&&!note){
     const existing=tempOrder.find(it=>it.iid===iid&&!it.note);
-    if(existing){ existing.qty=(existing.qty||1)+1; }
-    else { tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty:1,note:'',dest,separate:sep}); }
+    if(existing){ existing.qty=(existing.qty||1)+qty; }
+    else { tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty,note:'',dest,separate:sep}); }
   } else {
-    tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty:1,note,dest,separate:sep});
+    tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty,note,dest,separate:sep});
   }
-  selectedMenuItem=null;
+  selectedMenuItem=null; inlineQty=1;
+  showProductToast(`✅ ×${qty} ${item.name} aggiunto`);
   renderOrderPanel();
-  showToast(`✅ ${item.name} aggiunto`);
 };
 
 window.cancelInlineItem=function(){
-  selectedMenuItem=null;
+  selectedMenuItem=null; inlineQty=1;
   const gf=isGlutenFree(currentCat);
   const grid=document.getElementById('menuGrid');
   if(grid&&currentCat&&menuData[currentCat]) grid.innerHTML=renderMenuItems(menuData[currentCat].items||{},gf);
@@ -968,27 +945,37 @@ function renderCurrentOrder(){
       <div class="or-qty">
         <button class="qty-btn" onclick="removeOrderItem(${i})">−</button>
         <span style="font-weight:900;min-width:20px;text-align:center;font-size:1rem;color:#1a202c">${it.qty||1}</span>
-        ${!it.separate?`<button class="qty-btn" onclick="addQty(${i})">+</button>`:`<button class="qty-btn" onclick="duplicateItem(${i})" title="Aggiungi altro uguale">+</button>`}
+        <button class="qty-btn" onclick="addQty(${i})">+</button>
       </div>
       <div class="or-price">${fmt((it.price||0)*(it.qty||1))}</div>
     </div>`).join('');
   const total=tempOrder.reduce((s,it)=>s+(it.price||0)*(it.qty||1),0);
-  return `<div class="order-list">${rows}</div><div class="order-total-row">Totale: ${fmt(total)}</div>`;
+  return `<div class="order-list">${rows}</div><div class="order-total-row">Totale aggiunta: ${fmt(total)}</div>`;
 }
 
-window.setCat=function(cid){ currentCat=cid; selectedMenuItem=null; renderOrderPanel(); };
+window.setCat=function(cid){ currentCat=cid; selectedMenuItem=null; inlineQty=1; renderOrderPanel(); };
 window.removeOrderItem=function(i){ if(!tempOrder[i]) return; if((tempOrder[i].qty||1)>1){ tempOrder[i].qty--; } else { tempOrder.splice(i,1); } renderOrderPanel(); };
 window.addQty=function(i){ if(tempOrder[i]) tempOrder[i].qty=(tempOrder[i].qty||1)+1; renderOrderPanel(); };
-window.duplicateItem=function(i){ if(tempOrder[i]){ const c=JSON.parse(JSON.stringify(tempOrder[i])); c.uid=Date.now()+'_'+Math.random(); c.note=''; tempOrder.splice(i+1,0,c); } renderOrderPanel(); };
-window.goTables=function(){ tempOrder=[]; selectedTable=null; camTab='tables'; selectedMenuItem=null; renderCameriere(); };
+window.goTables=function(){ tempOrder=[]; selectedTable=null; camTab='tables'; selectedMenuItem=null; inlineQty=1; updateCartBadge(); renderCameriere(); };
 window.clearTable=async function(){ if(!confirm('Svuotare il tavolo?')) return; await remove(ref(db,`orders/${selectedTable}`)); tempOrder=[]; showToast('Tavolo svuotato'); goTables(); };
 
 window.sendOrder=async function(){
   if(!tempOrder.length){ showToast('Aggiungi almeno un articolo!'); return; }
   const existing=orders[selectedTable];
-  await set(ref(db,`orders/${selectedTable}`),{tableId:selectedTable,tableName:tables[selectedTable]?.name||'',items:tempOrder,status:'pending',timestamp:existing?.timestamp||Date.now(),covers:tables[selectedTable]?.covers||1,newItems:true});
+  const existingItems=existing?.items?(Array.isArray(existing.items)?existing.items:Object.values(existing.items)):[];
+  // Unisce articoli esistenti con i nuovi
+  const merged=[...existingItems,...tempOrder];
+  await set(ref(db,`orders/${selectedTable}`),{
+    tableId:selectedTable,
+    tableName:tables[selectedTable]?.name||'',
+    items:merged,
+    status:'pending',
+    timestamp:existing?.timestamp||Date.now(),
+    covers:tables[selectedTable]?.covers||1,
+    newItems:true
+  });
   playWhoosh();
-  showToast('✅ Ordine inviato!');
+  showToast(`✅ ${existingItems.length?'Aggiunta inviata!':'Ordine inviato!'}`);
   tempOrder=[];
   goTables();
 };
@@ -1021,10 +1008,7 @@ function renderStation(role){
 
 function renderStationContent(role){
   const c=document.getElementById('stationContent'); if(!c) return;
-  const list=Object.entries(orders).filter(([,ord])=>{
-    if(!ord||ord.status==='reserved') return false;
-    return stationTab==='active'?ord.status!=='paid':ord.status==='paid';
-  }).sort((a,b)=>(a[1].timestamp||0)-(b[1].timestamp||0));
+  const list=Object.entries(orders).filter(([,ord])=>{ if(!ord||ord.status==='reserved') return false; return stationTab==='active'?ord.status!=='paid':ord.status==='paid'; }).sort((a,b)=>(a[1].timestamp||0)-(b[1].timestamp||0));
   if(!list.length){ c.innerHTML=`<div class="empty mt-12"><div class="e-icon">${role==='pizzeria'?'🍕':role==='polleria'?'🍗':'👨‍🍳'}</div><p>Nessun ordine ${stationTab==='active'?'in corso':'completato'}</p></div>`; return; }
   c.innerHTML=`<div class="kitchen-grid mt-12">${list.map(([tid,ord])=>{
     const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items||{});
