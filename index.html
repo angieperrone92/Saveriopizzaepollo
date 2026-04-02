@@ -67,12 +67,10 @@ body{font-family:'Nunito',sans-serif;background:#ffffff;color:#1a202c;min-height
 .divider{border:none;border-top:2.5px solid #b8e4f0;margin:16px 0}
 .mt-12{margin-top:14px}
 
-/* ── TAVOLI ── */
 .tables-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
 .table-card{background:#ffffff;border-radius:18px;padding:22px 16px;text-align:center;cursor:pointer;transition:all .2s;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2.5px solid #b8e4f0;position:relative;min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
 .table-card:hover,.table-card:active{transform:translateY(-3px);box-shadow:0 6px 32px rgba(26,155,187,.18);border-color:#1a9bbb}
 .table-card.has-order{border-color:#dd6b20;border-width:3px}
-.table-card.all-served{border-color:#38a169;border-width:3px}
 .table-card.paid{border-color:#cbd5e0;opacity:.6}
 .table-card.reserved{border-color:#805ad5;border-width:3px}
 .t-name{font-weight:900;font-size:1.4rem;color:#0e7a9a}
@@ -80,23 +78,18 @@ body{font-family:'Nunito',sans-serif;background:#ffffff;color:#1a202c;min-height
 .t-status{font-size:.88rem;font-weight:800;margin-top:7px;padding:5px 13px;border-radius:20px;display:inline-block}
 .s-free{background:#e8f7fb;color:#0e7a9a}
 .s-order{background:#fff3e0;color:#7b3a10}
-.s-ready{background:#e6f4ea;color:#1a5c33}
 .s-paid{background:#f0f4f8;color:#2d3748}
 .s-reserved{background:#faf5ff;color:#44337a}
 .t-total{font-size:.95rem;font-weight:900;color:#2d3748;margin-top:4px}
-
-/* ── TIMER TAVOLO ── */
 .t-timer{font-size:.82rem;font-weight:800;padding:3px 10px;border-radius:20px;margin-top:5px;display:inline-block}
 .t-timer.timer-green{background:#e6f4ea;color:#1a5c33}
 .t-timer.timer-yellow{background:#fef9c3;color:#7b4f00}
 .t-timer.timer-red{background:#fee2e2;color:#9b1c1c}
-
 .badge{position:absolute;top:-7px;right:-7px;background:#e53e3e;color:#ffffff;border-radius:50%;width:22px;height:22px;font-size:.72rem;font-weight:900;display:flex;align-items:center;justify-content:center}
 .badge-note{position:absolute;top:-7px;left:-7px;background:#805ad5;color:#ffffff;border-radius:50%;width:22px;height:22px;font-size:.72rem;display:flex;align-items:center;justify-content:center}
 .badge-res{position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);background:#805ad5;color:#ffffff;border-radius:10px;padding:2px 9px;font-size:.68rem;font-weight:800;white-space:nowrap}
 .draft-badge{position:absolute;top:-7px;right:-7px;background:#1a9bbb;color:#ffffff;border-radius:50%;width:22px;height:22px;font-size:.72rem;font-weight:900;display:flex;align-items:center;justify-content:center}
 
-/* ── CERCHI STAZIONE ── */
 .station-circles{display:flex;gap:14px;align-items:center;justify-content:center;margin-top:12px;padding-top:10px;border-top:2px solid #b8e4f0;width:100%}
 .station-circle-wrap{display:flex;flex-direction:column;align-items:center;gap:4px}
 .station-circle{width:38px;height:38px;border-radius:50%;border:3px solid #cbd5e0;background:#ffffff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .25s;cursor:default}
@@ -107,7 +100,6 @@ body{font-family:'Nunito',sans-serif;background:#ffffff;color:#1a202c;min-height
 @keyframes pulse-yellow{0%,100%{box-shadow:0 0 0 0 rgba(214,158,46,.4)}50%{box-shadow:0 0 0 6px rgba(214,158,46,0)}}
 .station-circle-label{font-size:.6rem;font-weight:800;color:#4a5568;text-transform:uppercase;letter-spacing:.5px}
 
-/* ── ORDER PANEL ── */
 .order-panel{background:#ffffff;border-radius:18px;box-shadow:0 2px 16px rgba(26,155,187,.12);overflow:hidden;border:2px solid #b8e4f0}
 .order-header{background:#e8f7fb;color:#1a202c;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:2px solid #b8e4f0}
 .order-header h2{font-family:‘Playfair Display’,serif;font-size:1.4rem;color:#0e7a9a}
@@ -160,7 +152,6 @@ body{font-family:'Nunito',sans-serif;background:#ffffff;color:#1a202c;min-height
 .order-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
 .partial-banner{background:#fff3e0;border:2px solid #dd6b20;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:.9rem;font-weight:700;color:#7b3a10;display:flex;align-items:center;gap:8px}
 
-/* ── KITCHEN ── */
 .kitchen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .kcard{background:#ffffff;border-radius:18px;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0;border-left:6px solid #dd6b20;overflow:hidden;position:relative}
 .kcard.k-ready{border-left-color:#38a169}
@@ -216,6 +207,14 @@ body{font-family:'Nunito',sans-serif;background:#ffffff;color:#1a202c;min-height
 .stat-card{background:#ffffff;border-radius:18px;padding:20px 16px;text-align:center;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0}
 .stat-val{font-size:2rem;font-weight:900;color:#0e7a9a}
 .stat-lbl{font-size:.9rem;color:#2d3748;font-weight:700;margin-top:4px}
+
+/* ── STORICO ── */
+.storico-row{display:flex;align-items:center;background:#ffffff;border-radius:12px;padding:13px 16px;margin-bottom:9px;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0;gap:12px}
+.storico-table{font-weight:900;font-size:1rem;color:#0e7a9a;min-width:80px}
+.storico-items{flex:1;font-size:.85rem;color:#2d3748;font-weight:600}
+.storico-total{font-weight:900;font-size:1rem;color:#1a202c;flex-shrink:0}
+.storico-method{font-size:.8rem;font-weight:800;padding:3px 10px;border-radius:20px;flex-shrink:0}
+.storico-time{font-size:.78rem;color:#4a5568;flex-shrink:0}
 
 .settings-section{margin-bottom:24px}
 .settings-section h3{font-family:‘Playfair Display’,serif;color:#0e7a9a;font-size:1.2rem;margin-bottom:12px;padding-bottom:8px;border-bottom:2.5px solid #b8e4f0}
@@ -427,17 +426,15 @@ let tables={},menuData={},orders={},dailyStats={},settings={},chatMsgs={};
 let unsubFns=[];
 let selectedTable=null,currentCat=null;
 let billTableId=null,billExtras=[],editingTableId=null,mergeSrcId=null,moveSrcId=null;
-let chatUnread=0,selectedMenuItem=null,inlineQty=1,lastChatCount=0;
-let wakeLock=null;
-let timerInterval=null;
-
-// ── SALVATAGGIO ORDINI PER TAVOLO ─────────────────────────────
-// Ogni tavolo ha il suo ordine in corso salvato in memoria
+let chatUnread=0,selectedMenuItem=null,inlineQty=1;
+let wakeLock=null,timerInterval=null;
+let chatInitialized=false;
+let lastOrdersJson='';
 const draftOrders={};
 
-function getDraft(tid){ return draftOrders[tid]||[]; }
-function setDraft(tid,items){ draftOrders[tid]=items; }
-function clearDraft(tid){ draftOrders[tid]=[]; }
+function getDraft(tid){return draftOrders[tid]||[];}
+function setDraft(tid,items){draftOrders[tid]=items;}
+function clearDraft(tid){draftOrders[tid]=[];}
 
 const DEFAULT_SETTINGS={password:"pietro",coperto:1.50,restaurantName:"Saverio Pizza e Pollo",soundEnabled:true};
 const DEFAULT_TABLES={};
@@ -519,56 +516,73 @@ const DEFAULT_MENU={
 
 // ── SUONI ────────────────────────────────────────────────────────
 function playWhoosh(){try{const c=new AudioContext(),b=c.createBuffer(1,c.sampleRate*0.4,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++){const t=i/c.sampleRate;d[i]=Math.sin(2*Math.PI*(800-1500*t)*t)*Math.exp(-8*t)*(Math.random()*0.3+0.7);}const s=c.createBufferSource(),g=c.createGain();s.buffer=b;s.connect(g);g.connect(c.destination);g.gain.setValueAtTime(0.4,c.currentTime);g.gain.exponentialRampToValueAtTime(0.001,c.currentTime+0.4);s.start();s.stop(c.currentTime+0.4);}catch(e){}}
-function playCampanella(){try{const c=new AudioContext(),g=c.createGain();g.connect(c.destination);[880,1100,1320].forEach((freq,i)=>{const o=c.createOscillator();o.connect(g);o.frequency.value=freq;o.type='sine';const t=c.currentTime+i*0.12;g.gain.setValueAtTime(0.35,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.6);o.start(t);o.stop(t+0.6);});}catch(e){}}
-function playChatPop(){try{const c=new AudioContext(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=1200;o.type='sine';g.gain.setValueAtTime(0.15,c.currentTime);g.gain.exponentialRampToValueAtTime(0.001,c.currentTime+0.18);o.start();o.stop(c.currentTime+0.18);}catch(e){}}
 
-// ── KEEP AWAKE ────────────────────────────────────────────────────
-async function requestWakeLock(){
+// Cucina: suono grave e profondo tipo "bong" — più lungo e forte
+function playSuonoCucina(){
   try{
-    if('wakeLock' in navigator){
-      wakeLock=await navigator.wakeLock.request('screen');
-    }
+    const c=new AudioContext(),g=c.createGain();g.connect(c.destination);
+    const dur=1.8;
+    // Nota bassa profonda
+    [120,180,240].forEach((freq,i)=>{
+      const o=c.createOscillator();o.connect(g);o.type='sine';o.frequency.value=freq;
+      const t=c.currentTime+i*0.05;
+      g.gain.setValueAtTime(0.6,t);g.gain.exponentialRampToValueAtTime(0.001,t+dur);
+      o.start(t);o.stop(t+dur);
+    });
   }catch(e){}
 }
+
+// Pizzeria: campana media — più lunga e sonora
+function playSuonoPizzeria(){
+  try{
+    const c=new AudioContext(),g=c.createGain();g.connect(c.destination);
+    const dur=1.5;
+    [660,880,1100,880,660].forEach((freq,i)=>{
+      const o=c.createOscillator();o.connect(g);o.type='sine';o.frequency.value=freq;
+      const t=c.currentTime+i*0.18;
+      g.gain.setValueAtTime(0.55,t);g.gain.exponentialRampToValueAtTime(0.001,t+dur);
+      o.start(t);o.stop(t+dur);
+    });
+  }catch(e){}
+}
+
+// Polleria: trillo acuto e vivace — più lungo
+function playSuonoPolleria(){
+  try{
+    const c=new AudioContext(),g=c.createGain();g.connect(c.destination);
+    const dur=1.2;
+    [1200,1500,1200,1500,1800,1500].forEach((freq,i)=>{
+      const o=c.createOscillator();o.connect(g);o.type='square';o.frequency.value=freq;
+      const t=c.currentTime+i*0.12;
+      g.gain.setValueAtTime(0.25,t);g.gain.exponentialRampToValueAtTime(0.001,t+dur);
+      o.start(t);o.stop(t+dur);
+    });
+  }catch(e){}
+}
+
+function playSuonoStazione(role){
+  if(role==='cucina') playSuonoCucina();
+  else if(role==='pizzeria') playSuonoPizzeria();
+  else if(role==='polleria') playSuonoPolleria();
+}
+
+function playChatPop(){try{const c=new AudioContext(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=1200;o.type='sine';g.gain.setValueAtTime(0.15,c.currentTime);g.gain.exponentialRampToValueAtTime(0.001,c.currentTime+0.18);o.start();o.stop(c.currentTime+0.18);}catch(e){}}
+
+// ── KEEP AWAKE ─────────────────────────────────────────────────
+async function requestWakeLock(){try{if('wakeLock' in navigator){wakeLock=await navigator.wakeLock.request('screen');}}catch(e){}}
 function releaseWakeLock(){try{if(wakeLock){wakeLock.release();wakeLock=null;}}catch(e){}}
 
-// ── TIMER ────────────────────────────────────────────────────────
-function getTableTimer(ts){
-  if(!ts) return null;
-  const m=Math.floor((Date.now()-ts)/60000);
-  const h=Math.floor(m/60);
-  const min=m%60;
-  const label=h>0?`${h}h ${min}m`:`${m} min`;
-  const cls=m<60?'timer-green':m<120?'timer-yellow':'timer-red';
-  return{label,cls};
-}
+// ── TIMER ──────────────────────────────────────────────────────
+function getTableTimer(ts){if(!ts)return null;const m=Math.floor((Date.now()-ts)/60000);const h=Math.floor(m/60);const min=m%60;const label=h>0?`${h}h ${min}m`:`${m} min`;const cls=m<60?'timer-green':m<120?'timer-yellow':'timer-red';return{label,cls};}
+function startTimerRefresh(){if(timerInterval)clearInterval(timerInterval);timerInterval=setInterval(()=>{if(currentRole==='cameriere')refreshTimers();},60000);}
+function refreshTimers(){document.querySelectorAll('.table-card[data-tid]').forEach(card=>{const tid=card.getAttribute('data-tid');const ord=orders[tid];if(!ord||!ord.timestamp)return;const t=getTableTimer(ord.timestamp);if(!t)return;const el=card.querySelector('.t-timer');if(el){el.className=`t-timer ${t.cls}`;el.textContent=`⏱ ${t.label}`;}});}
 
-function startTimerRefresh(){
-  if(timerInterval) clearInterval(timerInterval);
-  timerInterval=setInterval(()=>{
-    if(currentRole==='cameriere') refreshTimers();
-  },60000);
-}
-
-function refreshTimers(){
-  const cards=document.querySelectorAll('.table-card[data-tid]');
-  cards.forEach(card=>{
-    const tid=card.getAttribute('data-tid');
-    const ord=orders[tid];
-    if(!ord||!ord.timestamp) return;
-    const t=getTableTimer(ord.timestamp);
-    if(!t) return;
-    const timerEl=card.querySelector('.t-timer');
-    if(timerEl){timerEl.className=`t-timer ${t.cls}`;timerEl.textContent=`⏱ ${t.label}`;}
-  });
-}
-
-// ── UTILS ────────────────────────────────────────────────────────
+// ── UTILS ──────────────────────────────────────────────────────
 async function initFirebase(){
-  if(!(await get(ref(db,'tables'))).exists()) await set(ref(db,'tables'),DEFAULT_TABLES);
-  if(!(await get(ref(db,'menu'))).exists()) await set(ref(db,'menu'),DEFAULT_MENU);
-  if(!(await get(ref(db,'settings'))).exists()) await set(ref(db,'settings'),DEFAULT_SETTINGS);
-  if(!(await get(ref(db,'dailyStats'))).exists()) await set(ref(db,'dailyStats'),{totalRevenue:0,tablesPaid:0,payments:[]});
+  if(!(await get(ref(db,'tables'))).exists())await set(ref(db,'tables'),DEFAULT_TABLES);
+  if(!(await get(ref(db,'menu'))).exists())await set(ref(db,'menu'),DEFAULT_MENU);
+  if(!(await get(ref(db,'settings'))).exists())await set(ref(db,'settings'),DEFAULT_SETTINGS);
+  if(!(await get(ref(db,'dailyStats'))).exists())await set(ref(db,'dailyStats'),{totalRevenue:0,tablesPaid:0,payments:[]});
 }
 function listen(path,cb){const u=onValue(ref(db,path),snap=>{cb(snap.val()||{});});unsubFns.push(u);}
 function stopAll(){unsubFns.forEach(u=>u());unsubFns=[];if(timerInterval){clearInterval(timerInterval);timerInterval=null;}releaseWakeLock();}
@@ -580,40 +594,40 @@ function getStatusLabel(s){return{free:'Libero',pending:'⏳ In attesa',ready:'�
 function isGlutenFree(catId){return(menuData[catId]?.label||'').toUpperCase().includes('GLUTEN');}
 
 function getStationCirclesHtml(ord,tid){
-  if(!ord||!ord.items) return '';
+  if(!ord||!ord.items)return'';
   const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items);
   const hasCucina=items.some(it=>it.dest==='cucina');
   const hasPizzeria=items.some(it=>it.dest==='pizzeria');
   const hasPolleria=items.some(it=>it.dest==='polleria');
-  if(!hasCucina&&!hasPizzeria&&!hasPolleria) return '';
+  if(!hasCucina&&!hasPizzeria&&!hasPolleria)return'';
   const sc=ord.stationColors||{};
   const makeCircle=(role,icon,label)=>{
     const state=sc[role]||'';
     const hasRole=role==='cucina'?hasCucina:role==='pizzeria'?hasPizzeria:hasPolleria;
     const cls=hasRole?(state==='green'?'active-green':state==='yellow'?'active-yellow':state==='red'?'active-red':'active-white'):'active-white';
     const clickable=(state==='yellow'&&hasRole)?`onclick="serveStation('${tid}','${role}')" title="Segna come servito"`:'';
-    return `<div class="station-circle-wrap"><div class="station-circle ${cls}" ${clickable}>${icon}</div><div class="station-circle-label">${label}</div></div>`;
+    return`<div class="station-circle-wrap"><div class="station-circle ${cls}" ${clickable}>${icon}</div><div class="station-circle-label">${label}</div></div>`;
   };
-  return `<div class="station-circles">${makeCircle('cucina','🍽️','Cucina')}${makeCircle('pizzeria','🍕','Pizzeria')}${makeCircle('polleria','🍗','Polleria')}</div>`;
+  return`<div class="station-circles">${makeCircle('cucina','🍽️','Cucina')}${makeCircle('pizzeria','🍕','Pizzeria')}${makeCircle('polleria','🍗','Polleria')}</div>`;
 }
 
 window.serveStation=async function(tid,role){
   const ord=orders[tid];if(!ord)return;
-  const sc=ord.stationColors||{};
-  sc[role]='red';
+  const sc=ord.stationColors||{};sc[role]='red';
   await update(ref(db,`orders/${tid}`),{stationColors:sc});
-  showToast(`✅ Servito!`);
+  showToast('✅ Servito!');
 };
 
 function updateCartBadge(){
   const draft=selectedTable?getDraft(selectedTable):[];
   const total=draft.reduce((s,it)=>s+(it.qty||1),0);
   const badge=document.getElementById('cartBadgeFixed');
-  const count=document.getElementById('cartBadgeCount');
-  const text=document.getElementById('cartBadgeText');
   if(!badge)return;
-  if(total>0&&currentRole==='cameriere'&&selectedTable){badge.style.display='flex';count.textContent=total;text.textContent=`${total} articol${total===1?'o':'i'}`;}
-  else badge.style.display='none';
+  if(total>0&&currentRole==='cameriere'&&selectedTable){
+    badge.style.display='flex';
+    document.getElementById('cartBadgeCount').textContent=total;
+    document.getElementById('cartBadgeText').textContent=`${total} articol${total===1?'o':'i'}`;
+  }else badge.style.display='none';
 }
 window.scrollToOrder=function(){const el=document.querySelector('.order-list')||document.querySelector('.order-actions');if(el)el.scrollIntoView({behavior:'smooth'});};
 
@@ -624,8 +638,7 @@ window.selectRole=async function(role){
   const labels={cameriere:'🍽️ Cameriere',pizzeria:'🍕 Pizzeria',cucina:'👨‍🍳 Cucina',polleria:'🍗 Polleria',cassa:'💰 Cassa',cassa_polleria:'🍗💰 Cassa Polleria'};
   document.getElementById('topbarRole').textContent=labels[role]||role;
   document.getElementById('chatBtn').style.display='';
-  // Keep awake per stazioni
-  if(role==='cucina'||role==='pizzeria'||role==='polleria') requestWakeLock();
+  if(role==='cucina'||role==='pizzeria'||role==='polleria')requestWakeLock();
   await initFirebase();
   const ssnap=await get(ref(db,'settings'));
   if(ssnap.exists()){settings=ssnap.val();document.getElementById('topbarName').textContent=settings.restaurantName||'Saverio';}
@@ -633,32 +646,74 @@ window.selectRole=async function(role){
   listen('tables',t=>{tables=t;});
   listen('menu',m=>{menuData=m;});
   listen('orders',o=>{
-    const prev=JSON.stringify(orders);orders=o||{};
-    if(JSON.stringify(orders)!==prev&&(currentRole==='cucina'||currentRole==='pizzeria'||currentRole==='polleria')){if(settings.soundEnabled!==false)playCampanella();}
+    const newJson=JSON.stringify(o||{});
+    const isFirst=lastOrdersJson==='';
+    if(!isFirst&&newJson!==lastOrdersJson&&settings.soundEnabled!==false){
+      // Suono specifico per stazione — solo se ci sono ordini per questa stazione
+      if(role==='cucina'||role==='pizzeria'||role==='polleria'){
+        const newOrders=o||{};
+        const oldOrders=JSON.parse(lastOrdersJson||'{}');
+        // Controlla se c'è un ordine nuovo o aggiornato per questa stazione
+        let hasNewForMe=false;
+        Object.entries(newOrders).forEach(([tid,ord])=>{
+          if(!ord||!ord.items)return;
+          const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items);
+          let hasMyItems;
+          if(role==='polleria'){
+            hasMyItems=items.some(it=>it.dest==='polleria'&&(it.name.toLowerCase().includes('pollo')||it.name.toLowerCase().includes('rosticceria')));
+          } else {
+            hasMyItems=items.some(it=>it.dest===role);
+          }
+          if(!hasMyItems)return;
+          const oldOrd=oldOrders[tid];
+          const oldJson=JSON.stringify(oldOrd?.items||[]);
+          const newItemJson=JSON.stringify(ord.items);
+          if(oldJson!==newItemJson||!oldOrd)hasNewForMe=true;
+        });
+        if(hasNewForMe)playSuonoStazione(role);
+      }
+    }
+    lastOrdersJson=newJson;
+    orders=o||{};
     renderRole();
   });
   listen('dailyStats',s=>{dailyStats=s;});
+  // Chat: inizializzazione separata per evitare false notifiche
+  chatInitialized=false;
   listen('chat',c=>{
-    const newCount=Object.keys(c||{}).length;
-    if(newCount>lastChatCount&&lastChatCount>0){if(settings.soundEnabled!==false)playChatPop();}
-    lastChatCount=newCount;chatMsgs=c||{};updateChatBadge();renderChatIfOpen();
+    chatMsgs=c||{};
+    if(!chatInitialized){
+      // Prima volta: solo inizializza senza badge
+      chatInitialized=true;
+      return;
+    }
+    // Messaggi successivi: notifica solo se chat chiusa e non è mio messaggio
+    const msgs=Object.values(chatMsgs).sort((a,b)=>a.time-b.time);
+    const last=msgs[msgs.length-1];
+    const chatOpen=document.getElementById('chatOverlay').classList.contains('active');
+    if(!chatOpen&&last&&last.role!==currentRole){
+      chatUnread++;
+      updateChatBadge();
+      if(settings.soundEnabled!==false)playChatPop();
+    }
+    if(chatOpen)renderChatMsgs();
   });
-  if(role==='cameriere') startTimerRefresh();
+  if(role==='cameriere')startTimerRefresh();
   renderRole();
 };
 
-window.goBack=function(){stopAll();currentRole=null;selectedTable=null;lastChatCount=0;updateCartBadge();document.getElementById('splash').style.display='flex';document.getElementById('app').style.display='none';};
+window.goBack=function(){stopAll();currentRole=null;selectedTable=null;lastOrdersJson='';chatInitialized=false;chatUnread=0;updateCartBadge();document.getElementById('splash').style.display='flex';document.getElementById('app').style.display='none';};
 
 let pendingRole=null;
 window.openPassModal=function(role){pendingRole=role;document.getElementById('passInput').value='';document.getElementById('passError').style.display='none';openModal('passModal');setTimeout(()=>document.getElementById('passInput').focus(),100);};
 window.checkPass=async function(){const ssnap=await get(ref(db,'settings'));const pw=ssnap.exists()?(ssnap.val().password||'pietro'):'pietro';if(document.getElementById('passInput').value===pw){closeModal('passModal');selectRole(pendingRole);}else document.getElementById('passError').style.display='block';};
 
 function renderRole(){
-  if(currentRole==='cameriere') renderCameriere();
-  else if(currentRole==='pizzeria') renderStation('pizzeria');
-  else if(currentRole==='cucina') renderStation('cucina');
-  else if(currentRole==='polleria') renderStation('polleria');
-  else if(currentRole==='cassa'||currentRole==='cassa_polleria') renderCassa();
+  if(currentRole==='cameriere')renderCameriere();
+  else if(currentRole==='pizzeria')renderStation('pizzeria');
+  else if(currentRole==='cucina')renderStation('cucina');
+  else if(currentRole==='polleria')renderStation('polleria');
+  else if(currentRole==='cassa'||currentRole==='cassa_polleria')renderCassa();
 }
 
 let camTab='tables';
@@ -674,20 +729,17 @@ function renderCameriere(){
       ${selectedTable?`<button class="tab ${camTab==='order'?'active':''}" onclick="setCamTab('order')">📝 Ordine ${draftCount>0?`<span style="background:#e53e3e;color:#fff;border-radius:50%;padding:1px 6px;font-size:.75rem;margin-left:4px">${draftCount}</span>`:''}</button>`:''}
     </div>
     <div class="content" id="camContent"></div>`;
-  if(camTab==='tables') renderTablesList();
-  else if(camTab==='order'&&selectedTable) renderOrderPanel();
+  if(camTab==='tables')renderTablesList();
+  else if(camTab==='order'&&selectedTable)renderOrderPanel();
 }
 
 function renderTablesList(){
   const c=document.getElementById('camContent');if(!c)return;
   const tids=Object.keys(tables);
   if(!tids.length){c.innerHTML='<div class="empty"><div class="e-icon">🍽️</div><p>Nessun tavolo configurato</p></div>';return;}
-
-  // Ordina: prima i tavoli con ordine aperto (per timestamp), poi i liberi
   const withOrder=tids.filter(tid=>orders[tid]&&orders[tid].timestamp).sort((a,b)=>(orders[a].timestamp||0)-(orders[b].timestamp||0));
   const withoutOrder=tids.filter(tid=>!orders[tid]||!orders[tid].timestamp);
   const sortedTids=[...withOrder,...withoutOrder];
-
   c.innerHTML=`<div class="section-title mt-12">Seleziona un tavolo</div>
     <div class="tables-grid">${sortedTids.map(tid=>{
       const t=tables[tid],ord=orders[tid];
@@ -705,29 +757,21 @@ function renderTablesList(){
       const timer=ord?.timestamp?getTableTimer(ord.timestamp):null;
       const timerHtml=timer?`<div class="t-timer ${timer.cls}">⏱ ${timer.label}</div>`:'';
       const draftBadge=draftCount>0?`<div class="draft-badge">${draftCount}</div>`:'';
-      return `<div class="table-card ${borderClass}" data-tid="${tid}" onclick="openTable('${tid}')">
+      return`<div class="table-card ${borderClass}" data-tid="${tid}" onclick="openTable('${tid}')">
         ${bNote}${draftBadge}
         <div style="width:100%">
           <div class="t-name">${t.name}</div>
           <div class="t-covers">👥 ${t.covers} coperti</div>
-          ${tot}
-          ${timerHtml}
+          ${tot}${timerHtml}
           <div class="t-status ${spill}">${sl}</div>
         </div>
-        ${circles}
-        ${bRes}
+        ${circles}${bRes}
       </div>`;
     }).join('')}</div>
     <div style="margin-top:16px"><button class="btn btn-secondary btn-sm" onclick="addTable()">➕ Aggiungi Tavolo</button></div>`;
 }
 
-window.openTable=function(tid){
-  selectedTable=tid;
-  camTab='order';
-  selectedMenuItem=null;
-  inlineQty=1;
-  renderCameriere();
-};
+window.openTable=function(tid){selectedTable=tid;camTab='order';selectedMenuItem=null;inlineQty=1;renderCameriere();};
 
 function renderOrderPanel(){
   const c=document.getElementById('camContent');if(!c)return;
@@ -740,7 +784,6 @@ function renderOrderPanel(){
   const existingItems=ord?.items?(Array.isArray(ord.items)?ord.items:Object.values(ord.items)):[];
   const hasExisting=existingItems.length>0;
   const tempOrder=getDraft(selectedTable);
-
   c.innerHTML=`
     <div class="order-panel mt-12">
       <div class="order-header">
@@ -780,7 +823,7 @@ function renderMenuItems(catItems,gf=false){
     const sel=(selectedMenuItem===iid)?'selected':'';
     const gfClass=gf?'gf-item':'';
     const nameStyle=gf?'color:#276749;font-weight:900':'';
-    return `<div class="menu-item ${so} ${sel} ${gfClass}" id="mi_${iid}" onclick="${item.soldOut?'':(`selectMenuItem('${iid}','${currentCat}')`)}">
+    return`<div class="menu-item ${so} ${sel} ${gfClass}" id="mi_${iid}" onclick="${item.soldOut?'':(`selectMenuItem('${iid}','${currentCat}')`)}">
       <div class="mi-name" style="${nameStyle}">${item.name.toUpperCase()}</div>
       ${item.desc?`<div class="mi-desc">${item.desc}</div>`:''}
       <div class="mi-price" style="${nameStyle}">${fmt(item.price)}</div>
@@ -803,18 +846,11 @@ function renderMenuItems(catItems,gf=false){
   }).join('');
 }
 
-window.changeInlineQty=function(delta,iid,catId){
-  inlineQty=Math.max(1,inlineQty+delta);
-  const disp=document.getElementById('inlineQtyDisplay');
-  if(disp)disp.textContent=inlineQty;
-  const item=menuData[catId]?.items?.[iid];
-  if(item){const totalEl=disp?.parentElement?.querySelector('.inline-qty-total');if(totalEl)totalEl.textContent=fmt(item.price*inlineQty);}
-};
+window.changeInlineQty=function(delta,iid,catId){inlineQty=Math.max(1,inlineQty+delta);const disp=document.getElementById('inlineQtyDisplay');if(disp)disp.textContent=inlineQty;const item=menuData[catId]?.items?.[iid];if(item){const totalEl=disp?.parentElement?.querySelector('.inline-qty-total');if(totalEl)totalEl.textContent=fmt(item.price*inlineQty);}};
 
 window.selectMenuItem=function(iid,catId){
   if(selectedMenuItem===iid){selectedMenuItem=null;inlineQty=1;}else{selectedMenuItem=iid;inlineQty=1;}
-  const gf=isGlutenFree(catId);
-  const grid=document.getElementById('menuGrid');
+  const gf=isGlutenFree(catId);const grid=document.getElementById('menuGrid');
   if(grid)grid.innerHTML=renderMenuItems(menuData[catId]?.items||{},gf);
   if(selectedMenuItem){setTimeout(()=>{const inp=document.getElementById(`inlineNoteInput_${iid}`);if(inp)inp.focus();},100);}
 };
@@ -829,8 +865,7 @@ window.confirmInlineItem=function(iid,catId){
   const tempOrder=getDraft(selectedTable);
   if(!sep&&!note){const existing=tempOrder.find(it=>it.iid===iid&&!it.note);if(existing){existing.qty=(existing.qty||1)+qty;}else{tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty,note:'',dest,separate:sep});}}
   else{tempOrder.push({uid:Date.now()+'_'+Math.random(),iid,name:item.name,price:item.price,qty,note,dest,separate:sep});}
-  setDraft(selectedTable,tempOrder);
-  selectedMenuItem=null;inlineQty=1;
+  setDraft(selectedTable,tempOrder);selectedMenuItem=null;inlineQty=1;
   showProductToast(`✅ ×${qty} ${item.name.toUpperCase()} aggiunto`);
   renderOrderPanel();
 };
@@ -854,8 +889,8 @@ function renderCurrentOrder(tempOrder){
 }
 
 window.setCat=function(cid){currentCat=cid;selectedMenuItem=null;inlineQty=1;renderOrderPanel();};
-window.removeOrderItem=function(i){const tempOrder=getDraft(selectedTable);if(!tempOrder[i])return;if((tempOrder[i].qty||1)>1){tempOrder[i].qty--;}else{tempOrder.splice(i,1);}setDraft(selectedTable,tempOrder);renderOrderPanel();};
-window.addQty=function(i){const tempOrder=getDraft(selectedTable);if(tempOrder[i])tempOrder[i].qty=(tempOrder[i].qty||1)+1;setDraft(selectedTable,tempOrder);renderOrderPanel();};
+window.removeOrderItem=function(i){const td=getDraft(selectedTable);if(!td[i])return;if((td[i].qty||1)>1){td[i].qty--;}else{td.splice(i,1);}setDraft(selectedTable,td);renderOrderPanel();};
+window.addQty=function(i){const td=getDraft(selectedTable);if(td[i])td[i].qty=(td[i].qty||1)+1;setDraft(selectedTable,td);renderOrderPanel();};
 window.goTables=function(){selectedTable=null;camTab='tables';selectedMenuItem=null;inlineQty=1;updateCartBadge();renderCameriere();};
 window.clearTable=async function(){if(!confirm('Svuotare il tavolo?'))return;await remove(ref(db,`orders/${selectedTable}`));clearDraft(selectedTable);showToast('Tavolo svuotato');goTables();};
 
@@ -866,19 +901,9 @@ window.sendOrder=async function(){
   const existingItems=existing?.items?(Array.isArray(existing.items)?existing.items:Object.values(existing.items)):[];
   const merged=[...existingItems,...tempOrder];
   const sc=existing?.stationColors||{};
-  ['cucina','pizzeria','polleria'].forEach(role=>{
-    const hasRole=merged.some(it=>it.dest===role);
-    if(hasRole&&(!sc[role]||sc[role]===''))sc[role]='green';
-  });
-  await set(ref(db,`orders/${selectedTable}`),{
-    tableId:selectedTable,tableName:tables[selectedTable]?.name||'',
-    items:merged,status:'pending',
-    timestamp:existing?.timestamp||Date.now(),
-    covers:tables[selectedTable]?.covers||1,
-    newItems:true,stationColors:sc
-  });
-  playWhoosh();
-  clearDraft(selectedTable);
+  ['cucina','pizzeria','polleria'].forEach(role=>{const hasRole=merged.some(it=>it.dest===role);if(hasRole&&(!sc[role]||sc[role]===''))sc[role]='green';});
+  await set(ref(db,`orders/${selectedTable}`),{tableId:selectedTable,tableName:tables[selectedTable]?.name||'',items:merged,status:'pending',timestamp:existing?.timestamp||Date.now(),covers:tables[selectedTable]?.covers||1,newItems:true,stationColors:sc});
+  playWhoosh();clearDraft(selectedTable);
   showToast(`✅ ${existingItems.length?'Aggiunta inviata!':'Ordine inviato!'}`);
   goTables();
 };
@@ -912,14 +937,10 @@ function renderStationContent(role){
   const list=Object.entries(orders).filter(([,ord])=>{
     if(!ord||ord.status==='reserved')return false;
     const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items||{});
-    // Polleria: solo pollo e rosticceria mignon
-    if(role==='polleria'){
-      const hasPollo=items.some(it=>it.dest==='polleria'&&(it.name.toLowerCase().includes('pollo')||it.name.toLowerCase().includes('rosticceria')));
-      if(!hasPollo)return false;
-    } else {
-      const hasRole=items.some(it=>it.dest===role);
-      if(!hasRole)return false;
-    }
+    let hasMyItems;
+    if(role==='polleria'){hasMyItems=items.some(it=>it.dest==='polleria'&&(it.name.toLowerCase().includes('pollo')||it.name.toLowerCase().includes('rosticceria')));}
+    else{hasMyItems=items.some(it=>it.dest===role);}
+    if(!hasMyItems)return false;
     const sc=ord.stationColors||{};
     const isDone=sc[role]==='red';
     return stationTab==='active'?!isDone:isDone;
@@ -930,11 +951,8 @@ function renderStationContent(role){
   c.innerHTML=`<div class="kitchen-grid mt-12">${list.map(([tid,ord])=>{
     const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items||{});
     let mine;
-    if(role==='polleria'){
-      mine=items.filter(it=>it.dest==='polleria'&&(it.name.toLowerCase().includes('pollo')||it.name.toLowerCase().includes('rosticceria')));
-    } else {
-      mine=items.filter(it=>it.dest===role);
-    }
+    if(role==='polleria'){mine=items.filter(it=>it.dest==='polleria'&&(it.name.toLowerCase().includes('pollo')||it.name.toLowerCase().includes('rosticceria')));}
+    else{mine=items.filter(it=>it.dest===role);}
     const others=items.filter(it=>it.dest!==role&&it.dest!=='cameriere');
     const sc=ord.stationColors||{};
     const myState=sc[role]||'green';
@@ -942,8 +960,7 @@ function renderStationContent(role){
     const isReady=myState==='yellow';
     const timer=getTimerLabel(ord.timestamp);
     const cls=isDone?'k-done':isReady?'k-ready':timer.cls==='t-red'?'k-urgent':'';
-
-    return `<div class="kcard ${cls}">
+    return`<div class="kcard ${cls}">
       ${isDone?`<div class="kcard-done-overlay"><div class="kcard-done-x">✕</div></div>`:''}
       <div class="kc-head">
         <span class="kc-tname">${ord.tableName||tid} <span style="font-size:.85rem;font-weight:600;color:#4a5568">👥${ord.covers||''}</span></span>
@@ -966,8 +983,7 @@ function renderStationContent(role){
 
 window.markStationReady=async function(tid,role){
   const ord=orders[tid];if(!ord)return;
-  const sc=ord.stationColors||{};
-  sc[role]='yellow';
+  const sc=ord.stationColors||{};sc[role]='yellow';
   await update(ref(db,`orders/${tid}`),{stationColors:sc});
   showToast('✅ Pronto! Il cameriere verrà a prendere.');
 };
@@ -979,6 +995,7 @@ function renderCassa(){
   document.getElementById('mainContent').innerHTML=`
     <div class="tabs">
       <button class="tab ${cassaTab==='orders'?'active':''}" onclick="setCassaTab('orders')">🍽️ Tavoli</button>
+      <button class="tab ${cassaTab==='storico'?'active':''}" onclick="setCassaTab('storico')">📜 Storico</button>
       <button class="tab ${cassaTab==='stats'?'active':''}" onclick="setCassaTab('stats')">📊 Stats</button>
       <button class="tab ${cassaTab==='menu'?'active':''}" onclick="setCassaTab('menu')">📋 Menù</button>
       <button class="tab ${cassaTab==='tables'?'active':''}" onclick="setCassaTab('tables')">⚙️ Tavoli</button>
@@ -987,7 +1004,7 @@ function renderCassa(){
     <div class="content" id="cassaContent"></div>`;
   renderCassaContent();
 }
-function renderCassaContent(){const c=document.getElementById('cassaContent');if(!c)return;if(cassaTab==='orders')renderCassaOrders(c);else if(cassaTab==='stats')renderStats(c);else if(cassaTab==='menu')renderMenuEditor(c);else if(cassaTab==='tables')renderTableSettings(c);else if(cassaTab==='settings')renderSettings(c);}
+function renderCassaContent(){const c=document.getElementById('cassaContent');if(!c)return;if(cassaTab==='orders')renderCassaOrders(c);else if(cassaTab==='storico')renderStorico(c);else if(cassaTab==='stats')renderStats(c);else if(cassaTab==='menu')renderMenuEditor(c);else if(cassaTab==='tables')renderTableSettings(c);else if(cassaTab==='settings')renderSettings(c);}
 
 function renderCassaOrders(c){
   c.innerHTML=`<div class="section-title mt-12">Tutti i Tavoli</div>${Object.keys(tables).map(tid=>{
@@ -1001,6 +1018,28 @@ function renderCassaOrders(c){
     const nItems=items.reduce((s,it)=>s+(it.qty||1),0);
     return`<div class="cassa-row" onclick="openBill('${tid}')"><div class="cr-name">${t.name}</div><div class="cr-info">👥 ${ord.covers||t.covers} · ${nItems} articoli</div><div class="cr-total">${fmt(total)}</div><span class="cr-status ${sc}">${getStatusLabel(ord.status)}</span></div>`;
   }).join('')}`;
+}
+
+// ── STORICO ────────────────────────────────────────────────────
+function renderStorico(c){
+  const s=dailyStats||{};
+  const payments=Array.isArray(s.payments)?[...s.payments].reverse():[];
+  if(!payments.length){c.innerHTML=`<div class="section-title mt-12">📜 Storico Tavoli</div><div class="empty"><div class="e-icon">📜</div><p>Nessun tavolo chiuso oggi</p></div>`;return;}
+  const total=payments.reduce((a,p)=>a+p.total,0);
+  c.innerHTML=`
+    <div class="section-title mt-12">📜 Storico Tavoli di Oggi</div>
+    <div style="background:#e8f7fb;border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;border:2px solid #b8e4f0">
+      <span style="font-weight:800;color:#0e7a9a;font-size:1rem">${payments.length} tavoli chiusi</span>
+      <span style="font-weight:900;color:#0e7a9a;font-size:1.2rem">${fmt(total)} totale</span>
+    </div>
+    ${payments.map((p,idx)=>`
+      <div class="storico-row">
+        <div class="storico-table">${p.table||'—'}</div>
+        <div class="storico-time">${new Date(p.time).toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})}</div>
+        <div class="storico-total">${fmt(p.total)}</div>
+        <span class="storico-method" style="background:${p.method==='contanti'?'#e6f4ea':'#e8f7fb'};color:${p.method==='contanti'?'#1a5c33':'#0e7a9a'}">${p.method==='contanti'?'💵 Contanti':'💳 Carta'}</span>
+      </div>`).join('')}
+    <div style="margin-top:14px"><button class="btn btn-danger btn-sm" onclick="resetStats()">🔄 Azzera storico</button></div>`;
 }
 
 function calcTotal(tid){const ord=orders[tid];if(!ord||!ord.items)return 0;const items=Array.isArray(ord.items)?ord.items:Object.values(ord.items);return items.reduce((s,it)=>s+(it.price||0)*(it.qty||1),0);}
@@ -1086,14 +1125,6 @@ function renderStats(c){
       <div class="stat-card"><div class="stat-val">${s.tablesPaid||0}</div><div class="stat-lbl">Tavoli Chiusi</div></div>
       <div class="stat-card"><div class="stat-val">${fmt(contanti)}</div><div class="stat-lbl">💵 Contanti</div></div>
       <div class="stat-card"><div class="stat-val">${fmt(carta)}</div><div class="stat-lbl">💳 Carta</div></div>
-    </div>
-    <div style="margin-top:20px"><div class="section-title">Ultimi pagamenti</div>
-    ${payments.length?[...payments].reverse().slice(0,20).map(p=>`
-      <div style="display:flex;justify-content:space-between;align-items:center;background:#ffffff;border-radius:12px;padding:12px 15px;margin-bottom:9px;box-shadow:0 2px 16px rgba(26,155,187,.12);border:2px solid #b8e4f0">
-        <span style="font-weight:800;font-size:1rem;color:#1a202c">${p.table}</span>
-        <span style="font-size:.85rem;color:#2d3748">${p.method==='contanti'?'💵':'💳'} ${new Date(p.time).toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})}</span>
-        <span style="font-weight:900;font-size:1rem;color:#0e7a9a">${fmt(p.total)}</span>
-      </div>`).join(''):`<div class="empty"><p>Nessun pagamento oggi</p></div>`}
     </div>
     <div style="margin-top:16px;display:flex;gap:9px;flex-wrap:wrap">
       <button class="btn btn-danger btn-sm" onclick="resetStats()">🔄 Reset statistiche</button>
@@ -1190,9 +1221,13 @@ window.toggleSound=async function(){const cur=settings.soundEnabled!==false;awai
 window.saveNewPass=async function(){const old=document.getElementById('cpOld').value,nw=document.getElementById('cpNew').value,conf=document.getElementById('cpConfirm').value,err=document.getElementById('cpError');const ssnap=await get(ref(db,'settings'));const pw=ssnap.exists()?(ssnap.val().password||'pietro'):'pietro';if(old!==pw){err.style.display='block';err.textContent='Password attuale errata';return;}if(nw!==conf){err.style.display='block';err.textContent='Le password non coincidono';return;}if(nw.length<3){err.style.display='block';err.textContent='Password troppo corta';return;}await update(ref(db,'settings'),{password:nw});closeModal('changePassModal');showToast('✅ Password cambiata!');};
 window.resetMenu=async function(){if(!confirm('Resettare il menù? Perderai le modifiche.'))return;await set(ref(db,'menu'),DEFAULT_MENU);showToast('Menù resettato');};
 
-window.openChat=function(){chatUnread=0;updateChatBadge();openModal('chatOverlay');renderChatMsgs();};
+window.openChat=function(){
+  chatUnread=0;
+  updateChatBadge();
+  openModal('chatOverlay');
+  renderChatMsgs();
+};
 function updateChatBadge(){const b=document.getElementById('chatBadge');if(!b)return;if(chatUnread>0){b.style.display='flex';b.textContent=chatUnread;}else b.style.display='none';}
-function renderChatIfOpen(){if(document.getElementById('chatOverlay').classList.contains('active'))renderChatMsgs();else{chatUnread++;updateChatBadge();}}
 function renderChatMsgs(){const c=document.getElementById('chatMessages');if(!c)return;const msgs=Object.values(chatMsgs).sort((a,b)=>a.time-b.time);c.innerHTML=msgs.map(m=>{const me=m.role===currentRole;return`<div class="chat-msg ${me?'me':'them'}"><div class="chat-author">${m.author}</div><div>${m.text}</div><div class="chat-time">${new Date(m.time).toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})}</div></div>`;}).join('');c.scrollTop=c.scrollHeight;}
 window.sendChat=async function(){const inp=document.getElementById('chatInput');const text=inp.value.trim();if(!text)return;const labels={cameriere:'🍽️ Cameriere',pizzeria:'🍕 Pizzeria',cucina:'👨‍🍳 Cucina',polleria:'🍗 Polleria',cassa:'💰 Cassa',cassa_polleria:'🍗💰 Cassa Polleria'};await push(ref(db,'chat'),{text,role:currentRole,author:labels[currentRole]||currentRole,time:Date.now()});inp.value='';};
 
